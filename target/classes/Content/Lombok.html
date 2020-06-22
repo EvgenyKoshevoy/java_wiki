@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Lombok</title>
+  </head>
+  <body vlink="#551A8B" text="#000000" bgcolor="#333333" alink="#EE0000"
+    link="#0000EE">
+    <h1 align="center"><font color="#33ccff">Lombok</font></h1>
+    <table width="80%" border="1" cellspacing="2" cellpadding="2">
+      <tbody>
+        <tr>
+          <td valign="top"><font color="#ffff00"><b>Название<br>
+              </b></font></td>
+          <td valign="top"><font color="#ffff00"><b>Описание<br>
+              </b></font></td>
+          <td valign="top"><font color="#ffff00"><b>Примеры<br>
+              </b></font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#ffffcc">@NonNull<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Обработка переменных,
+              которые не должны получать нуль<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Lombok:<br>
+              public Example(@NonNull P p) {<br>
+              &nbsp;&nbsp;&nbsp; super("Hello");<br>
+              &nbsp;&nbsp;&nbsp; this.name = p.getName();<br>
+              }<br>
+              <br>
+              Java:<br>
+              public Example(P p) {<br>
+              &nbsp;&nbsp;&nbsp; super("Hello");<br>
+              &nbsp;&nbsp;&nbsp; if(p == null) {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; throw new
+              NullPointerException("p"); &nbsp; <br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; this.name = p.getName();<br>
+              }<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#ffffcc">@Getter<br>
+              @Setter<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Создание геттеров и
+              сеттеров<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Lombok:<br>
+              @Getter<br>
+              @Setter<br>
+              private int age = 10;<br>
+              <br>
+              Java:<br>
+              private int age = 10;<br>
+              <br>
+              public int getAge() {<br>
+              &nbsp;&nbsp;&nbsp; return age;<br>
+              }<br>
+              <br>
+              public void setAge(int age) {<br>
+              &nbsp;&nbsp;&nbsp; this.age = age;<br>
+              }<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#ffffcc">@ToString<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Релизация стандартного
+              toString() метода<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Lombok:<br>
+              @ToString(exclude="f")<br>
+              public class Example {}<br>
+              <br>
+              Java:<br>
+              public class Example {<br>
+              &nbsp;&nbsp;&nbsp; @Override<br>
+              &nbsp;&nbsp;&nbsp; public toString() {<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return ...;<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              }<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#ffffcc">@EqualsAndHashCode<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Создание методов Equals
+              и HashCode<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Lombok:<br>
+              @EqualsAndHashCode(exclude={"id1", "id2"})<br>
+              public class Example{ }<br>
+              <br>
+              Java:<br>
+              public class Example{<br>
+              &nbsp;&nbsp;&nbsp; ...<br>
+              &nbsp;&nbsp;&nbsp; @Override<br>
+              &nbsp;&nbsp;&nbsp; public boolean equals(Object o) {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ...<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; @Override<br>
+              &nbsp;&nbsp;&nbsp; public int hashCode() {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ...<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              }<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#ffffcc">@NoArgsConstructor<br>
+              @RequiredArgsConstructor<br>
+              @AllArgsConstructor<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Создание пустого
+              конструктора<br>
+              Создание конструктора, включающего все final поля<br>
+              Создание конструктора, включающего все возможные поля<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Lombok:<br>
+              @RequiredArgsConstructor(staticName = "of")<br>
+              @AllArgsConstructor(access = AccessLevel.PROTECTED)<br>
+              public class E&lt;T&gt; {}<br>
+              <br>
+              Java:<br>
+              public class E&lt;T&gt; {<br>
+              &nbsp;&nbsp;&nbsp; private E(T description) {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ...<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; public static &lt;T&gt; E&lt;T&gt; of
+              (T description) {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return new
+              E&lt;T&gt;(description);<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              }<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#ffffcc">@Data<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Генерация всех
+              служебных методов, заменяет сразу команды @ToString,
+              @EqualsAndHashCode, @Getter, @Setter,
+              @RequiredArgsConstructor<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Lombok:<br>
+              @Data<br>
+              public class Example {<br>
+              &nbsp;&nbsp;&nbsp; private final String name;<br>
+              &nbsp;&nbsp;&nbsp; private int age;<br>
+              }<br>
+              <br>
+              Java:<br>
+              public class Example {<br>
+              &nbsp;&nbsp;&nbsp; private finall String name;<br>
+              &nbsp;&nbsp;&nbsp; private int age;<br>
+              &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; public Example(String name) {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; this.name = name;<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; public String getName() {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return this.name;<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; void setAge(int age) {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; this.age = age;<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; public int getAge() {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return this.age;<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; @Override<br>
+              &nbsp;&nbsp;&nbsp; public String toString() {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return ...;<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; @Override<br>
+              &nbsp;&nbsp;&nbsp; boolean equals(Object o) {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ...<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; @Override<br>
+              &nbsp;&nbsp;&nbsp; public int hashCode() {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ...<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              }<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#ffffcc">@Value<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Создание неизменяемых
+              классов (аналог @Data, но для неизменяемых классов)<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Lombok:<br>
+              @Value<br>
+              public class Example {<br>
+              &nbsp;&nbsp;&nbsp; private final String name;<br>
+              &nbsp;&nbsp;&nbsp; private int age;<br>
+              }<br>
+              <br>
+              Java:<br>
+              public class Example {<br>
+              &nbsp;&nbsp;&nbsp; private final String name;<br>
+              &nbsp;&nbsp;&nbsp; private final int age;<br>
+              &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; public Example(String name, int age) {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; this.name = name;<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; this.age = age;<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; public String getName() {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return name;<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; public int getAge() {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return age;<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; @Override<br>
+              &nbsp;&nbsp;&nbsp; public String toString() {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return ...;<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; @Override<br>
+              &nbsp;&nbsp;&nbsp; public boolean equals(Object o) {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ...<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; @Override<br>
+              &nbsp;&nbsp;&nbsp; public int hashCode() {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ...<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              }<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#ffffcc">@Builder<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Реализация паттерна
+              builder<br>
+              @Singular используется для объектов в единственном
+              экземпляре<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Lombok:<br>
+              @Builder<br>
+              public class Example {<br>
+              &nbsp;&nbsp;&nbsp; private String name;<br>
+              &nbsp;&nbsp;&nbsp; private int age;<br>
+              &nbsp;&nbsp;&nbsp; @Singular<br>
+              &nbsp;&nbsp;&nbsp; private Set&lt;String&gt; occupations;<br>
+              }<br>
+              <br>
+              Java:<br>
+              public class Example {<br>
+              &nbsp;&nbsp;&nbsp; private String name;<br>
+              &nbsp;&nbsp;&nbsp; private int age;<br>
+              &nbsp;&nbsp;&nbsp; private Set&lt;String&gt; occupations;<br>
+              &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; Example(String name, int age,
+              Set&lt;String&gt; occupations) {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; this.name = name;<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; this.age = age;<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; this.occupations =
+              occupations;<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; public static class ExampleBuilder {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; private String name;<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; private int age;<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; private
+              ArrayList&lt;&gt; occupations;<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ExampleBuilder() {}<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public
+              ExampleBuilder name(String name) {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              this.name = name;<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              return this;<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public
+              ExampleBuilder age(int age) {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              this.age = age;<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              return this;<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public
+              ExampleBuilder occupation(String occupation) {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              if(this.occupations == null) {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; this.occupation = new
+              ArrayList&lt;String&gt;();<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              this.occupations.add(occupation);<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              return this;<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ...<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public Example
+              build() {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              Set&lt;String&gt; occupations = ...;<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              return new Example(name, age, occupations);<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; @java.lang.Override<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public String
+              toString() {<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              ...<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              }<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#ffffcc">@SneakyThrows<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Обертка проверяемых
+              исключений<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Lombok:<br>
+              public String utf8ToString(byte[] bytes) {<br>
+              &nbsp;&nbsp;&nbsp; try {<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return new
+              String(bytes, "UTF-8");<br>
+              &nbsp;&nbsp;&nbsp; } catch {<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; throw
+              Lombok.sneakyThrow(e);<br>
+              &nbsp;&nbsp;&nbsp; }<br>
+              }<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#ffffcc">@Synchronized<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Создание synchronized
+              блоков<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Lombok:<br>
+              private final Object readLock = new Object();<br>
+              <br>
+              @Synchronized<br>
+              public static void hello() { ... }<br>
+              <br>
+              @Synchronized<br>
+              public int answerToLife() { ... }<br>
+              <br>
+              @Sycnhronized("readLock")<br>
+              public void foo() { ... }<br>
+              <br>
+              <br>
+              <br>
+              private static final Object $LOCK = new Object[0];<br>
+              private final Object $lock = new Object[0];<br>
+              private final Object readlock = new Object();<br>
+              <br>
+              public static void hello() {<br>
+              &nbsp; synchronized($LOCK) {<br>
+              &nbsp;&nbsp;&nbsp; ...<br>
+              &nbsp;&nbsp; }<br>
+              }<br>
+              &nbsp; <br>
+              public int answerToLife() {<br>
+              &nbsp; synchronized($lock) {<br>
+              &nbsp;&nbsp;&nbsp; ...<br>
+              &nbsp;&nbsp; }<br>
+              }<br>
+              &nbsp; <br>
+              public void foo() {<br>
+              &nbsp;&nbsp; synchronized(readLock) {<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...<br>
+              &nbsp;&nbsp; }<br>
+              }<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#ffffcc">@Log<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Добавляет инициализацию
+              логирования, позволяет выбрать вид логгера: @CommonsLog,
+              @JBossLog, @Log, @Log4j, @Log4j2, @Sif4j, @XSIf4j<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Lombok:<br>
+              @Slf4j<br>
+              public class Example {<br>
+              &nbsp; public static void main(String... args) {<br>
+              &nbsp;&nbsp;&nbsp; log.error("error");<br>
+              &nbsp; }<br>
+              &nbsp; <br>
+              Java:&nbsp; <br>
+              public class Example {<br>
+              &nbsp; private static final org.slf4j.Logger log =
+              org.slf4j.LoggerFactory.getLogger(LogExampleOther.class);<br>
+              &nbsp; <br>
+              &nbsp; public static void main(String... args) {<br>
+              &nbsp;&nbsp;&nbsp; log.error("error");<br>
+              &nbsp; }&nbsp; <br>
+            </font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#ffffcc">@Cleanup<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Определение ресурсов,
+              каторые бы закрывались автоматически после использования<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">Lombok:</font><br>
+            <font color="#ffffcc">
+              <meta http-equiv="content-type" content="text/html;
+                charset=UTF-8">
+              @Cleanup InputStream in = new FileInputStream(args[0]);<br>
+              @Cleanup OutputStream out = new FileOutputStream(args[1]);<br>
+              ... </font></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><br>
+    </p>
+  </body>
+</html>

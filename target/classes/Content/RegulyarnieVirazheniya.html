@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>RegulyarnieVirazheniya</title>
+  </head>
+  <body link="#0000EE" vlink="#551A8B" bgcolor="#333333" alink="#EE0000"
+    text="#000000">
+    <div align="center">
+      <h1><font color="#99ff99">Регулярные выражения</font></h1>
+      <div align="left"><font color="#ffffcc">&nbsp;&nbsp;&nbsp;
+          Обработка регулярных выражений поддерживается классами Pattern
+          и Matcher.<br>
+          <br>
+        </font>
+        <h2><font color="#ffffcc">&nbsp;&nbsp;&nbsp; <font
+              color="#66ff99">Класс Pattern</font></font></h2>
+        &nbsp;&nbsp;&nbsp; <font color="#ffffcc">Конструкторы не
+          определяются. Вместо этого вызывается фабричный метод
+          compile():<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; static Patter
+          compile(String шаблон)<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          шаблон - регулярное выражение, которое требуется использовать.<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; Метод преобразует шаблон в символьную
+          строку для сопоставления средствами класса Matcher. Возвращает
+          объект типа Pattern. <br>
+          <br>
+          &nbsp;&nbsp;&nbsp; Как только объект Pattern получен, можно
+          вызвать фабричный метод matcher() для создания объекта
+          Matcher:<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Matcher matcher(charSequence
+          строка)<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          строка - последовательность символов сопоставляемая с
+          шаблоном, называется <i>входной последовательностью</i>.<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; Так же методу можно передать символьную
+          строку.<br>
+          <br>
+        </font>
+        <h2><font color="#ffffcc">&nbsp;&nbsp;&nbsp; <font
+              color="#66ff99">Класс Matcher</font><br>
+          </font></h2>
+        <font color="#ffffcc">&nbsp;&nbsp;&nbsp; Не имеет конструкторов.
+          Для создания используется фабричный метод matcher(), описанный
+          в классе Pattern.<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; Методы:<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#33ccff"><b>boolean
+              matche</b><b>s()</b></font> - определяет совпадает ли
+          последовательность символов с шаблоном.<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          Возварщает true если совпадает вся последовательность (для
+          проверки совпадения подпоследовательности используется другой
+          метод), &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; иначе false.<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <b><font
+              color="#33ccff">boolean find()</font></b> - определяет
+          совпадает ли подпоследовательность с шаблоном.<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          Возвращает true, если подпоследовательность совпадает с
+          шаблоном, иначе false. Можно вызвать неоднократно, при каждом
+          вызове сравнение начинается с того места, где было завершено
+          предыдущее сравнение.<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <b><font
+              color="#33ccff">String group()</font></b> - возвращает
+          символьную строку, содержащую последнюю совпавшую
+          последовательность. Если совпадений не обнаружено генерируется
+          исключение IllegalStateException.<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <b><font
+              color="#33ccff">int start()</font></b> - возвращает индекс
+          текущего совпадения во входной последовательности символов.<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <b><font
+              color="#33ccff">int end()</font></b> - возвращает индекс
+          следующий, после текущего совпадения.<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#33ccff"><b>String
+              replaceAll(String новая_строка)</b></font> - каждую
+          совпавшую последовательность заменяет другой
+          последовательность новая_строка.<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; <br>
+        </font></div>
+      <br>
+    </div>
+  </body>
+</html>

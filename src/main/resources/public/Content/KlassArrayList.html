@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+    
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    
+  <title>KlassArrayList</title>
+</head>
+
+
+  <body alink="#ee0000" bgcolor="#1c1c1c" link="#0000ee" text="#000000" vlink="#551a8b">
+
+    
+<h1 align="center"><font color="#ffcc99">Класс ArrayList</font></h1>
+
+    
+<p><font color="#ffffff"><span style="color: rgb(51, 204, 0);">Синтаксис:</span><br>
+
+        &nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 204, 204);">ArrayList
+        </span><i style="color: rgb(255, 204, 204);">&lt;тип_переменной&gt;
+          name</i><span style="color: rgb(255, 204, 204);"> = new
+          ArrayList();</span><br>
+
+      </font></p>
+
+    
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; Размер такого массива
+        расширяется автоматически. При заполнении он создает новый
+        массив равный длине (длина_старого * 1,5) + 1. Данные копируются
+        в новый, а старый удаляется сборщиком мусора.</font></p>
+
+    
+<p><font color="#ffffff"><b style="color: rgb(255, 204, 204);">add()</b>
+        - добавление нового элемента в массив.<br>
+
+      </font></p>
+
+    
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; <font color="#ffff99">ArrayList&lt;Cat&gt;
+
+          cats = new ArrayList();<br>
+
+          &nbsp;&nbsp;&nbsp; cats.add(new Cat("Бегемот"));</font><br>
+
+      </font></p>
+
+    
+<p><font color="#ffffff">Новый элемент добавляется <b>в конец</b>
+        списка.<br>
+
+      </font></p>
+
+    
+<p><font color="#ffffff"><b style="color: rgb(255, 204, 204);">indexOf()</b>
+        - поиск индекса объекта по ссылке на объект.<br>
+
+      </font></p>
+
+    
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; <font color="#ffff99">ArrayList&lt;Cat&gt;
+
+          cats = new ArrayList();<br>
+
+        </font></font></p>
+
+    
+<p><font color="#ffff99">&nbsp;&nbsp;&nbsp; Cat thomas = new
+        Cat("Thomas");<br>
+
+        &nbsp;&nbsp;&nbsp; Cat behemoth = new Cat("Behemoth");<br>
+
+      </font></p>
+
+    
+<p><font color="#ffffff"><font color="#ffff99">&nbsp;&nbsp;&nbsp;
+          cats.add(thomas);<br>
+
+          &nbsp;&nbsp;&nbsp; cats.add(behemoth);<br>
+
+          &nbsp;&nbsp;&nbsp; <br>
+
+          &nbsp;&nbsp;&nbsp; int thomasIndex = cats.indexOf(thomas);</font>
+        <font color="#999999">//значение = 0<font color="#ffffff"><br>
+
+          </font></font></font></p>
+
+    
+<p><font color="#ffffff"><font color="#999999"><font color="#ffffff"><b style="color: rgb(255, 204, 204);">get()</b> - поиск
+            элемента по индексу<br>
+
+          </font></font></font></p>
+
+    
+<p><font color="#ffffff"><font color="#999999"><font color="#ffffff">&nbsp;&nbsp;&nbsp;
+
+            <font color="#ffff99">Cat secondCat = cats.get(1);</font><br>
+
+          </font></font></font></p>
+
+    
+<p><font color="#ffffff"><font color="#999999"><font color="#ffffff"><b style="color: rgb(255, 204, 204);">c</b><b style="color: rgb(255, 204, 204);">ontains()</b> - проверка содержит ли
+            массив конкретный объект<br>
+
+          </font></font></font></p>
+
+    
+<p><font color="#ffffff"><font color="#999999"><font color="#ffffff">&nbsp;&nbsp;&nbsp;
+
+            <font color="#ffff99">cats.contains(thomas);</font> <font color="#999999">//результатом является true или false</font></font></font></font></p>
+
+    
+<p><font color="#ffffff"><font color="#999999"><font color="#ffffff"><font color="#999999"><span style="color: rgb(255, 255, 255);"><span style="font-weight: bold; color: rgb(255, 204, 204);">set()</span>
+                - в отличии от add() затирает тукещуу значение и
+                заменяет его новым</span><br>
+
+            </font></font></font></font></p>
+
+    
+<p><font color="#ffffff"><font color="#999999"><font color="#ffffff"><font color="#999999"><font color="#ffffff">ArrayList позволяет
+                вставлять элементы в конкретную ячейку:</font></font></font></font></font></p>
+
+    
+<p><font color="#ffffff"><font color="#999999"><font color="#ffffff"><font color="#999999"><font color="#ffffff">&nbsp;&nbsp;&nbsp;<span style="font-weight: bold;"> add(int index, Cat
+                  elenemt);</span> <span style="color: rgb(204, 204, 204);">//сначала сдвигает все эелементы начиная с
+                  [index] а в образовавшееся пустое место вставляет
+                  значение</span><br>
+
+                &nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">set(int
+                  index, Cat element);</span> <span style="color: rgb(204, 204, 204);">//затирает старое значение,
+                  хранящееся в ячейке</span><br>
+
+              </font></font></font></font></font></p>
+
+    
+<p><font color="#ffffff"><font color="#999999"><font color="#ffffff"><font color="#999999"><font color="#ffffff">&nbsp;&nbsp;&nbsp;
+                cats.set(0, philip);<br>
+
+                &nbsp;&nbsp;&nbsp; cats.add(0, philip);<br>
+
+              </font></font></font></font></font></p>
+
+    
+<p><font color="#ffffff"><font color="#999999"><font color="#ffffff"><font color="#999999"><font color="#ffffff"><b style="color: rgb(255, 204, 204);">clear()</b> - полностью очищает
+                список<br>
+
+              </font></font></font></font></font></p>
+
+    
+<p><font color="#ffffff"><font color="#999999"><font color="#ffffff"><font color="#999999"><font color="#ffffff"><b style="color: rgb(255, 204, 204);">toString()</b> - выводит список в
+                формате строки<br>
+
+                &nbsp;&nbsp;&nbsp; <br>
+
+                &nbsp;&nbsp;&nbsp; System.out.println(cats.toString());</font></font></font></font></font></p>
+
+    
+<p><font color="#ffffff"><font color="#999999"><font color="#ffffff"><font color="#999999"><font color="#ffffff"><span style="color: rgb(255, 204, 204); font-weight: bold;">toArray()</span>
+                - получить массив из объекта</font></font></font></font></font></p>
+
+    
+<p><font color="#ffffff"><font color="#999999"><font color="#ffffff"><font color="#999999"><font color="#ffffff">Пример:</font></font></font></font></font></p>
+
+    
+<p style="color: rgb(255, 204, 153);">public static void main
+      (String[] args) {</p>
+
+    
+<p style="color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp;
+      ArrayList&lt;Cat&gt; cats = new ArrayList&lt;&gt;();</p>
+
+    <font style="color: rgb(255, 204, 153);" color="#ffffff">&nbsp;&nbsp;&nbsp;
+      Cat thomas = new Cat("thomas");</font><br style="color: rgb(255, 204, 153);">
+
+    <font style="color: rgb(255, 204, 153);" color="#ffffff">&nbsp;&nbsp;&nbsp;
+      Cat behemoth = new Cat("behemoth");</font><br style="color: rgb(255, 204, 153);">
+
+    <font style="color: rgb(255, 204, 153);" color="#ffffff">&nbsp;&nbsp;&nbsp;
+      Cat philipp new Cat("philipp");<br>
+
+      &nbsp;&nbsp;&nbsp; Cat pushok = new Cat("pushok");<br>
+
+      <br>
+
+      &nbsp;&nbsp;&nbsp; cats.add(thomas);<br>
+
+      &nbsp;&nbsp;&nbsp; cats.add(behemoth);<br>
+
+      &nbsp;&nbsp;&nbsp; cats.add(philipp);<br>
+
+      &nbsp;&nbsp;&nbsp; cats.add(pushok);<br>
+
+      <br>
+
+      &nbsp;&nbsp;&nbsp; Cat[] catsArray = new Cat[cats.size()];<br>
+&nbsp;&nbsp;&nbsp; catsArray = cats.toString(cats.Array);<br>
+
+      <br>
+
+      &nbsp;&nbsp;&nbsp; System.out.println(Array.toString(catsArray));</font>
+    
+<p><font color="#ffffff"><font color="#999999"><font color="#ffffff"><font color="#999999"><font color="#ffffff"><span style="color: rgb(255, 204, 153);">}</span><br>
+
+              </font></font></font></font></font></p>
+
+    
+<p><font color="#ffffff"><font color="#999999"><font color="#ffffff"><font color="#999999"><font color="#ffffff"><b style="color: rgb(255, 204, 204);">size()</b> - возвращает <b>число</b>
+                элементов</font></font></font></font></font></p>
+
+    
+<p><span style="font-weight: bold;"><span style="color: rgb(255, 255, 255);"><span style="color: rgb(255, 204, 204);">remove()</span>
+        </span></span><span style="color: rgb(255, 255, 255);">-
+        удаление элемента из массива</span></p>
+
+    
+<p><span style="color: rgb(255, 255, 255);">Может удалять не только
+        по индексу, но и по ссылке на объект.</span></p>
+
+    
+<p><span style="color: rgb(255, 255, 255);">Пример: <span style="color: rgb(255, 255, 153);">cats.remove(philipp);</span></span></p>
+
+    
+<p><span style="color: rgb(255, 255, 255);">Нельзя одновременно
+        проводить итерацию коллекции и ее изменение. Может возникнуть
+        ошибка
+        &nbsp;выхода за пределы списка. Для корректного удаления
+        используется
+        класс <span style="font-weight: bold; color: rgb(255, 204, 153);">Iterator</span>.</span></p>
+
+    
+<p><span style="color: rgb(255, 255, 255);">Класс <span style="font-weight: bold; color: rgb(255, 204, 153);">Iterator</span>
+        отвечает за безопасный проход по списку элементов. Имеет всего
+        три метода:</span></p>
+
+    
+<p><span style="color: rgb(255, 255, 255);"><font color="#ffcccc"><span style="font-weight: bold;">hasNext()</span></font> -
+        возвращает true или false в зависимости от того есть ли в списке
+        следующий элемент или мы дошли до последнего.</span></p>
+
+    
+<p><span style="color: rgb(255, 204, 153);"><font color="#ffcccc"><span style="font-weight: bold;">next()</span></font><span style="color: rgb(255, 255, 255);"> - возвращает следующий
+          элемент списка</span></span></p>
+
+    
+<p><span style="color: rgb(255, 204, 153);"><span style="color: rgb(255, 255, 255);"><font color="#ffcccc"><span style="font-weight: bold;">remove()</span></font> -
+          удаляет элемент из списка</span></span></p>
+
+    
+<p><span style="color: rgb(255, 204, 153);"><span style="color: rgb(255, 255, 255);">Пример:</span></span></p>
+
+    
+<p style="color: rgb(255, 204, 153);">Iterator&lt;Cat&gt;
+      catIterator = cats.iterator(); <span style="color: rgb(192, 192, 192);">//создаем итератор</span></p>
+
+    
+<p style="color: rgb(255, 204, 153);">while(cat.Iterator.hasNext())
+      { <span style="color: rgb(192, 192, 192);">//до тех пор, пока в
+        списке есть элементы</span></p>
+
+    <span style="color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp; Cat
+      nextCat = catIterator.next(); <span style="color: rgb(192, 192, 192);">//получаем следующий элемент</span><br>
+
+      &nbsp;&nbsp;&nbsp; if (nextCat.name.equals("Филипп Маркович")) {<br>
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; catIterator.remove(); <span style="color: rgb(192, 192, 192);">//удаляем кота с нужным
+        именем</span><br>
+
+      &nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(255, 204, 153);"></span>
+    
+<p style="color: rgb(255, 204, 153);">}</p>
+
+    
+<p><span style="color: rgb(255, 204, 153);">System.out.println(cats);<br>
+
+      </span></p>
+
+    
+<p><b><font color="#ffcccc">trimToSize()</font></b><font color="#ffcccc"><font color="#ffffff"> - обрезае длину
+          внутреннего массива до кличества хранящихся в нем элементов</font></font><br>
+
+      <span style="color: rgb(255, 204, 153);"></span><span style="color: rgb(255, 255, 255);"></span></p>
+
+    
+<p><span style="color: rgb(255, 255, 255);"></span><span style="color: rgb(255, 255, 255);"></span></p>
+
+    
+<p><span style="color: rgb(255, 255, 255);"></span><span style="color: rgb(255, 255, 255);"><span style="color: rgb(255, 255, 153);"></span></span></p>
+
+    
+<p><span style="color: rgb(255, 255, 255);"><span style="color: rgb(255, 255, 153);"></span></span></p>
+
+    
+<p><font color="#ffffff"><font color="#999999"><font color="#ffffff"><font color="#999999"><font color="#ffffff"><br>
+
+              </font></font></font></font></font></p>
+
+    
+<p><font color="#ffffff"><br>
+
+      </font></p>
+
+  
+</body>
+</html>

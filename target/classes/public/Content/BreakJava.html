@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Оператор Break в Java</title>
+  <style>
+     .clrorng {
+	     color:#FF4500;
+		 }
+		 
+     .clrbl {
+	     color:#4169E1;
+		 }
+
+     .clrpr {
+         color:#8B008B;
+         }
+
+     .clrgr {
+         color:#228B22
+		 }
+     .clrrd {
+         color:#DC143C
+         }		 
+		 
+     .clrMB {
+		 color:#191970
+		 }
+  </style>
+ </head>
+ <body leftmargin="30">
+  <h1 align="center">Оператор Break в Java</h1>
+  <!-- Комментарий -->
+  <p>Оператор <b>break</b> позволяет прерывать выполнение цикла в любой удобный для программиста момент, раньше чем цикл должен был бы завершиться.</p>
+  <h3>Синтаксис</h3>
+  <p>Оператор break записывается так:<br>
+  break;</p>
+  <h3>Оператор break для выхода из цикла</h3>
+  <p>
+     <pre>
+	      class Test {
+         public static void main(String args[]){
+             int i;
+             int a;
+ 
+             i = 1;
+             a = 3;
+             while(i <= 5){
+                 System.out.println(i + ": цикл выполняется!");
+                 if (i == a)
+                     break;
+                 i++;
+                 }
+             }
+         }
+	 </pre>
+  </p>
+  <p>Когда переменная <b>i</b> приобрела значение 3, цикл завершился. Так же оператор break будет работать и с дргими циклами. Для этого надо вставить строчку
+     <p>if (i == a);<br>
+	     break;</p>
+  </p>
+  <h3>Оператор break для выхода из цикла: вложенные циклы</h3>
+  <p>Как будет работать код если циклов несколько?</p>
+  <p>
+     <pre>
+	     class Test {
+             public static void main(String args[]){
+ 
+                 for (int i = 1; i <= 3; i++) {
+                     System.out.println("Это первый цикл! Я выполняюсь " + i + " раз");
+                     for (int a = 1; a <= 10; a++) {
+                         System.out.println("    Это второй цикл! Я выполняюсь " + a + " раз");
+                         if (a == 2)
+                             break;
+                     }
+                 }
+             }
+         }
+	 </pre>
+  </p>
+  <p>Тут два цикла for. Во втором цикле оператор break.</p>
+  <p>В результате выполнения кода имеем:</p>
+  <p>
+     <pre>
+	 Это первый цикл! Я выполняюсь 1 раз
+            Это второй цикл! Я выполняюсь 1 раз
+            Это второй цикл! Я выполняюсь 2 раз
+         Это первый цикл! Я выполняюсь 2 раз
+            Это второй цикл! Я выполняюсь 1 раз
+            Это второй цикл! Я выполняюсь 2 раз
+         Это первый цикл! Я выполняюсь 3 раз
+            Это второй цикл! Я выполняюсь 1 раз
+            Это второй цикл! Я выполняюсь 2 раз
+	 </pre>
+  </p>
+  <p>Первый цикл выполняется 3 раза, как и должен. Второй - 2 раза. Т.е. оператор break прерывает только тот цикл, который его непосредственно вызывает.</p>
+  <h3>Оператор break и оператор switch</h3>
+  <p>
+     <pre>
+	     import java.util.Scanner; // импорт сканера
+ 
+         class Test {
+	         public static void main(String args[]){
+		         System.out.println("Введите 1, 2, 3 или 4");
+		         Scanner scan = new Scanner(System.in);
+		         int number = scan.nextInt();
+ 
+		         switch (number){
+		         case 1: System.out.println ("Вы ввели число 1"); break;
+		         case 2: System.out.println ("Вы ввели число 2"); break;
+		         case 3: System.out.println ("Вы ввели число 3"); break;
+		         case 4: System.out.println ("Вы ввели число 4"); break;
+		         default: System.out.println("Вы ввели неправильное число");
+		         }
+	         }
+         }
+	 </pre>
+  </p>
+  <p>Каждый кейс заканчивается оператором break. Тут он как бы говорит "Ты нашел то что искал, зачем работать дальше?"</p>
+  <h2>Заключение</h2>
+  <ul>
+     <li>break вызывается лаконично - просто break и точка с запятой;</li>
+	 <li>break работает одинаково для всех циклов - while,  for,  do...while и др.;</li>
+	 <li>break прерывает выполнение только одного цикла - того, который его непосредственно вызывает;</li>
+	 <li>break применяется в операторе switch.</li>
+  </ul>
+ </body>
+</html>

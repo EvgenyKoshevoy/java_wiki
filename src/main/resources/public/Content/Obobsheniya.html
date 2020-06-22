@@ -1,0 +1,664 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+    
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    
+  <title>Obobsheniya</title>
+</head>
+
+
+  <body>
+
+    
+<h1 align="center">Обобщения</h1>
+
+    
+<p>&nbsp;&nbsp;&nbsp; <font color="#333333"><b>Общая форма
+          обобщенного класса:<br>
+
+          &nbsp;&nbsp;&nbsp; </b>&nbsp;&nbsp;&nbsp; class
+        имя_класса&lt;список_параметров_типа&gt; {// ...}<br>
+
+      </font></p>
+
+    
+<p><font color="#333333">&nbsp;&nbsp;&nbsp; <b>Синтаксис объявления
+          ссылки на обобщенный класс:<br>
+
+          &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; </b><font color="#006600">имя_класса</font>&lt;<i>список
+
+
+          аргументов_типа</i>&gt; имя переменной = <font color="#ff6600">new</font> <font color="#006600">имя_класса</font>&lt;<i>список_аргументов_типа</i>&gt;(<i>список_аргументов_конструктора</i>);&nbsp;<b>
+          &nbsp;&nbsp;&nbsp; <br>
+
+        </b><b></b></font></p>
+
+    
+<table border="1" cellpadding="2" cellspacing="2" width="100%">
+
+      <tbody>
+
+        <tr>
+
+          <td valign="top"><font color="#006600"><font color="#333333">//
+
+
+                простой обобщенный класс.<br>
+
+                // Здесь Т - это параметр типа, вместо которого при
+                создании объекта класса Gen будет подставляться<br>
+
+                // реально существующий тип.<br>
+
+                <br>
+
+              </font>class Gen&lt;T&gt; {<br>
+
+              &nbsp;&nbsp;&nbsp; T ob; // объявить объект типа Т<br>
+
+              &nbsp;&nbsp;&nbsp; <br>
+
+              &nbsp;&nbsp;&nbsp; //передать конструктору ссылку на
+              объект типа Т<br>
+
+              &nbsp;&nbsp;&nbsp; Gen(T o) {<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ob = o;<br>
+
+              &nbsp;&nbsp;&nbsp; }<br>
+
+              &nbsp;&nbsp;&nbsp; <br>
+
+              &nbsp;&nbsp;&nbsp; // вернуть объект ob из метода<br>
+
+              &nbsp;&nbsp;&nbsp; T getOb() {<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return ob;<br>
+
+              &nbsp;&nbsp;&nbsp; }<br>
+
+              &nbsp;&nbsp;&nbsp; <br>
+
+              &nbsp;&nbsp;&nbsp; // отобразить&nbsp; тип Т<br>
+
+              &nbsp;&nbsp;&nbsp; void showType() {<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              System.out.println("Тип Т - это " +
+              ob.getClass().getName());<br>
+
+              &nbsp;&nbsp;&nbsp; }<br>
+
+              }</font></td>
+
+          <td valign="top"><font color="#006600">// демонстрация
+              использования обобщенного класса<br>
+
+              public class GenDemo {<br>
+
+              &nbsp;&nbsp;&nbsp; public static void main(String[] args)
+              {<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // создать
+              обобщенную ссылку на целочисленное значение<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Gen&lt;Integer&gt;
+              iOb;<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; iOb = new
+              Gen&lt;Integer&gt;(88);<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; iOb.showType();<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; int v = iOb.getOb();<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              System.out.println("значение: " + v);<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              System.out.println();<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // создать объект
+              типа Gen для строк<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Gen&lt;String&gt;
+              strOb;<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; strOb = new
+              Gen&lt;String&gt;("Testing generics");<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; strOb.showType();<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; String str =
+              strOb.getOb();<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              System.out.println("Значение: " + str);<br>
+
+              &nbsp;&nbsp;&nbsp; }<br>
+
+              }</font></td>
+
+        </tr>
+
+      
+  </tbody>
+    
+</table>
+
+    
+<p><font color="#333333"><br>
+
+        &nbsp;&nbsp;&nbsp; Обобщения работают только с объектами.
+        Простые типы не могут выступать в роли передаваемого аргумента.</font></p>
+
+    
+<p><font color="#333333">&nbsp;&nbsp;&nbsp; <b>Обобщенный класс с
+          двумя параметрами:</b><br>
+
+      </font></p>
+
+    
+<table border="1" cellpadding="2" cellspacing="2" width="100%">
+
+      <tbody>
+
+        <tr>
+
+          <td valign="top"><font color="#006600">// простой обобщенный
+              класс с двумя параметрами T и V<br>
+
+              class TwoGen&lt;T, V&gt; {<br>
+
+              &nbsp;&nbsp;&nbsp; T ob1;<br>
+
+              &nbsp;&nbsp;&nbsp; V ob2;<br>
+
+              &nbsp;&nbsp;&nbsp; <br>
+
+              &nbsp;&nbsp;&nbsp; TwoGen(T ob1, V ob2) {<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; this.ob1 = ob1;<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; this.ob2 = ob2;<br>
+
+              &nbsp;&nbsp;&nbsp; }<br>
+
+              &nbsp;&nbsp;&nbsp; <br>
+
+              &nbsp;&nbsp;&nbsp; // отобразить типы T и V<br>
+
+              &nbsp;&nbsp;&nbsp; void showTypes() {<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              System.out.println("Тип Т - это " +
+              ob1.getClass().getName());<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              System.out.println("Тип V - это " +
+              ob2.getClass().getName());<br>
+
+              &nbsp;&nbsp;&nbsp; }<br>
+
+              &nbsp;&nbsp;&nbsp; <br>
+
+              &nbsp;&nbsp;&nbsp; T getOb1() {<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return ob1;<br>
+
+              &nbsp;&nbsp;&nbsp; }<br>
+
+              &nbsp;&nbsp;&nbsp; <br>
+
+              &nbsp;&nbsp;&nbsp; V getOb2() {<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return ob2;<br>
+
+              &nbsp;&nbsp;&nbsp; }<br>
+
+              }</font><br>
+
+          </td>
+
+          <td valign="top"><font color="#006600">// демонстрация класса
+              TwoGen<br>
+
+              public class SimpGen {<br>
+
+              &nbsp;&nbsp;&nbsp; public static void main(String[] args)
+              {<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; TwoGen&lt;Integer,
+              String&gt; tgObj = new TwoGen&lt;Integer, String&gt;(88,
+              "Generics");<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // отобразить типы<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; tgObj.showTypes();<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // получить и
+              отобразить значения<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; int v =
+              tgObj.getOb1();<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              System.out.println("значение: " + v);<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; String str =
+              tgObj.getOb2();<br>
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              System.out.println("значение: " + str);<br>
+
+              &nbsp;&nbsp;&nbsp; }<br>
+
+              }</font><br>
+
+          </td>
+
+        </tr>
+
+      
+  </tbody>
+    
+</table>
+
+    
+<p><font color="#333333"><br>
+
+      </font></p>
+
+    
+<h3> &nbsp;&nbsp;&nbsp; Органиченные типы</h3>
+
+    &nbsp;&nbsp;&nbsp; <font color="#333333">Java позволяет создавать
+      обощения с ограниченными типами. Это необходимо, если например
+      требуется работать только с числовыми данными.<br>
+
+      <br>
+
+      &nbsp;&nbsp;&nbsp; Объявление:<br>
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;T extends <i>суперкласс</i>&gt;<br>
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; class NumericFns&lt;T
+      extends Number&gt;<br>
+
+      <br>
+
+      &nbsp;&nbsp;&nbsp; Также есть возможность обеспечивать
+      совметстимость одного параметра с другим:</font><br>
+
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#006600">class
+      Pair&lt;T, V extends T&gt; {<br>
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T first;<br>
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; V second;<br>
+
+      <br>
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Pair(T
+      first,V second) {<br>
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; this.first = first;<br>
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; this.second = second;<br>
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // ...<br>
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+
+      <br>
+
+    </font>
+    
+<h3>&nbsp;&nbsp;&nbsp; Шаблоны аргументов</h3>
+
+    <font color="#333333">&nbsp;&nbsp;&nbsp; Обозначается метасимволом
+      ?, которому соответствует неизвестный тип данных.<br>
+
+      <br>
+
+      &nbsp;&nbsp;&nbsp; Пример:<br>
+
+      &nbsp;&nbsp;&nbsp; <font color="#006600">class NumericFns&lt;T
+        extends Number&gt; {<br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // ...<br>
+
+        <br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; boolean
+        absEquals(NumericFns&lt;?&gt; ob) {&nbsp;&nbsp;&nbsp; // ? -
+        соответствует любому типу объекта из класса NumericFns.<br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // ...<br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+
+        &nbsp;&nbsp;&nbsp; }</font><br>
+
+      <br>
+
+    </font>
+    
+<h3><font color="#333333">&nbsp;&nbsp;&nbsp; <font color="#000000">Ограниченные
+
+          шаблоны аргументов</font></font></h3>
+
+    
+<p>&nbsp;&nbsp;&nbsp; Задача: UseBoundedWildcard<br>
+
+    </p>
+
+    
+<p>&nbsp;&nbsp;&nbsp; <font color="#333333">Шаблоны можно
+        ограничивать так же, как и параметры типов.&nbsp; Ограничение
+        полезно при создании методов, которые должны оперировать только
+        объектами подклассов определенного суперкласса.<br>
+
+      </font></p>
+
+    
+<p><font color="#333333">&nbsp;&nbsp;&nbsp; Для настройки верхней
+        границы шаблона аргумента используется следующее выражение:<br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#003300">&lt;?
+
+          extends <i>суперкласс</i>&gt;</font> - суперкласс -
+        определяет верхнюю границу, включая его самого. В качестве
+        аргумента допускается указывать не только подклассы но и сам
+        суперкласс.<br>
+
+      </font></p>
+
+    
+<p><font color="#333333">&nbsp;&nbsp;&nbsp; Для настройки нижней
+        границы используется следующее выражение:<br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#003300">&lt;?
+
+          super <i>подкласс</i>&gt;</font> - в качестве аргумента
+        допускается использовать только суперклассы, от которых
+        наследуется подкласс, включая его самого.</font> &nbsp; <br>
+
+    </p>
+
+    
+<p>&nbsp;&nbsp;&nbsp; Пример:<br>
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#003300">static
+
+        void test(Gen&lt;? extends A&gt;) {// ...}</font>&nbsp;&nbsp;&nbsp;
+
+      // в качестве аргумента могут выступать все подклассы А, включая
+      его самого.<br>
+
+    </p>
+
+    <br>
+
+    
+<h3>&nbsp;&nbsp;&nbsp; Обобщенные методы</h3>
+
+    
+<p>&nbsp;&nbsp;&nbsp; Задача: GenericMethodDemo<br>
+
+    </p>
+
+    
+<p>&nbsp;&nbsp;&nbsp; Методы в обобщенных классах могут использовать
+      параметр типа своего класса и автоматически становятся обобщенными
+      относительно параметра типа. Так же можно объявить метод, который
+      сам по себе использует параметр типа. Такой метод может быть
+      объявлен в обычном, а не в обобщенном классе.<br>
+
+    </p>
+
+    
+<p>&nbsp;&nbsp;&nbsp;&nbsp; Форма объявления метода:<br>
+
+      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;<i>списко_параметров_типа</i>&gt;
+      <font color="#003300">возвращаемый_тип</font> <font color="#003300"><b>имя_метода</b></font>(<i>список параметров</i>)
+      {// ...}<br>
+
+    </p>
+
+    
+<p>&nbsp;&nbsp;&nbsp; Пример:<br>
+
+      &nbsp;&nbsp;&nbsp; static &lt;T extends Comparable&lt;T&gt;, V
+      extends T&gt; <font color="#003300">boolean <b>arraysEqual</b></font>(T[]
+      x, V[] y) {// ...}<br>
+
+    </p>
+
+    
+<h3>&nbsp;&nbsp;&nbsp; Обобщенные конструкторы</h3>
+
+    
+<p>&nbsp;&nbsp;&nbsp; Задача: GenConsDemo<br>
+
+    </p>
+
+    
+<p>&nbsp;&nbsp;&nbsp; Конструктор может быть обобщенным, даже если
+      сам класс не явяется обобщенным.<br>
+
+    </p>
+
+    
+<p>&nbsp;&nbsp;&nbsp; Пример:<br>
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#003300">&lt;T
+        extends Number&gt; Summation(T arg) {// ...}<br>
+
+      </font></p>
+
+    
+<h3><font color="#003300">&nbsp;&nbsp;&nbsp; <font color="#000000">Обобщенные
+          интерфейсы</font></font></h3>
+
+    
+<p>&nbsp;&nbsp;&nbsp; Задача: GenIFDemo<br>
+
+    </p>
+
+    
+<p>&nbsp;&nbsp;&nbsp; Синтаксис:<br>
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#003300">interface
+        <b>имя_интерфейса</b>&lt;<i>список_параметров_типа</i>&gt;
+        {//... }</font><br>
+
+    </p>
+
+    
+<p>&nbsp;&nbsp;&nbsp; Общая форма объявления класса, реализующего
+      обобщенный интерфейс:<br>
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#003300">class
+        <b>имя_класса</b>&lt;<i>список_параметров_типа</i>&gt;
+        implements <b>имя_интерфейса</b>&lt;<i>список_параметров_типа</i>&gt;
+        {// ...}<br>
+
+      </font></p>
+
+    
+<p><font color="#003300">&nbsp;&nbsp;&nbsp; <font color="#000000">Пример:</font><br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; interface
+        Containment&lt;T&gt; {//... }<br>
+
+      </font></p>
+
+    
+<p><font color="#003300">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; class
+        MyClass&lt;T&gt; implements Containment&lt;T&gt; {//... }<br>
+
+      </font></p>
+
+    
+<p><font color="#003300"><font color="#000000">&nbsp;&nbsp;&nbsp;
+          Если верхняя граница параметра задана в объявлении класса, то
+          нет необходимости указывать ее еще раз после implements:<br>
+
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; class MyClass&lt;T
+          extends Number&gt; implemets Containmet&lt;T&gt;</font></font><br>
+</p>
+<h2><font color="#003300"><font color="#000000">&nbsp;&nbsp;&nbsp; Базовые типы</font></font></h2>
+<span style="color: rgb(51, 51, 51);">&nbsp;&nbsp;&nbsp; Совместимы с унаслежованным кодом. Не обеспечивается безопасноть типов.<br>
+<br>
+&nbsp;&nbsp;&nbsp; Пример:<br>
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">class Gen&lt;T&gt; {</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T ob; &nbsp;&nbsp;&nbsp; // объявить объект типа Т</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // передать конструктору ссылку на объект типа Т</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Gen(T o) {</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ob = o;</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // вернуть объект ob</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T getob() {</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return ob;</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; }</span><br>
+<br>
+</span>
+<h2><span style="color: rgb(51, 51, 51);">&nbsp;&nbsp; &nbsp;<span style="color: rgb(0, 0, 0);">Выведение типов</span></span></h2>
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(51, 51, 51);">С JDK 7 для создания экземпляров обобщенного типа предусмотрен сокращенный синтаксис:</span><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="font-weight: bold; color: rgb(0, 51, 0);">имя_класса</span>&lt;<span style="font-style: italic;">список_аргументов_типа</span>&gt; <span style="font-weight: bold; color: rgb(0, 51, 0);">имя_переменной</span> = new <span style="font-weight: bold; color: rgb(0, 51, 0);">имя_класса</span>&lt;&gt;(<span style="font-style: italic;">список_аргументов_конструктора</span>);<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; где: <span style="font-weight: bold;">&lt;&gt;</span> - ромбовидный оператор, обозначающий пустой список аргументов типа.<br>
+<br>
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(51, 51, 51);">Пример:</span><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(0, 51, 0);">TwoGen&lt;Integer, String&gt; tgOb = new TwoGen&lt;&gt;(42, "testing");</span><br>
+<br>
+<h2>&nbsp;&nbsp;&nbsp; Ошибки неоднозначности</h2>
+&nbsp;&nbsp;&nbsp; Пример:<br>
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">// неоднозначность, вызванная очисткой перегруженных методов</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">class MyGenClass&lt;T, V&gt; {</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; T ob1;</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; T ob2;</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; </span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; // ...</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; </span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; // эти два объявления перегруженных методов порождают неоднозначность</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; // код не скомпелируется</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; void set(T o) {</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ob1 = o;</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; }</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; </span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; void set(T o) {</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ob2 = o;</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; }</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">}</span><br>
+<br>
+&nbsp;&nbsp;&nbsp; Для комплятора эти методы одинаковы:<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 1: Можно создать объект &lt;String, String&gt;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 2: После очистки происходить приведение типов: void set(Object o)<br>
+<br>
+&nbsp;&nbsp;&nbsp;<span style="text-decoration: underline;"> В таких случаях требуется задавать разные имена методов.</span><br>
+<br>
+<h2>&nbsp;&nbsp;&nbsp; Ограничения на использование обобщений</h2>
+<h3>&nbsp;&nbsp;&nbsp; Невозможность создания экземпляров параметров типа</h3>
+&nbsp;&nbsp;&nbsp; Создать экземпляр параметра типа невозможно:
+компилятору ничего не известно о типе создаваемого объекта. Тип Т
+явялется заполнителем, информация о котором удаляется во время
+компиляции.<br>
+<br>
+&nbsp;&nbsp;&nbsp; Пример:<br>
+&nbsp;&nbsp;&nbsp; //невозможно получить экземпляр типа Т<br>
+&nbsp;&nbsp;&nbsp; class Get&lt;T&gt; {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T ob;<br>
+<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Gen() {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ob = new T();&nbsp;&nbsp;&nbsp; //недопустимо<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; }<br>
+<br>
+<h3>&nbsp;&nbsp;&nbsp; Ограничения статических членов класса</h3>
+&nbsp;&nbsp;&nbsp; В статическом члене нельзя использовать параметры типа, объявленные в его классе.<br>
+<br>
+&nbsp;&nbsp;&nbsp; Пример:<br>
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">class Wrong&lt;T&gt; {</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //неверно, поскольку нельзя создать статическую переменную типа Т</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; static T ob;</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // неверно, поскольку невозможно использовать переменную типа Т в статическом методе</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; static T getOb() {</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return ob;</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; }</span><br>
+<br>
+<h3>&nbsp;&nbsp;&nbsp; Ограничения обобщенных массивов</h3>
+&nbsp;&nbsp;&nbsp; Нельзя получить экземпляр массива, тип элементов которого определяется параметром типа.<br>
+<br>
+&nbsp;&nbsp;&nbsp; Нельзя создать массив обобщенных ссылок на объекты конкретного типа.<br>
+<br>
+&nbsp;&nbsp;&nbsp; Пример:<br>
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">class Gen&lt;T extends Number&gt; {</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T ob;</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T[] vals;&nbsp;&nbsp;&nbsp; //допустимо</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Gen(T o, T[] nums) {</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ob = o;</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //недопустимо</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; vals = new T[10];</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //допустимо</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; vals = nums;</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; }</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; class GenArrays {</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public static void main(String[] args) {</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Integer[] n = {1, 2, 3, 4 ,5};</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Gen&lt;Integer&gt; iOb = new Gen&lt;Integer&gt;(50, n);</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //невозможно создать массив
+обобщенных ссылок на объекты конкретного типа</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Gen&lt;Integer&gt; gens[] = new Gen&lt;Integer&gt;[10];</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // допустимо</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Gen&lt;?&gt; gens[] = new Gen&lt;?&gt;[10];</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</span><br style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">
+<span style="color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; }</span><br>
+<br>
+<h3>&nbsp;&nbsp; &nbsp;Ограничения обобщенных исключений</h3>
+&nbsp;&nbsp;&nbsp; Обобщенный класс не может расширять класс Throwable. Создать обобщенные классы исключений невозможно.
+<h2><span style="color: rgb(51, 51, 51);"></span></h2>
+
+  
+</body>
+</html>

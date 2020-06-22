@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+  
+  <meta content="text/html; charset=Windows-1251" http-equiv="content-type">
+
+  
+  <title>Objekty</title>
+</head>
+
+
+<body style="background-color: rgb(51, 51, 51); color: rgb(0, 0, 0);" alink="#ee0000" link="#0000ee" vlink="#551a8b">
+
+<span style="color: rgb(255, 255, 204);"></span>
+<h1 style="text-align: center;"><span style="color: rgb(0, 204, 204);">Объекты, Конструкторы</span></h1>
+
+<span style="color: rgb(255, 255, 204);">&nbsp;&nbsp;&nbsp; Объект это экземпляр класса.<br>
+<br>
+&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">Процесс создания объекта:</span><br>
+&nbsp;&nbsp;&nbsp; - выделяется память для хранения объекта;<br>
+&nbsp;&nbsp;&nbsp; - создается ссылка на этот объект;<br>
+&nbsp;&nbsp;&nbsp; - инициализируются переменные и вызывается конструктор.</span>
+<h3 style="background-color: rgb(51, 51, 60);"><font color="#33ff33">&nbsp;&nbsp;&nbsp; Инициализация
+
+        объектов</font><span style="color: rgb(255, 204, 153);"></span></h3>
+
+
+
+    
+<p style="color: rgb(255, 255, 255); background-color: rgb(51, 51, 60);"><span style="color: rgb(255, 255, 255);">Порядок
+        инициализации переменных и вызова конструкторов:</span></p>
+
+
+
+    
+<ol>
+
+  <li><span style="color: rgb(255, 255, 255);">Инициализируются
+          статические переменные <span style="font-weight: bold; color: rgb(204, 255, 255);">базового класса</span></span></li>
+
+  <li><span style="color: rgb(255, 255, 255);">Инициализируются
+          статические переменные <span style="color: rgb(255, 204, 255); font-weight: bold;">класса потомка</span></span></li>
+
+  <li><span style="color: rgb(255, 255, 255);">Инициализируются
+          нестатические переменные <span style="font-weight: bold; color: rgb(204, 255, 255);">базового класса</span></span></li>
+
+  <li><span style="color: rgb(255, 255, 255);">Начинает работу
+          конструктор <span style="color: rgb(204, 255, 255); font-weight: bold;">базового класса</span></span></li>
+
+  <li><span style="color: rgb(255, 255, 255);">Инициализация
+          нестатических полей <span style="font-weight: bold; color: rgb(255, 204, 255);">дочернего класса</span></span></li>
+
+  <li><span style="color: rgb(255, 255, 255);">Вызывается
+          конструктор <span style="color: rgb(255, 204, 255); font-weight: bold;">класса потомка</span></span></li>
+
+</ol>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 204);">Инициализация переменных класса происходит в конструкторе.</span> <br>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 204);">Если не вызывается конструктор базового класса, его вызов будет добавлен автоматически.<br>
+
+<br>
+
+&nbsp;&nbsp;&nbsp; <span style="text-decoration: underline;">Пример:<br>
+
+<br>
+
+</span></span>
+<table style="text-align: left; width: 80%;" border="0" cellpadding="2" cellspacing="2">
+
+  <tbody>
+
+    <tr>
+
+      <td align="undefined" valign="undefined"><span style="font-weight: bold;"><span style="color: rgb(255, 255, 51);">Как все происходит на самом деле</span></span></td>
+
+      <td align="undefined" valign="undefined"></td>
+
+    </tr>
+
+    <tr>
+
+      <td align="undefined" valign="undefined"><span style="color: rgb(255, 204, 153);"><span style="font-family: Courier New,Courier,monospace;">class Pet {<br>
+
+&nbsp; &nbsp;int x = 5, y = 5;<br>
+
+&nbsp; &nbsp;int weight = 10;<br>
+
+      <br>
+
+&nbsp; &nbsp;Pet(int x, int y) {<br>
+
+&nbsp; &nbsp; &nbsp; this.x = x;<br>
+
+&nbsp; &nbsp; &nbsp; this.y = y;<br>
+
+&nbsp; &nbsp;}&nbsp; &nbsp;<br>
+
+}<br>
+
+      <br>
+
+class Cat extends Pet {<br>
+
+&nbsp; &nbsp;int tailLength = 8;<br>
+
+&nbsp; &nbsp;int age;<br>
+
+      <br>
+
+&nbsp; &nbsp;Cat(int x, int y, int age) {<br>
+
+&nbsp; &nbsp; &nbsp; super(x, y);<br>
+
+&nbsp; &nbsp; &nbsp; this.age = age;<br>
+
+&nbsp; &nbsp;}<br>
+
+}</span></span></td>
+
+      <td align="undefined" valign="undefined"><span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">class Pet <span style="color: rgb(192, 192, 192);">extends Object</span> {<br>
+
+&nbsp; &nbsp;int x;<br>
+
+&nbsp; &nbsp;int y;<br>
+
+&nbsp; &nbsp;int weight;<br>
+
+      <br>
+
+&nbsp; &nbsp;Pet(int x, int y) {<br>
+
+&nbsp; &nbsp; &nbsp; <span style="color: rgb(153, 153, 153);">//вызов конструктора базового класса</span><br>
+
+&nbsp; &nbsp; &nbsp; super();<br>
+
+&nbsp; &nbsp; &nbsp; <span style="color: rgb(153, 153, 153);">//инициализация переменных</span><br>
+
+&nbsp; &nbsp; &nbsp;<span style="color: rgb(192, 192, 192);"> this.x = 5;</span><br style="color: rgb(192, 192, 192);">
+
+      <span style="color: rgb(192, 192, 192);">&nbsp; &nbsp; &nbsp; this.y = 5;</span><br style="color: rgb(192, 192, 192);">
+
+      <span style="color: rgb(192, 192, 192);">&nbsp; &nbsp; &nbsp; this.weight = 10;</span><br>
+
+&nbsp; &nbsp; &nbsp; <span style="color: rgb(153, 153, 153);">//вызов кода конструктора<br>
+
+&nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 204, 153);">this.x = x;</span><br style="color: rgb(255, 204, 153);">
+
+      <span style="color: rgb(255, 204, 153);">&nbsp; &nbsp; &nbsp; this.y = y;</span><br>
+
+      </span>&nbsp; &nbsp;}<br>
+
+}<br>
+
+      <br>
+
+class Cat extends Pet {<br>
+
+&nbsp; &nbsp;int tailLength;<br>
+
+&nbsp; &nbsp;int age;<br>
+
+      <br>
+
+&nbsp; &nbsp;Cat(int x, int y, int weight) {<br>
+
+&nbsp; &nbsp; &nbsp; <span style="color: rgb(153, 153, 153);">//вызов конструктора базового класса</span><br>
+
+&nbsp; &nbsp; &nbsp; super(x, y);<br>
+
+&nbsp; &nbsp; &nbsp; <span style="color: rgb(153, 153, 153);">//инициализация переменных</span><br>
+
+&nbsp; &nbsp; &nbsp; <span style="color: rgb(192, 192, 192);">this.tailLength = 8;<br>
+
+&nbsp; &nbsp; &nbsp; //вызов кода конструктора<br>
+
+&nbsp; &nbsp; &nbsp; <span style="color: rgb(255, 204, 153);">this.age = age;</span><br>
+
+      </span>&nbsp; &nbsp;}<br>
+
+}</span></td>
+
+    </tr>
+
+  
+  </tbody>
+</table>
+
+<span style="color: rgb(255, 255, 204);"><span style="text-decoration: underline;"><br>
+
+</span></span>&nbsp;&nbsp; 
+<h2 style="background-color: rgb(51, 51, 60); color: rgb(144, 240, 144);">Конструкторы</h2>
+
+
+
+    <span style="color: rgb(255, 255, 255);"> Конструктор инициализирует
+      объект при его создании. Его имя совпадает с именем класса. Он
+      похож на обычный метод, но у него нет возвращаемого типа.</span><br style="color: rgb(255, 255, 255);">
+
+
+
+    <br style="color: rgb(255, 255, 255);">
+
+
+
+    <span style="color: rgb(255, 255, 255);"> Как правило, конструкторы
+      используются для задания первоначальных значений переменных
+      экземпляра, определенных в классе,</span><br style="color: rgb(255, 255, 255);">
+
+
+
+    <span style="color: rgb(255, 255, 255);"> или же для выполнения
+      любых других установочных процедур, которые требуются для создания
+      полностью сформированного объекта.</span><br style="color: rgb(255, 255, 255);">
+
+
+
+    <br style="color: rgb(255, 255, 255);">
+
+
+
+    <span style="color: rgb(255, 255, 255);"> Пример:</span><br style="color: rgb(255, 255, 255);">
+
+
+
+    <br style="color: rgb(255, 255, 255);">
+
+
+
+    <span style="color: rgb(255, 204, 153);"> class MyClass {</span><br style="color: rgb(255, 204, 153);">
+
+
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; int x;</span><br style="color: rgb(255, 204, 153);">
+
+
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; </span><br style="color: rgb(255, 204, 153);">
+
+
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp;
+      MyClass() { //конструктор класса MyClass</span><br style="color: rgb(255, 204, 153);">
+
+
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; x = 10;</span><br style="color: rgb(255, 204, 153);">
+
+
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; }</span><br style="color: rgb(255, 204, 153);">
+
+
+
+    <span style="color: rgb(255, 204, 153);"> }<br>
+
+
+
+      <br>
+
+
+
+      <span style="color: rgb(255, 255, 255);">Конструкторы можно
+        перегружать, так же как и методы.<br>
+
+
+
+        <br>
+
+
+
+        В &nbsp;Java есть конструктор по умолчанию Он исчезает сразу
+        после создания своего конструктора. Если нужен конструктор без
+        параметор, его следует создать отдельно.<br>
+
+
+
+        Пример:<br>
+
+
+
+        <br>
+
+
+
+        <span style="color: rgb(255, 204, 153);">public Cat() {</span><br style="color: rgb(255, 204, 153);">
+
+
+
+        <span style="color: rgb(255, 204, 153);">}</span><br style="color: rgb(255, 255, 255);">
+
+
+
+      </span></span> <br style="color: rgb(255, 255, 255);">
+
+
+
+    
+<h3 style="background-color: rgb(51, 51, 60); color: rgb(132, 220, 132);"><a name="Параметризированные_конструкторы"></a>Параметризированные
+
+
+
+
+
+
+      конструкторы</h3>
+
+
+
+    <span style="color: rgb(255, 255, 255);"> В конструктор параметры
+      вводятся так же как и в метод.</span><br style="color: rgb(255, 255, 255);">
+
+
+
+    <br style="color: rgb(255, 255, 255);">
+
+
+
+    <span style="color: rgb(255, 204, 153);"> Пример:</span><br style="color: rgb(255, 204, 153);">
+
+
+
+    <span style="color: rgb(255, 204, 153);"> class Vehicle {</span><br style="color: rgb(255, 204, 153);">
+
+
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; int
+      passengers;</span><br style="color: rgb(255, 204, 153);">
+
+
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; int
+      fuelcap;</span><br style="color: rgb(255, 204, 153);">
+
+
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; int
+      mpg;</span><br style="color: rgb(255, 204, 153);">
+
+
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; </span><br style="color: rgb(255, 204, 153);">
+
+
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; Vehicle
+      (int p, int f, int m) {</span><br style="color: rgb(255, 204, 153);">
+
+
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; passengers = p;</span><br style="color: rgb(255, 204, 153);">
+
+
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; fuelcap = f;</span><br style="color: rgb(255, 204, 153);">
+
+
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; mpg = m;</span><br style="color: rgb(255, 204, 153);">
+
+
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; }</span><br style="color: rgb(255, 204, 153);">
+
+
+
+    <span style="color: rgb(255, 204, 153);"> }</span><br style="color: rgb(255, 255, 255);">
+
+
+
+    <br style="color: rgb(255, 255, 255);">
+
+
+
+    <span style="color: rgb(255, 255, 255);"> Инициализация объекта в
+      коде:</span><br style="color: rgb(255, 255, 255);">
+
+
+
+    <span style="color: rgb(255, 204, 153);"> Vehicle sportscar = new
+      Vehicle (2, 14, 12);</span><br style="color: rgb(255, 255, 255);">
+
+
+
+    <br style="color: rgb(255, 255, 255);">
+
+
+
+    <span style="color: rgb(255, 255, 255);"> В результате чего:</span><br style="color: rgb(255, 255, 255);">
+
+
+
+    <span style="color: rgb(255, 255, 255);"> passengers = 2;</span><br style="color: rgb(255, 255, 255);">
+
+
+
+    <span style="color: rgb(255, 255, 255);"> fuelcap = 14;</span><br style="color: rgb(255, 255, 255);">
+
+
+
+    <span style="color: rgb(255, 255, 255);"> mpg = 12;<br>
+
+
+
+      </span>
+</body>
+</html>

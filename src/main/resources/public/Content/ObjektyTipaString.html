@@ -1,0 +1,372 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Объекы типа String</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body vlink="#551a8b" text="#000000" bgcolor="#333333" alink="#ee0000"
+    link="#0000ee">
+    <br>
+    <h1 align="center"><font color="#ffff99">Объекты типа String</font></h1>
+    <h3>&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 51);">Конструкторы</span></h3>
+    &nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 204);"><span
+        style="font-weight: bold;">String(char[] chars)</span> - строка
+      инициализируемая массивом сомволов<br>
+      &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">String(char[]
+        chars, int начальный_индекс, int количество_символов)</span> -
+      для инициализации указывается определенная часть массива<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; Для <span style="font-weight: bold;">byte[]</span>
+      конструкторы ананлогичны. Используется для работы с символами в
+      кодировке ASCII<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">String(String
+        строковый_объект)</span> - создает строку на основе другой
+      строки<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">String(StringBuffer
+        объект_буфера_строк)</span> - создает строку из объекта
+      StringBuffer<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">String(StringBuilder
+        объект_построения_строки)</span> - создает строку из объекта
+      StringBuilder<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </span>
+    <p> </p>
+    <h3 style="background-color: rgb(51, 51, 60);"><font color="#ffff66">Методы</font></h3>
+    &nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 204);"><span
+        style="font-weight: bold;">Длина символьной строки:</span><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<span style="color: rgb(51,
+        204, 255);"> int </span></span><font style="color: rgb(51, 204,
+      255);" color="#3366ff"><b>length()</b></font><span style="color:
+      rgb(255, 255, 204);"> - возвращает длину строки<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">Сцепление
+        символьных строк с другими типами данных:</span><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; int age = 9;<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; String s = "Ему " + age + "
+      лет";<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">Преобразрвание
+        символьных строк:</span><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(51,
+        204, 255);">String </span><span style="font-weight: bold;"><span
+          style="color: rgb(51, 204, 255);">toString()</span></span> -
+      для удобочитаемого отображения объектов<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">Извлечение
+        символов:</span><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(51,
+        204, 255);">char </span></span><font style="color: rgb(51, 204,
+      255);" color="#3366ff"><b>charAt (int index)</b></font><span
+      style="color: rgb(255, 255, 204);"> - возаращает символ, по
+      указанному индексу<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<span style="color: rgb(51,
+        204, 255);"> void <span style="font-weight: bold;">getChars</span>(<span
+          style="font-style: italic; color: rgb(255, 255, 204);">int
+          начало_источника, int конец_источника, char[] target, int
+          начало_индекса</span>)</span><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      начало_источника - индекс начала подстроки<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      конец_источника - индекс конца извлекаемой подстроки (в
+      извлекаемою
+      подстроку не входит)<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; target -
+      массив, принимающий символы<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      начало_адресата - с какого индекса<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(51,
+        204, 255);">byte[] <span style="font-weight: bold;">getBytes</span></span>
+      - применяется там, где не поддерживаются 16 разрядные символы в
+      Юникоде (используется для кодировки ASCII)<br>
+      <br>
+    </span>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color:
+      rgb(51, 204, 255);">char[] </span><font style="color: rgb(51,
+      204, 255); font-weight: bold;" color="#3366ff">toCharArray()</font><span
+      style="color: rgb(255, 255, 204);"> - преобразует строку в новый
+      массив символов (аналог <span style="color: rgb(51, 204, 255);">getChars()</span>)<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">Сравнение
+        символьных строк:</span><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(51,
+        204, 255);">boolean <span style="font-weight: bold;">equals</span>(<span
+          style="color: rgb(255, 255, 204);">Object строка</span>)</span>
+      - сравнение символьных строк на равенство. Возвращает true если
+      строки
+      лексически равны. (Оператор == сравнивает ссылки на объекты).<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<span style="color: rgb(51,
+        204, 255);"> boolean <span style="font-weight: bold;">equalsIgnoreCase</span>(<span
+          style="color: rgb(255, 255, 204);">Object строка</span>)</span>
+      - сравнение строк без учета регистров<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<span style="color: rgb(51,
+        204, 255);"> boolean <span style="font-weight: bold;">regionMatches</span>(<span
+          style="color: rgb(255, 255, 204);">int начальный индекс,
+          String строка2, int индекс начала строки, int
+          количество_символов</span>)</span> - сравнивает одну часть
+      смивольной строки с другой частью<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(51,
+        204, 255);">boolean <span style="font-weight: bold;">startWith</span>(<span
+          style="color: rgb(255, 255, 204);">String строка</span>)</span>
+      - определяет начинается ли заданный объект типа String с
+      указанноый символьной строки<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(51,
+        204, 255);">boolean <span style="font-weight: bold;">endWith</span>(<span
+          style="color: rgb(255, 255, 204);">String строка</span>)</span>
+      - определяет завершается ли заданный объект типа String указанной
+      подстрокой</span><br>
+    <span style="color: rgb(255, 255, 204);"><font color="#ffffcc">&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; Пример, заканивается ли файл ".txt":<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; String
+        fileName;<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; if(!fileName.<font color="#33ccff">endsWith(</font>".txt"<font
+          color="#33ccff">)</font>) {<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //...<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; }<br>
+      </font>&nbsp;<br>
+      &nbsp;&nbsp;&nbsp;<span style="color: rgb(51, 204, 255);"> &nbsp;
+        &nbsp; int </span></span><font style="color: rgb(51, 204,
+      255);" color="#3366ff"><b>compareTo(</b><span style="color:
+        rgb(255, 255, 204);">Object o</span><b>)</b></font><span
+      style="color: rgb(255, 255, 204);">
+      - сравнивает данную строку с другим объектом по длине. Строка
+      меньше
+      другой, если она следует перед ней в лексикографическом порядке.
+      Если
+      меньше - возвращает: -1, равна: 0, больше: 1.<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">Поиск в
+        символьных строках:</span><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(51,
+        204, 255);">int <span style="font-weight: bold;">indexOf</span>(char
+        символ)</span> - поиск первого вхождения символа в строке.
+      Возвращает позицию символа в строке. При неудачном поиске
+      возвращает -1.<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(51,
+        204, 255);">int <span style="font-weight: bold;">lastIndexOf</span>(char
+        символ)</span>
+      - поиск последнего вхождения символа в подстроке. Возвращает
+      последнюю
+      позицию символа в строке. При неудачном поиске возвращает
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;-1.<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(51,
+        204, 255);">int </span></span><font style="color: rgb(51, 204,
+      255);" color="#3366ff"><b>indexOf (String str</b><span
+        style="color: rgb(255, 255, 204);"></span><b>)</b></font><span
+      style="color: rgb(255, 255, 204);"> - поиcк подстроки,
+      определяемый параметром str. Возвращает индекс первого вхождения
+      подстроки str или -1 если описк завершен неудачно<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(51,
+        204, 255);">int </span></span><font style="color: rgb(51, 204,
+      255);" color="#3366ff"><b>last indexOf (String str)</b></font><span
+      style="color: rgb(255, 255, 204);"> - поиcк подстроки,
+      определяемый параметром str. Возвращает индекс последнего
+      вхождения подстроки str или -1 если описк завершен неудачно.<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">Видоизменение
+        символьных строк:</span><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(51,
+        204, 255);">String <span style="font-weight: bold;">substring</span>(<span
+          style="color: rgb(255, 255, 204);">int начальный_индекс</span>)</span>
+      - извлекает подстроку из указанной строки с начального_индекса и
+      до конца.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(51,
+        204, 255);">String <span style="font-weight: bold;">substring</span>(<span
+          style="color: rgb(255, 255, 204);">int начальный_индекс, int
+          конечный_индекс</span>)</span> - то же самое, но указывается с
+      какого индекса по какой (конечный индекс - 1).<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(51,
+        204, 255);">String&nbsp;</span></span><font style="color:
+      rgb(51, 204, 255);" color="#3366ff"><b>concat(</b><span
+        style="color: rgb(255, 255, 204);">String строка</span><b>)</b></font><span
+      style="color: rgb(255, 255, 204);"></span><i style="color:
+      rgb(255, 255, 204);"> - </i><span style="color: rgb(255, 255,
+      204);">объединяет вторую строку с первой.<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(51,
+        204, 255);">String replace(char исходный, char заменяемый)</span>
+      - заменяет все исходные символы на заменяемый.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(51,
+        204, 255);">String replace(CharSequence исходная, CharSequence
+        заменяемая)</span> - одна последовательность символов заменяется
+      другой.<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(51,
+        204, 255);">String trim()</span> - возвращает копию символьной
+      строки из которой удалены все начальные и конечные пробелы.<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">Преобразование
+        данных методом valueOf():</span><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; <span
+        style="color: rgb(51, 204, 255);">static String </span></span><font
+      style="color: rgb(51, 204, 255);" color="#3366ff"><b>valueOf()</b></font><span
+      style="color: rgb(255, 255, 204);"> - предоставляет строковое
+      представление переданных примитивных типов.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; Метод перегружен для всех типов данных Java.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span
+        style="color: rgb(51, 204, 255);">static String valueOf(char[]
+        chars, int начальный_индекс, int количество_символов)</span> -
+      строковое представление массива символов.<br>
+      <br>
+    </span><span style="color: rgb(255, 255, 204);">&nbsp;&nbsp;&nbsp;
+      Смена регистра букв в строке:<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </span><font
+      color="#ffffcc">String <font color="#33ccff">toLowerCaes()</font>
+      - преобразует все символы в данной строке в ижний регистр<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; String <font
+        color="#33ccff">toUpperCase()</font> - преобразует все символы в
+      строке в верхний регистр</font><span style="color: rgb(255, 255,
+      204);"></span>
+    <p style="color: rgb(255, 255, 255); background-color: rgb(51, 51,
+      60);">&nbsp;&nbsp;&nbsp;<font color="#ffffcc"> boolean <font
+          color="#33ccff"><b>contentEquals(StringBuffer sb)</b></font> -
+        возвращает true если строка представляет собой ту же
+        последовательность символов как указано в буфере строки</font><br>
+      <font color="#ffffcc"></font></p>
+    <p style="background-color: rgb(51, 51, 60);"><font color="#ffffcc">&nbsp;&nbsp;&nbsp;
+        static String <font color="#33ccff">copyValueOf(char[] data)</font>
+        - возвращает строку, которая представляет собой
+        последовательность символов в указанный массив<br>
+      </font> </p>
+    <font color="#ffffcc"> </font>
+    <p style="color: rgb(255, 255, 255); background-color: rgb(51, 51,
+      60);"><font color="#ffffcc"><b>&nbsp;&nbsp;&nbsp; <font
+            color="#33ccff">contains("</font></b><font color="#33ccff"><b><i>value</i></b><b>")</b></font>
+        - проверка строки на содержание заданного значения <i>value</i></font><span
+        style="color: rgb(255, 255, 255);"></span><span style="color:
+        rgb(255, 255, 255);"></span></p>
+    <span style="color: rgb(255, 255, 255);"><font color="#ffffcc"><i>&nbsp;&nbsp;&nbsp;
+        </i></font><font color="#33ccff">String[] split(String regex)</font>
+      - разделяет строку вокруг данного регулярного выражения.
+      Возвращает массив строк, разделенных вокруг данного регулярного
+      выражения.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Пример:<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      file.split(" "); - разделит строку, вернет массив строк.</span><span
+      style="color: rgb(255, 255, 255);"><span style="font-style:
+        italic;"><br>
+      </span></span><span style="color: rgb(255, 255, 255);"><span
+        style="font-style: italic;"></span></span> <br>
+    <b><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Проверка строки на
+        пустоту:</font></b><br>
+    &nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 255);"><span
+        style="color: rgb(51, 204, 255);">&nbsp;&nbsp;&nbsp;
+        string.trim().length() == 0</span>, где string - имя переменной
+      типа String</span><br>
+    <br>
+    <h2>&nbsp; <b><font color="#ffffcc"><font color="#ff6600">&nbsp;&nbsp;&nbsp;
+            Класс StringBuffer</font></font></b></h2>
+    <p>&nbsp;&nbsp;&nbsp; <font color="#ffffcc">В отличии от String
+        класс представляет собойрасширяемые и доступные для изменения
+        последовательности символов.<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Конструкторы:<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; StringBuffer()<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; StringBuffer(int размер)<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; StringBuffer(String
+        строка)<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; StringBuffer(CharSequence
+        символы)<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Методы:<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        length() - получить текущую длину<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        capacity() - выводит текущий объем выделенной памяти<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; void
+        ensureCapacity(int минимальная_емкость) - предварительно
+        выделить место для определенного количества символов после
+        создания объекта<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; void
+        setLength(int длина) - задать длину символьной строки<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; char
+        charAt(int где) - извлечь символ<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; char
+        setCharAt(int где, char символ) - добавить символ по указанному
+        индексу<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; void
+        getChars(int начало_источника, int конец_источника, char
+        target[], int начало адресата) - скопировать подстроку в массив<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        StringBuffer append(String строка) - присоединяет строковое
+        представление любого другого типа<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp; (int число)<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp; (Object объект)<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; StringBuffer
+        insert(int индекс, String строка/char символ/Object объект) -
+        вставляет одну символьную строку в другую<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        StringBuffer reverse() - изменяет порядок следования символов<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        StringBuffer delete(int начальный индекс, int конечный_индекс) -
+        удаляет последовательность символов из вызывающего объекта<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+        StringBuffer deleteCharAt(int позиция) - удалить смивол на
+        указанной позиции<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        StringBuffer replace(int начальный_индекс, int конечный_индекс,
+        String строка) - заменить один набор символов другим<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        StringBuffer substring(int начальный_индекс) - получить часть
+        содержимого объекта StringBuffer<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; (int начальный_индекс, int
+        конечный_индекс)<br>
+      </font></p>
+    <h2><font color="#ffffcc">&nbsp;&nbsp;&nbsp; <font color="#ff6600">Класс
+          StringBuilder</font></font></h2>
+    <p>&nbsp;&nbsp;&nbsp; <font color="#ffffcc">Отличие от StringBuffer
+        в том, что он не является потокобезопасным. Дает выйгрыш в
+        производительности за счет этого.</font><br>
+    </p>
+    <b><font color="#ffffcc"> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </font></b><font
+      color="#ffffcc"><br>
+    </font><b><font color="#ffffcc"></font></b>
+  </body>
+</html>

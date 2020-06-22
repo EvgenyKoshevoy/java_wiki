@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+  
+  
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+
+  
+  
+  
+  
+  
+  
+  <title>Преобразование типов Java</title>
+  <style>
+     .clrorng {
+	     color:#FF4500;
+		 }
+		 
+     .clrbl {
+	     color:#4169E1;
+		 }
+
+     .clrpr {
+         color:#8B008B;
+         }
+
+     .clrgr {
+         color:#228B22
+		 }
+     .clrrd {
+         color:#DC143C
+         }		 
+		 
+     .clrMB {
+		 color:#191970
+		 }
+  </style>
+</head>
+
+
+<body style="background-color: rgb(51, 51, 51); color: rgb(0, 0, 0);" leftmargin="30" alink="#ee0000" link="#0000ee" vlink="#551a8b">
+
+
+
+
+  
+<h1 style="background-color: rgb(51, 51, 51); color: rgb(0, 204, 204);" align="center">Преобразование типов Java</h1>
+
+<h2><span style="color: rgb(255, 255, 204);">&nbsp;&nbsp; &nbsp;<span style="color: rgb(102, 204, 204);">Примитивные типы:</span></span></h2>
+
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);"><img src="D:%5CYandexDisk%5C%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%5CHTML%5CProjects%5CJavaInf%5CContent%5CVertexAcademy%5CImages%5CPreobrqzovanieTipovJava%5CImg01.png" align="middle" height="" width=""></p>
+
+
+
+  
+<h3>&nbsp;&nbsp;&nbsp; <span style="color: rgb(51, 255, 255);">Автоматическое преобразование</span></h3>
+
+
+
+  
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);">Каждый тип переменных имеет свой диаппазон значений и объем занимаемой памяти.<br>
+
+</p>
+
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);">Сравним:</p>
+
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);"><span class="clrorng">1. byte и short.</span> byte имеет меньший диапазон допустимых значений, чем short. Значит, <span class="clrorng">byte можно вложить в short</span>.</p>
+
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);"><span class="clrorng">2. byte и int.</span> byte имеет меньший диапазон допустимых значений, чем int. Значит, <span class="clrorng">byte можно вложить в int</span>.</p>
+
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);"><span class="clrorng">3. int и long.</span> int имеет меньший диапазон допкстимых значений, чем long. Значит, <span class="clrorng">int можно вложить в long</span>.</p>
+
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);">Это пример автоматического преобразования. Схематически это выглядит так:</p>
+
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);"><img src="D:%5CYandexDisk%5C%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%5CHTML%5CProjects%5CJavaInf%5CContent%5CVertexAcademy%5CImages%5CPreobrqzovanieTipovJava%5CImg03.png" height="" width=""></p>
+
+
+
+  
+<h2 style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);">Пример №1</h2>
+
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);">Код №1. Ответ: 15</p>
+
+
+
+  
+<pre style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);">     class Test {<br> <br>	     public static void main(String[] args) {<br>		     byte a = 15;<br>		     byte b = a;<br>		     System.out.println(b);<br>	     }<br>     }<br>  </pre>
+
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);">Код №2. Ответ: 15</p>
+
+
+
+  
+<pre style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);">     class Test {<br> <br>	     public static void main(String[] args) {<br>		     byte a = 15;<br>		     int b = a;<br>		     System.out.println(b);<br>	     }<br>     }<br>  </pre>
+
+
+
+  
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);">Код №1 отличается от кода №2. В коде №2 присутствует <span style="color: rgb(51, 204, 255);" class="clrMB">автоматическое преобразование типов</span>, а в коде №1 нет.<br>
+
+</p>
+
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);">Число одно и то же, но оно теперь находится в большем конейнере, которое занимает болоьше места.</p>
+
+
+
+  
+<h2 style="background-color: rgb(51, 51, 51); color: rgb(51, 255, 255);">&nbsp;&nbsp;&nbsp; Приведение типов</h2>
+
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);"><img src="D:%5CYandexDisk%5C%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%5CHTML%5CProjects%5CJavaInf%5CContent%5CVertexAcademy%5CImages%5CPreobrqzovanieTipovJava%5CImg05.png" align="middle" height="" width=""></p>
+
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);">Может быть проблемпным перемещение из большего контейнера в меньший.
+Если пользователю известно, что помещаемое число входит в границы
+нового контейнера, Java об этом не знает. Ей нужно на это указать явно.</p>
+
+
+
+  
+<pre style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);">     class Test {<br>	     public static void main(String[] args) {<br>		     int a=0;<br>		     long b=15;<br>		     a = (int) b;<br>	     }<br>     }  <br>  </pre>
+
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);">Тут дописали <span class="clrMB"><b>(int)</b></span> перед <span class="clrMB"><b>b</b></span>. Если бы переменная <span class="clrrd"><b>a</b></span> была бы типа <span class="clrMB"><b>byte</b></span>, к примеру, то в скобах было бы <span class="clrMB"><b>(byte)</b></span>.</p>
+
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);"><br>
+
+</p>
+
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);"> Она говорит "сделай мне из (большего) значения <span class="clrMB"><b>b</b></span> переменную нужного мне (целевого) типа <span class="clrMB"><b>int</b></span>.</p>
+
+
+
+  
+<h3><span class="clrMB">&nbsp;&nbsp; &nbsp;<span style="color: rgb(51, 255, 255);">Если что-то пошло не так:</span></span></h3>
+
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);">Если в контейнер поместить то, что туда не помещается - в него
+поместиться только то, что туда влезло. Например, у числе с плавающей
+точкой будет отсекаться дробная часть. Надо помнить, что дробная часть <b>не округляется</b>, а <b>отбрасывается</b></p>
+
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);"><img src="D:%5CYandexDisk%5C%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%5CHTML%5CProjects%5CJavaInf%5CContent%5CVertexAcademy%5CImages%5CPreobrqzovanieTipovJava%5CImg07.jpg" height="" width=""></p>
+
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);">Если поместить число, выходящее за границы контейнера, например, если в byte (-128; 127) поместить число 128 - получим -128.</p>
+
+
+
+  
+<p style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 204);">Цель программиста не допускать выхода значения за допустимые
+границы, поскольку это может привести к неправильной работе программы.</p>
+
+<h3><span class="clrMB">&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: rgb(51, 255, 255);">Итоги:</span></span></h3>
+
+
+
+  
+
+
+  
+<ol style="color: rgb(255, 255, 204);">
+
+  <li>
+    
+    <p>При приведении float или double к целочисленным типам, дробная часть не округляется, а отбрасывается.</p>
+
+  </li>
+
+  <li>
+    
+    <p>Тип boolean не приводится ни к одному из типов.</p>
+
+  </li>
+
+  <li>
+    
+    <p>Тип char приводится к числовым типам как символ в системе Unicode.</p>
+
+  </li>
+
+  <li>
+    
+    <p>Если число больше своего контейнера результат будет непредсказуемым.</p>
+
+  </li>
+
+</ol>
+
+<h2>&nbsp;&nbsp;&nbsp; <span style="color: rgb(102, 204, 204);">Ссылочные типы:</span></h2>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 204);">Цепочка наследования:<br>
+
+Класс, его родитель, родитель родителя, ... , Obejct.<br>
+
+<br>
+
+&nbsp;&nbsp;&nbsp; Т.к. класс содержит все методы класса-родителя,
+то&nbsp;объект этого класса можно сохранить в переменную любого из его
+типов родителей.<br>
+
+<br>
+
+</span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">class</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token class-name" style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">Animal</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">{</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+
+</span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">public</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">void</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token function" style="color: rgb(255, 198, 109); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">doAnimalActions</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">;</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+
+</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">}</span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);"><br>
+
+class</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token class-name" style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">Cat</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">extends</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token class-name" style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">Animal </span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"></span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">{</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+
+</span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">public</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">void</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token function" style="color: rgb(255, 198, 109); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">doCatActions</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">;</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+
+</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">}</span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);"><br>
+
+class</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token class-name" style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">Tiger</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">extends</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token class-name" style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">Cat </span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"></span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">{</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+
+</span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">public</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">void</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token function" style="color: rgb(255, 198, 109); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">doTigerActions</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">;</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+
+</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">}</span><br>
+
+<br>
+
+<span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">public</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">static</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">void</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token function" style="color: rgb(255, 198, 109); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">main</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;">String</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">[</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">]</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> args</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">{</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+
+Tiger tiger </span><span class="token operator" style="color: rgb(169, 183, 198); background-color: rgb(43, 43, 43); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px;">=</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">new</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token class-name" style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">Tiger</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">;</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+
+</span><span class="text-red" style="color: rgb(241, 79, 76) ! important; font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">Cat cat <span class="token operator" style="color: rgb(169, 183, 198); background-color: transparent;">=</span> <span class="token keyword" style="color: rgb(204, 120, 50);">new</span> <span class="token class-name" style="color: rgb(241, 79, 76) ! important;">Tiger</span><span class="token punctuation" style="color: rgb(153, 153, 153);">(</span><span class="token punctuation" style="color: rgb(153, 153, 153);">)</span><span class="token punctuation" style="color: rgb(153, 153, 153);">;</span><br>
+
+Animal animal <span class="token operator" style="color: rgb(169, 183, 198); background-color: transparent;">=</span> <span class="token keyword" style="color: rgb(204, 120, 50);">new</span> <span class="token class-name" style="color: rgb(241, 79, 76) ! important;">Tiger</span><span class="token punctuation" style="color: rgb(153, 153, 153);">(</span><span class="token punctuation" style="color: rgb(153, 153, 153);">)</span><span class="token punctuation" style="color: rgb(153, 153, 153);">;</span><br>
+
+Object obj <span class="token operator" style="color: rgb(169, 183, 198); background-color: transparent;">=</span> <span class="token keyword" style="color: rgb(204, 120, 50);">new</span> <span class="token class-name" style="color: rgb(241, 79, 76) ! important;">Tiger</span><span class="token punctuation" style="color: rgb(153, 153, 153);">(</span><span class="token punctuation" style="color: rgb(153, 153, 153);">)</span><span class="token punctuation" style="color: rgb(153, 153, 153);">;</span></span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);"></span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+
+</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">}</span><br>
+
+<br>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 204);">При таком
+присваивании с объектом ничего не происходит. Меняется только
+количество методов, которое можно вызвать с помощью конкретной
+переменной-ссылки.</span><br>
+
+<h3>&nbsp;&nbsp;&nbsp; <span style="color: rgb(51, 255, 255);">Сужение типа:</span><br>
+
+</h3>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 204);">При сужении типа используется явное проеобразование:<br>
+
+<br>
+
+</span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">public</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">static</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">void</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token function" style="color: rgb(255, 198, 109); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">main</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;">String</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">[</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">]</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> args</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">{</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+
+Object obj </span><span class="token operator" style="color: rgb(169, 183, 198); background-color: rgb(43, 43, 43); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px;">=</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">new</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token class-name" style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">Tiger</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">;</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+
+</span><span class="text-red" style="color: rgb(241, 79, 76) ! important; font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">Animal animal <span class="token operator" style="color: rgb(169, 183, 198); background-color: transparent;">=</span> <span class="token punctuation" style="color: rgb(153, 153, 153);">(</span>Animal<span class="token punctuation" style="color: rgb(153, 153, 153);">)</span> obj<span class="token punctuation" style="color: rgb(153, 153, 153);">;</span><br>
+
+Cat cat <span class="token operator" style="color: rgb(169, 183, 198); background-color: transparent;">=</span> <span class="token punctuation" style="color: rgb(153, 153, 153);">(</span>Cat<span class="token punctuation" style="color: rgb(153, 153, 153);">)</span> obj<span class="token punctuation" style="color: rgb(153, 153, 153);">;</span><br>
+
+Tiger tiger <span class="token operator" style="color: rgb(169, 183, 198); background-color: transparent;">=</span> <span class="token punctuation" style="color: rgb(153, 153, 153);">(</span>Tiger<span class="token punctuation" style="color: rgb(153, 153, 153);">)</span> animal<span class="token punctuation" style="color: rgb(153, 153, 153);">;</span><br>
+
+Tiger tiger2 <span class="token operator" style="color: rgb(169, 183, 198); background-color: transparent;">=</span> <span class="token punctuation" style="color: rgb(153, 153, 153);">(</span>Tiger<span class="token punctuation" style="color: rgb(153, 153, 153);">)</span> cat<span class="token punctuation" style="color: rgb(153, 153, 153);">;</span></span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);"></span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+
+</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">}</span><br>
+
+<span style="color: rgb(255, 255, 204);"><br>
+
+</span><span style="color: rgb(255, 255, 204);">Чтобы избежать ошибок при сужении типов, рекомендуется исяпользовать проверку instanceOf:<br>
+
+<br>
+
+<span style="color: rgb(255, 204, 153);"><span style="font-family: Courier New,Courier,monospace;">public static void main(String[] args) {<br>
+
+&nbsp;&nbsp;&nbsp; Animal animal = new Tiger();<br>
+
+&nbsp;&nbsp;&nbsp; doAllAction(animal);<br>
+
+<br>
+
+&nbsp;&nbsp;&nbsp; Animal animal2 = new Cat();<br>
+
+&nbsp;&nbsp;&nbsp; doAllAction(animal2);<br>
+
+<br>
+
+&nbsp;&nbsp;&nbsp; Animal animal3 = new Animal();<br>
+
+&nbsp;&nbsp;&nbsp; doAllAction(Animal3);<br>
+
+<br>
+
+&nbsp;&nbsp;&nbsp; public static void doAllAction (Animal animal) {<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if (animal instanceof Tiger) {<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Tiger tiger = (Tiger) animal;<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; tiger.doTigerActions();<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if (animal instanceof Cat) {<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Cat cat = (Cat) animal;<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; cat.doCatActions();<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+
+<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; animal.doAnimalActions();<br>
+
+&nbsp;&nbsp;&nbsp; }<br>
+
+}</span></span></span>
+<h3><span style="color: rgb(51, 255, 255);">&nbsp;&nbsp;&nbsp; Расширение типа:</span></h3>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 204);">Движение
+вверх по цепочке называется расширением типа. При этом теряется
+возможность использовать методы, добавленные в класс при наследовании.</span><br>
+
+<br>
+
+<span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">public</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">static</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">void</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token function" style="color: rgb(255, 198, 109); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">main</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;">String</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">[</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">]</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> args</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">) </span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"></span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">{</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+
+</span><span class="text-red" style="color: rgb(241, 79, 76) ! important; font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">Cat cat <span class="token operator" style="color: rgb(169, 183, 198); background-color: transparent;">=</span> <span class="token keyword" style="color: rgb(204, 120, 50);">new</span> <span class="token class-name" style="color: rgb(241, 79, 76) ! important;">Tiger</span><span class="token punctuation" style="color: rgb(153, 153, 153);">(</span><span class="token punctuation" style="color: rgb(153, 153, 153);">)</span><span class="token punctuation" style="color: rgb(153, 153, 153);">;</span><br>
+
+Animal animal <span class="token operator" style="color: rgb(169, 183, 198); background-color: transparent;">=</span> cat<span class="token punctuation" style="color: rgb(153, 153, 153);">;</span><br>
+
+Object obj <span class="token operator" style="color: rgb(169, 183, 198); background-color: transparent;">=</span> cat<span class="token punctuation" style="color: rgb(153, 153, 153);">;</span></span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);"></span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+
+</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">}</span><br>
+
+<br>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 204);">При
+расширении типа оператор преобразования не нужен, т.к. не требуется
+проверка. Ссылку на объект всегда можно сохранить в переменную любого
+его базового типа.<br>
+
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+
+<br>
+
+</span>&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 204);"></span>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=Windows-1251" http-equiv="content-type">
+  <title>StackTraceElement</title>
+</head>
+<body style="background-color: rgb(51, 51, 51); color: rgb(0, 0, 0);" alink="#ee0000" link="#0000ee" vlink="#551a8b">
+<span style="color: rgb(255, 255, 255);"></span>
+<h1 style="text-align: center;"><span style="color: rgb(255, 255, 204);">StackTraceElement</span></h1>
+<span style="color: rgb(255, 255, 255);"><span style="font-weight: bold;">Пример:</span><br>
+<span style="color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp; StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();<br>
+<br>
+<span style="color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp; В Java есть специальная коллекция &nbsp;- стек (<span style="font-weight: bold;">stack</span>). Когда одна функция вызывает другую, Java-машина помещает в этот стек новый элемент <span style="font-weight: bold;">StackTraceElement</span>. Когда функция завершается, этот элемент удаляется из стека.<br>
+&nbsp;&nbsp;&nbsp; Каждый <span style="font-weight: bold;">StackTraceElement</span> содержит информацию о методе, который был вызван.<br>
+<br>
+Что содержится в <span style="font-weight: bold;">stackTraceElements[]</span>:<br>
+&nbsp;&nbsp;&nbsp; 0 - getStackTrace<br>
+&nbsp;&nbsp;&nbsp; 1 - имя метода (свое имя)<br>
+&nbsp;&nbsp;&nbsp; 2 - имя метода кто вызывал [1]<br>
+&nbsp;&nbsp;&nbsp; 3 - имя метода кто вызывал [2]<br>
+&nbsp;&nbsp;&nbsp; 4 - и т.д. ...<br>
+</span></span></span><span style="color: rgb(255, 255, 255);"><span style="color: rgb(255, 204, 153);"><span style="color: rgb(255, 255, 255);"></span></span></span>
+<h3><span style="color: rgb(51, 204, 255);">Методы:</span></h3>
+<span style="color: rgb(255, 255, 255);">- <span style="font-weight: bold;">getMethodName()</span> - получает имя метода.<br>
+Пример:<br>
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();</span><span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;"> <br>
+&nbsp;&nbsp;&nbsp; String name = stackTraceElements[2].getMethodName();<br>
+<br>
+</span><span style="color: rgb(255, 204, 153);"><span style="color: rgb(255, 255, 255);">- <span style="font-weight: bold;">getLineNumber()</span> - возвращает номер строки кода из которого вызвали этот метод<br>
+Пример:<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">int numberLine = stackTraceElements[2].getLineNumber();<br>
+<br>
+</span><span style="color: rgb(255, 204, 153);"><span style="color: rgb(255, 255, 255);">- <span style="font-weight: bold;">getClassName()</span> - возвращает имя класса</span></span><span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;"><span style="color: rgb(255, 255, 255);"><br>
+</span></span></span></span><span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;"></span></span>
+</body>
+</html>

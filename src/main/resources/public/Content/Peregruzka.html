@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Peregruzka</title>
+  </head>
+  <body vlink="#551A8B" text="#000000" bgcolor="#ffffff" alink="#EE0000"
+    link="#0000EE">
+    <h1 align="center">Перегрузка</h1>
+    <h3>Перегрузка методов</h3>
+    <p>Условия:<br>
+      - тип или число параметров в каждом из перегружаемых методов
+      должны быть разными<br>
+      - тип возвращаемого значения не учитывается при перегрузке<br>
+    </p>
+    <p>Пример:</p>
+    <p><font size="-1">void ovlDemo() {<br>
+        &nbsp;&nbsp;&nbsp; //..<br>
+        }</font></p>
+    <p><font size="-1">void ovlDemo(int i) {<br>
+        //...<br>
+        }<br>
+      </font></p>
+    <p><font size="-1">int ovlDemo(int a, int b) {<br>
+        &nbsp;&nbsp;&nbsp; //..<br>
+        }<br>
+      </font></p>
+    <p><font size="-1">double ovlDemo(double a, double b) {<br>
+        &nbsp;&nbsp;&nbsp; //..<br>
+        }</font><br>
+    </p>
+    <p>Следующая попытка перегрузки скомпелируется с ошибкой, т.к. тип
+      возвращаемого значения не учитывается при перегрузке:<br>
+    </p>
+    <p><font size="-1">void ovlDemo(int a) {<br>
+        &nbsp;&nbsp;&nbsp; //..<br>
+        }<br>
+      </font></p>
+    <p><font size="-1">int ovlDemo(int a) { //компилятор неразличит два
+        этих метода<br>
+        &nbsp;&nbsp;&nbsp; //..<br>
+        }</font><br>
+    </p>
+    <h3>Перегрузка конструкторов</h3>
+    <p>Пример:<br>
+    </p>
+    <p><font size="-1">MyClass {<br>
+      </font></p>
+    <p><font size="-1">&nbsp;&nbsp;&nbsp; <font color="#999900">MyClass()
+          {<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //..<br>
+          &nbsp;&nbsp;&nbsp; }<br>
+        </font></font></p>
+    <p><font color="#999900" size="-1">&nbsp;&nbsp;&nbsp; MyClass(int i)
+        {<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //..<br>
+        &nbsp;&nbsp;&nbsp; }<br>
+      </font></p>
+    <p><font size="-1"><font color="#999900">&nbsp;&nbsp;&nbsp;
+          MyClass(int i, int j) {<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //..<br>
+          &nbsp;&nbsp;&nbsp; }</font><br>
+      </font></p>
+    <p><font size="-1">}</font><br>
+    </p>
+  </body>
+</html>

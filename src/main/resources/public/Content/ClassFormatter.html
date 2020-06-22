@@ -1,0 +1,256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>ClassFormatter</title>
+  </head>
+  <body>
+    <h1 align="center">Класс Formatter</h1>
+    <p>&nbsp;&nbsp;&nbsp; Конструкторы:<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Formatter()<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Formatter(Appendable буфер)<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Formatter(Appendable буфер,
+      Locale региональные_настройки)<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Formatter(String имя_файла)
+      throws FileNotFoundException<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Formatter(String имя_файла,
+      String набор_символов) throws FileNotFoundException,
+      UnsupportedEncodingException<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Formatter(File файл_вывода)
+      throws FileNotFoundException<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Fprmatter(OutputStream
+      поток_вывода)<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; Методы:<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; void close() - закрывает
+      объект высвобождая ресурсы<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; void flush() - очищает
+      буфер отформатированных данных, все несохраненный данные выводятся
+      по месту назначения<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Formatter format(String
+      форматирующая_строка, Object ... аргументы) - форматирует
+      указаннфе аргументы в соответствии со спецификациями формата,
+      которые содержит форматирующая строка.<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Formatter format(Locale
+      региональные_настройки, String форматирующая_строка, Object ...
+      аргументы) - то же, с региональными параметрами<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Locale locale() -
+      возвращает региональные настройки вызывающего объекта<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Appendable out() -
+      возвращает ссылку на базовый объект, который служит в качестве
+      адресата для выводимых данных<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; String toString() -
+      возвращает объект типа String содержащий отформатированные данные<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; Общая форма:<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+%&lt;признак_формата&gt;&lt;спецификатор_минимальной_ширины_поля&gt;&lt;спецификатор_точности&gt;&lt;спецификатор_формата&gt;<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; Спецификаторы формата:</p>
+    <p>&nbsp;&nbsp;&nbsp; %а&nbsp;&nbsp;&nbsp; Шестнадцатеричное
+      значение с плавающей точкой<br>
+      &nbsp;&nbsp;&nbsp; %А</p>
+    <p>&nbsp;&nbsp;&nbsp; %b&nbsp;&nbsp;&nbsp; Логическое значение<br>
+      &nbsp;&nbsp;&nbsp; %В</p>
+    <p>&nbsp;&nbsp;&nbsp; %c &nbsp;&nbsp; Символ</p>
+    <p>&nbsp;&nbsp;&nbsp; %d&nbsp;&nbsp;&nbsp; Десятичное целое значение</p>
+    <p>&nbsp;&nbsp;&nbsp; %h&nbsp;&nbsp;&nbsp; Хеш-код аргумента<br>
+      &nbsp;&nbsp;&nbsp; %Н</p>
+    <p>&nbsp;&nbsp;&nbsp; %е&nbsp;&nbsp;&nbsp; Экспоненциальное
+      представление числа<br>
+      &nbsp;&nbsp;&nbsp; %Е</p>
+    <p>&nbsp;&nbsp;&nbsp; %f&nbsp;&nbsp;&nbsp; Десятичное число с
+      плавающей точкой</p>
+    <p>&nbsp;&nbsp;&nbsp; %g&nbsp;&nbsp;&nbsp; Используется спецификатор
+      формата %е или %f в зависимости<br>
+      &nbsp;&nbsp;&nbsp; %G&nbsp;&nbsp;&nbsp; от форматируемого значения
+      и заданной точности<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; %о&nbsp;&nbsp;&nbsp; Восьмеричное целое число</p>
+    <p>&nbsp;&nbsp;&nbsp; %n&nbsp;&nbsp;&nbsp; Вставляет знак перевода
+      строки</p>
+    <p>&nbsp;&nbsp;&nbsp; %s &nbsp;&nbsp; Символьная строка<br>
+      &nbsp;&nbsp;&nbsp; %S</p>
+    <p>&nbsp;&nbsp;&nbsp; %t&nbsp;&nbsp;&nbsp; Время и дата<br>
+      &nbsp;&nbsp;&nbsp; %Т</p>
+    <p>&nbsp;&nbsp;&nbsp; %х&nbsp;&nbsp;&nbsp; Шестнадцатеричное целое
+      число<br>
+      &nbsp;&nbsp;&nbsp; %Х</p>
+    <p>&nbsp;&nbsp;&nbsp; %%&nbsp;&nbsp; Вставляет знак %<br>
+    </p>
+    <h3>&nbsp;&nbsp;&nbsp; Форматирование даты и времени</h3>
+    <p>&nbsp;&nbsp;&nbsp; Суффикты формата времени и даты:<br>
+      &nbsp;&nbsp;&nbsp; <br>
+    </p>
+    <table width="80%" border="1" cellspacing="2" cellpadding="2">
+      <tbody>
+        <tr>
+          <td valign="top">а&nbsp;&nbsp;&nbsp; Сокращенное название дня
+            недели<br>
+            <br>
+            А&nbsp;&nbsp;&nbsp; Полное название дня недели<br>
+            <br>
+            b &nbsp;&nbsp; Сокращенное название месяца<br>
+            <br>
+            В&nbsp;&nbsp;&nbsp; Полное название месяца<br>
+            <br>
+            с&nbsp;&nbsp;&nbsp; Стандартная строка даты и времени в
+            таком формате:<br>
+            день месяц да~а чч::мм:сс часовой пояс год<br>
+            <br>
+            С &nbsp;&nbsp; Первые две цифры года<br>
+            <br>
+            d &nbsp;&nbsp; День месяца в десятичном представлении
+            (01-31)<br>
+            <br>
+            D&nbsp;&nbsp;&nbsp; месяц/ день/год<br>
+            <br>
+            е&nbsp;&nbsp;&nbsp; День месяца в десятичном представлении
+            (1 - 31)<br>
+            <br>
+            F&nbsp;&nbsp;&nbsp; Формат «год-месяц-день»<br>
+            <br>
+            h&nbsp;&nbsp;&nbsp; Сокращенное название месяца<br>
+            <br>
+            Н&nbsp;&nbsp; Часы (от 00 до 23)<br>
+            <br>
+            I&nbsp;&nbsp;&nbsp;&nbsp; Часы (от 01 до 12)<br>
+            <br>
+            j&nbsp;&nbsp;&nbsp; День года в десятичном представлении (от
+            001 до 366)<br>
+          </td>
+          <td valign="top">k&nbsp;&nbsp;&nbsp; Часы (от 0 до 23)<br>
+            <br>
+            l&nbsp;&nbsp;&nbsp;&nbsp; Часы (от 1 до 12)<br>
+            <br>
+            L&nbsp;&nbsp;&nbsp; Миллисекунды (от 000 до 999)<br>
+            <br>
+            m&nbsp;&nbsp;&nbsp; Месяц в десятичном представлении (от
+            01до13)<br>
+            <br>
+            М &nbsp;&nbsp; Минуты в десятичном представлении (от 00 до
+            59)<br>
+            <br>
+            N Наносекунды (от 000000000 до 999999999)<br>
+            <br>
+            p&nbsp;&nbsp;&nbsp; Региональный эквивалент времени до
+            полудня (АМ) или после полудня (РМ)<br>
+            в нижнем регистре<br>
+            <br>
+            Q Количество миллисекунд, прошедших с даты 01/01/1970<br>
+            <br>
+            r&nbsp;&nbsp;&nbsp; чч:мм:сс(12-часовой формат)<br>
+            <br>
+            R &nbsp; чч: мм(24--часовый формат)<br>
+            &nbsp; <br>
+            S&nbsp;&nbsp;&nbsp; Секунды (от 00 до 60)<br>
+            <br>
+            s &nbsp;&nbsp; Количество миллисекунд, прошедших с даты
+            01/01/1970<br>
+            <br>
+            Т&nbsp;&nbsp;&nbsp; чч:мм:сс(24-часовой формат)<br>
+            <br>
+            у&nbsp;&nbsp;&nbsp; Год в десятичном представлении без
+            указания столетия (от 00 до 99)<br>
+            <br>
+            У&nbsp;&nbsp; Год в десятичном представлении, включая
+            столетие (от 0001 до 9999)<br>
+            <br>
+            z&nbsp;&nbsp;&nbsp; Смещение относительно времени UTC<br>
+            <br>
+            z&nbsp;&nbsp;&nbsp; Наименование часового пояса<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <h3>&nbsp;&nbsp;&nbsp; Указание минимальной ширины поля&nbsp;&nbsp;&nbsp;
+      <br>
+    </h3>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Пример:<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; %05d - 0:
+    дополнить нулями поле, 5 - минимальная длина поля.<br>
+    <br>
+    <h3>&nbsp;&nbsp;&nbsp; Указание точности</h3>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Спецификатор точности
+    применяется с %f, %e, %g, %s. Указывается после спецификатора
+    минимальной ширины (еслит такой есть), состоит из <i>точки и целого
+      числа</i>.<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Если применяется с %f или %e,
+    то спецификатор точности определяет количество отображаемых
+    десятичных цифр.<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; %10.4f -
+    вывод числа, шириной не меньше 10 знаков, с четырьмя цифрами после
+    запятой.<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Если применяется с %g, то
+    спецификатор определяет количество значащих десятичных цифр.
+    Точность по умолчанию составляет 6 цифр после запятой.<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Применительно к строковым -
+    задает максимальную ширину поля.<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; %5.7s -
+    вывод строки длиной минимум 5 символов, максимум 7. Если строка
+    оказывается длиннее, то конечные символы отбрасываются.<br>
+    <br>
+    <h3>&nbsp;&nbsp;&nbsp; Признаки формата</h3>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;
+    выравнивание по левому краю<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; #&nbsp;&nbsp;&nbsp;
+    альтернативный формат преобразования<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Применяется
+    с %o, %x, %e, %f. Обеспечивает наличие десятичной точки, даже в том
+    случае, если отсутствует дробная часть числа.<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; выводимые
+    данные дополняются 0 вместо пробелов<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; пробел&nbsp;&nbsp;&nbsp;
+    положительные числа выводятся с предшествующим пробелом<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; +&nbsp;&nbsp;&nbsp; Числовые
+    значения выводятся с предшествующим знаком +<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ,&nbsp;&nbsp;&nbsp; Числовые
+    значения содержат групповые разделители<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Пример:
+    ("%,.2f", 4356783497.34) получим: 4,356,783,497.34<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; (&nbsp;&nbsp;&nbsp;
+    Отрицательные числовые значения заключаются в круглые скобки<br>
+    &nbsp;&nbsp;&nbsp; <br>
+    <br>
+    <h3>&nbsp;&nbsp;&nbsp; Индекс аргумента</h3>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Позволяет указывать
+      аргумент, к которому должен применяться конкретный спецификатор
+      формата.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Указывается после знака % и
+      имеет форму n$.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Пример:<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      fmt.format("%3$d %1$d %2$d", 10, 20, 30) Вывод: 30 10 20<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Можно повторно использовать
+      аргумент, не указывая его дважды:<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      fmt.format("Число %d в шестнадцатиричном формате " + "равно %1$x",
+      255)&nbsp;&nbsp;&nbsp; Вывод: Число 255 в шестнадцатиричной форме
+      равно ff<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Либо:<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; fmt.format("Число %d в шестнадцатиричном
+      формате равно %&lt;x", 255)</p>
+    <br>
+  </body>
+</html>

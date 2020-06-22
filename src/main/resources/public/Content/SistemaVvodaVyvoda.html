@@ -1,0 +1,1501 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <title>Sistema vvoda-vyvoda</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body vlink="#7b68ee" text="#ffffcc" link="#00ff7f" alink="#4682b4"
+    bgcolor="#333333">
+    <span style="color: rgb(255, 255, 204);"></span>
+    <h1 style="text-align: center; background-color: rgb(51, 51, 51);"><span
+        style="color: rgb(51, 153, 153);"></span><span style="color:
+        rgb(0, 204, 204);">Система ввода-вывода</span></h1>
+    <span style="color: rgb(255, 255, 204);">&nbsp;&nbsp;&nbsp; Для
+      реализации потоков используется иерархия классов, содержащаяся в
+      пакете <span style="font-weight: bold;">java.io.*.</span></span><font
+      color="#66cccc">&nbsp; <br>
+      <br>
+      &nbsp;&nbsp;&nbsp; <a
+        href="SistemaVvoda-vyvoda/AvtomaticheskoeZakrytieFailov.html"><font
+          color="#ffffcc">Автоматическое закрытие файлов</font></a><br>
+      <font color="#ffffcc">&nbsp;&nbsp;&nbsp; <a
+          href="SistemaVvoda-vyvoda/ChtenieIZapisDannyhVFail.html">Чтение
+
+
+          и запись данных в файл</a><br>
+        &nbsp;&nbsp;&nbsp; <a
+          href="SistemaVvoda-vyvoda/KlassyBaitovyhPotokov.html">Классы
+          байтовых потоков</a><br>
+        &nbsp;&nbsp;&nbsp; <a
+          href="SistemaVvoda-vyvoda/KonsolnyiVvodVyvod.html">Консольный
+          ввод - вывод</a><br>
+      </font> </font>
+    <h2>&nbsp;&nbsp;&nbsp; <font color="#ffff00">Классы байтовых
+        потоков</font></h2>
+    <table style="text-align: left; width: 60%;" cellspacing="2"
+      cellpadding="2" border="0">
+      <tbody>
+        <tr>
+          <td style="color: rgb(255, 255, 0); font-weight: bold;"
+            valign="undefined" align="undefined">Класс байтового потока</td>
+          <td style="color: rgb(255, 255, 0); font-weight: bold;"
+            valign="undefined" align="undefined">Описание</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; color: rgb(51, 204, 255);"
+            valign="undefined" align="undefined">BufferedInputStream</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Обертка класса InputStream. Читает данные
+            большими порциями из InputStream в буфер, а потом отдает из
+            буфера.<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; color: rgb(51, 204, 255);"
+            valign="undefined" align="undefined">BufferedOutputStream</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Буферизированный выходной поток</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; color: rgb(51, 204, 255);"
+            valign="undefined" align="undefined">ByteArrayInputStream</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Входной поток для чтения из байтового
+            массива</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; color: rgb(51, 204, 255);"
+            valign="undefined" align="undefined">ByteArrayOutputStream</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Выходной поток для записи в байтовый
+            массив</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; color: rgb(51, 204, 255);"
+            valign="undefined" align="undefined">DataInputStream</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Входной поток, включающий методы для
+            чтения стандартных типов Java</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; color: rgb(51, 204, 255);"
+            valign="undefined" align="undefined">DataOutputStream</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Выходной поток, включающий методы для
+            записи стандартных методов Java</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; color: rgb(51, 204, 255);"
+            valign="undefined" align="undefined">FileInputStream</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Входной поток для чтения из файла</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; color: rgb(51, 204, 255);"
+            valign="undefined" align="undefined">FileOutputStream</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Выходной поток для записи в файл</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; color: rgb(51, 204, 255);"
+            valign="undefined" align="undefined">FilterInputStream</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Реализация класса InputStream</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; color: rgb(51, 204, 255);"
+            valign="undefined" align="undefined">FilterOutputStream</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Реализация класса OutputStream</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; color: rgb(51, 204, 255);"
+            valign="undefined" align="undefined">InputStream</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Абстрактный класс, описывающий потоковый
+            ввод</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; color: rgb(51, 204, 255);"
+            valign="undefined" align="undefined">ObjectInputStream</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Входной поток для объектов</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; color: rgb(51, 204, 255);"
+            valign="undefined" align="undefined">ObjectOutputStream</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Выходной поток для объектов</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; color: rgb(51, 204, 255);"
+            valign="undefined" align="undefined">OutputStream</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Абстрактный класс, описывающий потоковый
+            вывод</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; color: rgb(51, 204, 255);"
+            valign="undefined" align="undefined">PipedInputStream</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Входной канал</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; color: rgb(51, 204, 255);"
+            valign="undefined" align="undefined">PipedOutputStream</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Выходной канал</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; color: rgb(51, 204, 255);"
+            valign="undefined" align="undefined">PrintStream</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Выходной поток, включащий методы print() и
+            println()</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; color: rgb(51, 204, 255);"
+            valign="undefined" align="undefined">PushbackInputStream</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Входной поток, позволяющий возвращать
+            байты обратно в поток</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; color: rgb(51, 204, 255);"
+            valign="undefined" align="undefined">SequenceInputStream</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Входной поток, сочетающий в себе несколько
+            потоков, которые читаются последовательно, один после
+            другого</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3><span style="color: rgb(102, 204, 204);">&nbsp;&nbsp;&nbsp; <font
+          color="#ff6600">InputStream / OutputStream</font><br>
+      </span></h3>
+    <font color="#ffffcc"><b>&nbsp;&nbsp;&nbsp; Методы класса
+        InputStream:</b></font><br>
+    <table style="text-align: left; width: 60%;" cellspacing="2"
+      cellpadding="2" border="0">
+      <tbody>
+        <tr>
+          <td style="font-weight: bold; color: rgb(255, 255, 0);"
+            valign="undefined" align="undefined">Метод</td>
+          <td style="font-weight: bold; color: rgb(255, 255, 0);"
+            valign="undefined" align="undefined">Описание</td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">int read (byte[] buff);</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Читает блок байт в буфер, пока буфер не
+            заполнится, или не закончатся байты в источнике</td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">int read()</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Читает один байт и возвращает его как
+            результат. Когда все прочитано возвращает -1</td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">int available()</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Возвращает количество непрочитанных
+            (доступных) байт</td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">void close()</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Закрывает поток</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <span style="color: rgb(102, 204, 204);">&nbsp;&nbsp;&nbsp; &nbsp;<b><font
+          color="#ffffcc">Методы класса OutputStream:</font></b></span><br>
+    <table style="text-align: left; width: 60%;" cellspacing="2"
+      cellpadding="2" border="0">
+      <tbody>
+        <tr>
+          <td style="font-weight: bold; color: rgb(255, 255, 51);"
+            valign="undefined" align="undefined">Метод</td>
+          <td style="font-weight: bold; color: rgb(255, 255, 51);"
+            valign="undefined" align="undefined">Описание</td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">void write(int c)</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">записывает 1 байт информации. Тип int
+            сужается до byte, остальное отбрасывается</td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">void write(byte[] buff)</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Записывает блок байт</td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">void flush()</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Записывает данные, хранящиеся в памяти</td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">void write(byte[], int from, int count)</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Записывает часть блока байт</td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">void close()</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Закрывает поток</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3><font color="#33ffff">&nbsp;&nbsp;&nbsp; <font color="#ff6600">FileInputStream
+
+
+
+
+
+
+          / FileOutputStream</font></font></h3>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; <b>Методы класса
+          FileInputStream:</b><br>
+      </font></p>
+    <table width="60%" cellspacing="2" cellpadding="2" border="1">
+      <tbody>
+        <tr>
+          <td valign="top"><font color="#ffff33"><b>Метод</b><b><br>
+              </b></font></td>
+          <td valign="top"><font color="#ffff33"><b>Описание</b><b><br>
+              </b></font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#33ccff">FileInputStream(String
+              fileName)<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">конструктор<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#33ccff">int read();<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">читает один из байтов и
+              возвращает его как результат (результат расширяется до
+              int). Если байтов для чтения не осталось, метод возвращает
+              <span style="font-weight: bold;">-1</span>.<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#33ccff">int available();<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">возвращает количество
+              непрочитанных (доступных байт)<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#33ccff">void close();<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">закрывает поток<br>
+            </font></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; <b>Методы класса </b><b>FileOutputStream:</b><br>
+      </font></p>
+    <table width="60%" cellspacing="2" cellpadding="2" border="1">
+      <tbody>
+        <tr>
+          <td valign="top"><font color="#ffff33"><b>Метод</b><b><br>
+              </b></font></td>
+          <td valign="top"><font color="#ffff33"><b>Описание</b><b><br>
+              </b></font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#33ccff">FileOutputStream(String
+              fileName)<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">конструктор<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td valign="undefined" align="undefined"><span style="color:
+              rgb(51, 204, 255);">FileOutputStream(File file, boolean
+              append)</span></td>
+          <td valign="undefined" align="undefined"><span style="color:
+              rgb(255, 255, 204);"><span style="font-weight: bold;">file</span>
+              - либо созданный объект, либом имя файла; <span
+                style="font-weight: bold;">append</span>: <span
+                style="font-style: italic;">true</span> - дописывает
+              данные в файл, <span style="font-style: italic;">false</span>
+              - затирает старые данные и пишет поверх, по умолчанию
+              значение <span style="font-style: italic;">false</span>.</span></td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#33ccff">void write(int data);<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">записывает байт,
+              обрезая data до одного байта. При записи данных массивом,
+              данные не затираются, а добавляются.<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#33ccff">void flush();<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">немедленно записывает
+              всю информацию, находящуюся в памяти на диск<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#33ccff">void close();<br>
+            </font></td>
+          <td valign="top"><font color="#ffffcc">закрывает поток, метод
+              flush() вызывается автоматически<br>
+            </font></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    &nbsp;&nbsp;&nbsp; <font color="#ffffcc">Пример:</font><br>
+    &nbsp;&nbsp;&nbsp; <font face="Courier New, Courier, monospace"
+      color="#ffcc99">public static void main(String[] args) throws
+      Exception {<br>
+      &nbsp; &nbsp;&nbsp;&nbsp; FileInputStream inputStream = new
+      FileInputStream("c:/data.txt"); <br>
+      &nbsp; &nbsp;&nbsp;&nbsp; FileOutputStream outputStream = new
+      FileOutputStream("c:/result.txt");<br>
+      <br>
+      &nbsp; &nbsp;&nbsp;&nbsp; byte[] buffer = new byte[1000];<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while (inputStream.available() &gt;
+      0) <font color="#cccccc">//пока есть еще непрочитанные байты</font><br>
+      &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; {<br>
+      &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font
+        color="#cccccc">// прочитать очередной блок байт в переменную
+        buffer и реальное количество в count</font><br>
+      &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      int count = inputStream.read(buffer);<br>
+      &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      outputStream.write(buffer, 0, count); <font color="#cccccc">//записать
+
+
+
+
+
+        блок(часть блока) во второй поток</font><br>
+      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; }<br>
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; inputStream.close();<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; outputStream.close();<br>
+      &nbsp;&nbsp;&nbsp; }</font><br>
+    <br>
+    <h3>&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 102, 0);">BufferedInputStream</span></h3>
+    &nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 204);">Считывает
+
+
+
+
+      байты из файла блоками.<br>
+      &nbsp;&nbsp;&nbsp; Констукторы:<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(51,
+        255, 51);">BufferedInputStream(InputStream in);</span><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(51,
+        255, 51);">BufferedInputStream(InputStream in, int size); </span>где
+
+
+
+
+      size - размер&nbsp;считываемого блока<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; Пример:<br>
+      &nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 153);
+        font-family: Courier New,Courier,monospace;"> &nbsp; public
+        class Main{</span><br style="color: rgb(255, 204, 153);
+        font-family: Courier New,Courier,monospace;">
+      <span style="color: rgb(255, 204, 153); font-family: Courier
+        New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        public static void main(String[] args) throws IOException {</span><br
+        style="color: rgb(255, 204, 153); font-family: Courier
+        New,Courier,monospace;">
+      <span style="color: rgb(255, 204, 153); font-family: Courier
+        New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; FileInputStream fileInputStream = new
+        FileInputStream("\pathToFile");</span><br style="color: rgb(255,
+        204, 153); font-family: Courier New,Courier,monospace;">
+      <span style="color: rgb(255, 204, 153); font-family: Courier
+        New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; BufferedInputStream bufferedInputStream = new
+        BufferdInputStream(fileInputStream, 200);</span><br
+        style="color: rgb(255, 204, 153); font-family: Courier
+        New,Courier,monospace;">
+      <br style="color: rgb(255, 204, 153); font-family: Courier
+        New,Courier,monospace;">
+      <span style="color: rgb(255, 204, 153); font-family: Courier
+        New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; int i;</span><br style="color: rgb(255, 204,
+        153); font-family: Courier New,Courier,monospace;">
+      <span style="color: rgb(255, 204, 153); font-family: Courier
+        New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; while((i = bufferedInputStream.read()) != -1)
+        {</span><br style="color: rgb(255, 204, 153); font-family:
+        Courier New,Courier,monospace;">
+      <span style="color: rgb(255, 204, 153); font-family: Courier
+        New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println((char)
+        i);</span><br style="color: rgb(255, 204, 153); font-family:
+        Courier New,Courier,monospace;">
+      <span style="color: rgb(255, 204, 153); font-family: Courier
+        New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; }</span><br style="color: rgb(255, 204, 153);
+        font-family: Courier New,Courier,monospace;">
+      <span style="color: rgb(255, 204, 153); font-family: Courier
+        New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</span><br
+        style="color: rgb(255, 204, 153); font-family: Courier
+        New,Courier,monospace;">
+      <span style="color: rgb(255, 204, 153); font-family: Courier
+        New,Courier,monospace;">&nbsp;&nbsp;&nbsp; }</span><br>
+      <br>
+    </span><span style="color: rgb(255, 255, 204);"></span>
+    <h3>&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 102, 0);">PrintStream</span></h3>
+    &nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 204);">Конструкторы:<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(51,
+        255, 51);">PrintStream(OutputStream outputStream)</span><br
+        style="color: rgb(51, 255, 51);">
+      <span style="color: rgb(51, 255, 51);">&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; PrintStream(File outputFile) throws
+        FileNotFoundException</span><br style="color: rgb(51, 255, 51);">
+      <span style="color: rgb(51, 255, 51);">&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; PrintStream(String outputFileName) throws
+        FileNotFoundException</span><br>
+      <br>
+      &nbsp;&nbsp;&nbsp; Пример:<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<span style="font-family:
+        Courier New,Courier,monospace; color: rgb(255, 204, 153);">
+        import java.io.*;</span><br style="font-family: Courier
+        New,Courier,monospace; color: rgb(255, 204, 153);">
+      <br style="font-family: Courier New,Courier,monospace; color:
+        rgb(255, 204, 153);">
+      <span style="font-family: Courier New,Courier,monospace; color:
+        rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        public class Main {</span><br style="font-family: Courier
+        New,Courier,monospace; color: rgb(255, 204, 153);">
+      <span style="font-family: Courier New,Courier,monospace; color:
+        rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; public static void main(String[] args) {</span><br
+        style="font-family: Courier New,Courier,monospace; color:
+        rgb(255, 204, 153);">
+      <span style="font-family: Courier New,Courier,monospace; color:
+        rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; PrintStream
+        filePrintStream = new PrintStream(new File("\path\fileName"));</span><br
+        style="font-family: Courier New,Courier,monospace; color:
+        rgb(255, 204, 153);">
+      <span style="font-family: Courier New,Courier,monospace; color:
+        rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        filePrintStream.println(22);</span><br style="font-family:
+        Courier New,Courier,monospace; color: rgb(255, 204, 153);">
+      <span style="font-family: Courier New,Courier,monospace; color:
+        rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        filePrintStream.println("Hello world");</span><br
+        style="font-family: Courier New,Courier,monospace; color:
+        rgb(255, 204, 153);">
+      <span style="font-family: Courier New,Courier,monospace; color:
+        rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        filePrintStream.println(false);</span><br style="font-family:
+        Courier New,Courier,monospace; color: rgb(255, 204, 153);">
+      <span style="font-family: Courier New,Courier,monospace; color:
+        rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; }</span><br style="font-family: Courier
+        New,Courier,monospace; color: rgb(255, 204, 153);">
+      <span style="font-family: Courier New,Courier,monospace; color:
+        rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+      </span><span style="color: rgb(255, 255, 204);">&nbsp;&nbsp;&nbsp;
+        <span style="font-weight: bold;">Методы:</span><br>
+        &nbsp;&nbsp;&nbsp; <br>
+      </span></span>
+    <table style="text-align: left; width: 60%;" cellspacing="2"
+      cellpadding="2" border="0">
+      <tbody>
+        <tr>
+          <td style="font-weight: bold; color: rgb(255, 255, 51);"
+            valign="undefined" align="undefined">Метод</td>
+          <td style="font-weight: bold; color: rgb(255, 255, 51);"
+            valign="undefined" align="undefined">Описание</td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">void append()</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined"><br>
+          </td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">void close()</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined"><br>
+          </td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">PrintStream flush()</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined"><br>
+          </td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">PrintStream printf()</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">выводит форматированную строку</td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">void print()</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined"><br>
+          </td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">void println()</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined"><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <span style="color: rgb(255, 255, 204);"><span style="color:
+        rgb(255, 255, 204);">&nbsp;&nbsp;&nbsp; &nbsp; <br>
+        &nbsp;&nbsp;&nbsp; Пример:<br>
+        &nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 153);
+          font-family: Courier New,Courier,monospace;"> public class
+          Main {</span><br style="color: rgb(255, 204, 153);
+          font-family: Courier New,Courier,monospace;">
+        <span style="color: rgb(255, 204, 153); font-family: Courier
+          New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          public static void main(String[] args) {</span><br
+          style="color: rgb(255, 204, 153); font-family: Courier
+          New,Courier,monospace;">
+        <span style="color: rgb(255, 204, 153); font-family: Courier
+          New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; PrintStream printStream = new
+          PrintStream("path\fileName");</span><br style="color: rgb(255,
+          204, 153); font-family: Courier New,Courier,monospace;">
+        <span style="color: rgb(255, 204, 153); font-family: Courier
+          New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; printStream.print("Hello!");</span><br
+          style="color: rgb(255, 204, 153); font-family: Courier
+          New,Courier,monospace;">
+        <span style="color: rgb(255, 204, 153); font-family: Courier
+          New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; printStream.print("I`m robot!");</span><br
+          style="color: rgb(255, 204, 153); font-family: Courier
+          New,Courier,monospace;">
+        <span style="color: rgb(255, 204, 153); font-family: Courier
+          New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; printStream.printf("My name is &nbsp;%s, my
+          age is %d", "Amigo", 18);</span><br style="color: rgb(255,
+          204, 153); font-family: Courier New,Courier,monospace;">
+        <span style="color: rgb(255, 204, 153); font-family: Courier
+          New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; printStream.close();</span><br
+          style="color: rgb(255, 204, 153); font-family: Courier
+          New,Courier,monospace;">
+        <span style="color: rgb(255, 204, 153); font-family: Courier
+          New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          }</span><br style="color: rgb(255, 204, 153); font-family:
+          Courier New,Courier,monospace;">
+        <span style="color: rgb(255, 204, 153); font-family: Courier
+          New,Courier,monospace;">&nbsp;&nbsp;&nbsp; }<br>
+        </span><span style="color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp;
+
+
+
+
+          <span style="color: rgb(255, 255, 204);">%s и %d - это
+            указатели, в которые можно передавать различные параметры (в
+            примере это Amigo и 18).</span></span><span style="color:
+          rgb(255, 204, 153); font-family: Courier
+          New,Courier,monospace;"><br>
+        </span></span></span>
+    <h2><font color="#ffff00">Чтение и запись двоичных данных</font></h2>
+    &nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 204);">Для
+      чтения и записи простых типов данных предусмотрены классы
+      DataInputStream и DataOutputStream. Данные записываются во
+      внутреннем двоичном формате, а не в виде последовательности
+      символов. При возникновении ошибки ввода-вывода методы классов
+      могут генерировать исключения IOException.</span><span
+      style="color: rgb(255, 255, 204);"><span style="color: rgb(255,
+        204, 153);"><span style="color: rgb(255, 255, 204);"></span></span><br>
+    </span><span style="color: rgb(255, 255, 204);"></span>
+    <h3 style="background-color: rgb(51, 51, 51);">&nbsp;&nbsp;&nbsp; <span
+        style="color: rgb(51, 255, 255);">Часто используемые методы
+        DataInputStream</span></h3>
+    <table style="text-align: left; width: 80%;" cellspacing="2"
+      cellpadding="2" border="0">
+      <tbody>
+        <tr>
+          <td style="font-weight: bold; background-color: rgb(51, 51,
+            51); color: rgb(255, 255, 51);" valign="undefined"
+            align="undefined">Метод</td>
+          <td style="font-weight: bold; background-color: rgb(51, 51,
+            51); color: rgb(255, 255, 51);" valign="undefined"
+            align="undefined">Описание</td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="undefined" align="undefined">boolean readBoolean()</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Читает значение типа boolean</td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="undefined" align="undefined">byte readByte()</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Читает значение типа byte</td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="undefined" align="undefined">char readChar()</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Читает значение типа char</td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="undefined" align="undefined">double readDouble()</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Читает значение типа double</td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="undefined" align="undefined">float readFloat()</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Читает значение типа float</td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="undefined" align="undefined">int readInt()</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Читает значение типа int</td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="undefined" align="undefined">long readLong()</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Читает значение типа long</td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="undefined" align="undefined">short readShort()</td>
+          <td style="color: rgb(255, 255, 204);" valign="undefined"
+            align="undefined">Читает значение типа short</td>
+        </tr>
+      </tbody>
+    </table>
+    <font color="#ffffcc"><span style="color: rgb(255, 204, 153);"> <br>
+        <br>
+      </span>&nbsp;&nbsp;&nbsp; Пример:<br>
+      <br>
+    </font>
+    <pre style="background-color: rgb(43, 43, 43); color: rgb(169, 183, 198); font-family: 'Courier New';"><small><span style="color: rgb(128, 128, 128);">//Запись и чтение двоичных данных<br></span><span style="color: rgb(128, 128, 128);"><br></span><span style="color: rgb(204, 120, 50);">import </span>java.io.*<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">public class </span>RWData {<br>    <span style="color: rgb(204, 120, 50);">public static void </span><span style="color: rgb(255, 198, 109);">main</span>(String[] args) {<br>        <span style="color: rgb(204, 120, 50);">int </span>i = <span style="color: rgb(104, 151, 187);">10</span><span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">        double </span>d = <span style="color: rgb(104, 151, 187);">1023.56</span><span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">        boolean </span>b  = <span style="color: rgb(204, 120, 50);">true;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">        </span><span style="color: rgb(128, 128, 128);">//Запись ряда значений<br></span><span style="color: rgb(128, 128, 128);">        </span><span style="color: rgb(204, 120, 50);">try </span>(DataOutputStream dataOut = <span style="color: rgb(204, 120, 50);">new </span>DataOutputStream(<span style="color: rgb(204, 120, 50);">new </span>FileOutputStream (<span style="color: rgb(106, 135, 89);">"testdata"</span>))) {<br>            System.out.println(<span style="color: rgb(106, 135, 89);">"Записано: " </span>+ i)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">            </span>dataOut.writeInt(i)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">            </span>System.out.println(<span style="color: rgb(106, 135, 89);">"Записано: " </span>+ d)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">            </span>dataOut.writeDouble(d)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">            </span>System.out.println(<span style="color: rgb(106, 135, 89);">"Записано: " </span>+ b)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">            </span>dataOut.writeBoolean(b)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">            </span>System.out.println(<span style="color: rgb(106, 135, 89);">"Записано: " </span>+ <span style="color: rgb(104, 151, 187);">12.2 </span>* <span style="color: rgb(104, 151, 187);">7.4</span>)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">            </span>dataOut.writeDouble(<span style="color: rgb(104, 151, 187);">12.2 </span>* <span style="color: rgb(104, 151, 187);">7.4</span>)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">        </span>} <span style="color: rgb(204, 120, 50);">catch </span>(IOException exc) {<br>            System.out.println(<span style="color: rgb(106, 135, 89);">"Ошибка записи"</span>)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">            return;<br></span><span style="color: rgb(204, 120, 50);">        </span>}<br><br>        System.out.println()<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">        </span><span style="color: rgb(128, 128, 128);">//А теперь прочитать записанные значения<br></span><span style="color: rgb(128, 128, 128);">        </span><span style="color: rgb(204, 120, 50);">try </span>(DataInputStream dataIn = <span style="color: rgb(204, 120, 50);">new </span>DataInputStream(<span style="color: rgb(204, 120, 50);">new </span>FileInputStream(<span style="color: rgb(106, 135, 89);">"testdata"</span>))) {<br>            i = dataIn.readInt()<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">            </span>System.out.println(<span style="color: rgb(106, 135, 89);">"Прочитано: " </span>+ i)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">            </span>d = dataIn.readDouble()<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">            </span>System.out.println(<span style="color: rgb(106, 135, 89);">"Прочитано: " </span>+ d)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">            </span>b = dataIn.readBoolean()<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">            </span>System.out.println(<span style="color: rgb(106, 135, 89);">"Прочитано: " </span>+ b)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">            </span>d = dataIn.readDouble()<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">            </span>System.out.println(<span style="color: rgb(106, 135, 89);">"Прочитано: " </span>+ d)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">        </span>} <span style="color: rgb(204, 120, 50);">catch </span>(IOException exc) {<br>            System.out.println(<span style="color: rgb(106, 135, 89);">"Ошибка при чтении"</span>)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">            return;<br></span><span style="color: rgb(204, 120, 50);">        </span>}<br>    }<br>}</small></pre>
+    <h3><font color="#ffffcc"> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </font></h3>
+    <h3><font color="#ffffcc"> </font>&nbsp;&nbsp;&nbsp; <span
+        style="color: rgb(255, 102, 0);">Подмена System.in</span></h3>
+    <font size="-1" face="Courier New, Courier, monospace"
+      color="#333333">&nbsp;&nbsp;&nbsp; <font size="-2"
+        color="#ffcc99"><span class="token keyword" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">import</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> java</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">.</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;">io</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">.</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;">*</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">;</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+<br>
+</span><span class="token keyword" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">public</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">class</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token class-name" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">Main</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">{</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+<br>
+   </span><span class="token keyword" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">public</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">static</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">void</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token function" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">main</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;">String</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">[</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">]</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> args</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">throws</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> IOException </span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">{</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+       String greetings </span><span class="token operator" style="background-color: rgb(43, 43, 43); font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px;">=</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token string" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">"Привет! Меня зовут Амиго!\nЯ изучаю Java на сайте JavaRush.\nОднажды я стану крутым программистом!\n"</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">;</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+       </span><span class="token keyword" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">byte</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">[</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">]</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> bytes </span><span class="token operator" style="background-color: rgb(43, 43, 43); font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px;">=</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> greetings</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">.</span><span class="token function" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">getBytes</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">;</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+       InputStream inputStream </span><span class="token operator" style="background-color: rgb(43, 43, 43); font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px;">=</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">new</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token class-name" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">ByteArrayInputStream</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;">bytes</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">;</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+       System</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">.</span><span class="token function" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">setIn</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;">inputStream</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">;</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+       BufferedReader reader </span><span class="token operator" style="background-color: rgb(43, 43, 43); font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px;">=</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">new</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token class-name" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">BufferedReader</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span class="token keyword" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">new</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token class-name" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">InputStreamReader</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;">System</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">.</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;">in</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">;</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+       String str</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">;</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+       </span><span class="token keyword" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">while</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;">str </span><span class="token operator" style="background-color: rgb(43, 43, 43); font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px;">=</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> reader</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">.</span><span class="token function" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">readLine</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span class="token operator" style="background-color: rgb(43, 43, 43); font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px;">!=</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> null</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">{</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+           System</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">.</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;">out</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">.</span><span class="token function" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">println</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;">str</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">;</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+       </span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">}</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+   </span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">}</span><span style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+</span><span class="token punctuation" style="font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; word-spacing: 0px; background-color: rgb(43, 43, 43);">}</span></font></font>
+    <h2>&nbsp;&nbsp;&nbsp; <font color="#ffff00">Классы символьных
+        потоков</font></h2>
+    <p>&nbsp;&nbsp;&nbsp; <font color="#ffffcc">Определены с
+        использованием двух иерархий классов, вершины которых
+        представлены классами <b>Reader</b> и <b>Writer</b>.<br>
+        &nbsp;&nbsp;&nbsp; Классы, производные от Reader и Writer
+        оперируют символами в кодировке Unicode.<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Классы символьных
+        потоков:<br>
+      </font></p>
+    <table width="80%" cellspacing="2" cellpadding="2" border="1">
+      <tbody>
+        <tr>
+          <td style="color: rgb(255, 255, 51);" valign="top"><b>Класс
+              символьного потока<br>
+            </b></td>
+          <td style="color: rgb(255, 255, 51);" valign="top"><b>Описание<br>
+            </b></td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="top">BufferedReader<br>
+          </td>
+          <td valign="top"><font color="#ffffcc">Буферизованный входной
+              символьный поток<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="top">BufferedWriter<br>
+          </td>
+          <td valign="top"><font color="#ffffcc">Буферизованный выходной
+              символьный поток<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="top">CharArrayReader<br>
+          </td>
+          <td valign="top"><font color="#ffffcc">Входной поток для
+              чтения из символьного массива<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="top">CharArrayWriter<br>
+          </td>
+          <td valign="top"><font color="#ffffcc">Выходной поток для
+              записи в символьный массив<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="top">FileReader<br>
+          </td>
+          <td valign="top"><font color="#ffffcc">Входной поток для
+              чтения из файла<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="top">FileWriter<br>
+          </td>
+          <td valign="top"><font color="#ffffcc">Выходной поток для
+              записи в файл<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="top">FilterReader<br>
+          </td>
+          <td valign="top"><font color="#ffffcc">Фильтрующий входной
+              поток<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="top">FilterWriter<br>
+          </td>
+          <td valign="top"><font color="#ffffcc">Фильтрующий выходной
+              поток<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="top">InputStreamReader<br>
+          </td>
+          <td valign="top"><font color="#ffffcc">Входной поток,
+              транслирующий байты в символы<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="top">LineNumberReader<br>
+          </td>
+          <td valign="top"><font color="#ffffcc">Входной поток,
+              подсчитывающий строки<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="top">OutputStreamWriter<br>
+          </td>
+          <td valign="top"><font color="#ffffcc">Выходной поток,
+              транслирубщий символы в байты<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="top">PipedReader<br>
+          </td>
+          <td valign="top"><font color="#ffffcc">Входной канал<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="top">PipedWriter<br>
+          </td>
+          <td valign="top"><font color="#ffffcc">Выходной канал<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="top">PrintWriter<br>
+          </td>
+          <td valign="top"><font color="#ffffcc">Выходной поток,
+              включающий методы print() и println()<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="top">PushbackReader<br>
+          </td>
+          <td valign="top"><font color="#ffffcc">Входной поток,
+              позволяющий возвращать символы обратно в поток<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="top">Reader<br>
+          </td>
+          <td valign="top"><font color="#ffffcc"><span
+                style="font-weight: bold;">Абстрактный класс,
+                описывающий символьный ввод</span><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="top">StringReader<br>
+          </td>
+          <td valign="top"><font color="#ffffcc">Входной поток для
+              чтения из строки<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="top">StringWriter<br>
+          </td>
+          <td valign="top"><font color="#ffffcc">Выходной поток для
+              записи в строку<br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="color: rgb(51, 204, 255); font-weight: bold;"
+            valign="top">Writer<br>
+          </td>
+          <td valign="top"><font color="#ffffcc"><span
+                style="font-weight: bold;">Абстрактный класс,
+                описывающий символьный вывод</span><br>
+            </font></td>
+        </tr>
+      </tbody>
+    </table>
+    <font color="#ffffcc"><span style="color: rgb(102, 204, 204);">&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+
+
+
+      </span></font><font color="#ffffcc"><span style="color: rgb(102,
+        204, 204);"><font color="#ffffcc">&nbsp;&nbsp;&nbsp; </font></span></font>
+    <h3><font color="#ffffcc">&nbsp;&nbsp;&nbsp; <font color="#ff6600">Классы
+
+
+
+          Reader и Writer</font><span style="color: rgb(102, 204, 204);"></span></font></h3>
+    <font color="#ffffcc"><span style="color: rgb(102, 204, 204);"> </span></font><font
+      color="#ffffcc"><span style="color: rgb(102, 204, 204);"></span></font>
+    <br>
+    <span style="color: rgb(51, 255, 255);">&nbsp;&nbsp;&nbsp; <b><font
+          color="#ffffcc"> Методы, определенные в классе Reader:<br>
+          <br>
+        </font></b></span>
+    <table style="text-align: left; width: 80%;" cellspacing="2"
+      cellpadding="2" border="0">
+      <tbody>
+        <tr>
+          <td style="color: rgb(255, 255, 51); font-weight: bold;"
+            valign="undefined" align="undefined">Метод</td>
+          <td style="color: rgb(255, 255, 51); font-weight: bold;"
+            valign="undefined" align="undefined">Описание</td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(51,
+            204, 255); font-weight: bold;" valign="undefined"
+            align="undefined">abstract void close()</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 204);" valign="undefined" align="undefined">Закрывает
+            источник ввода. Дальнейшие попытки чтения будут генерировать
+            исключение IOException</td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(51,
+            204, 255); font-weight: bold;" valign="undefined"
+            align="undefined">void mark(int numChars)</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 204);" valign="undefined" align="undefined">Помещает в
+            текущую позицию входного потока метку, которая будет
+            находиться там до тех пор, пока не будет прочитано
+            количество байтов, определяемое параметромnumChars </td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(51,
+            204, 255); font-weight: bold;" valign="undefined"
+            align="undefined">boolean markSupported()</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 204);" valign="undefined" align="undefined">Возвращает
+            значение true, если методы mark () и reset () поддерживаются
+            вызывающим потоком</td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(51,
+            204, 255); font-weight: bold;" valign="undefined"
+            align="undefined">int read()</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 204);" valign="undefined" align="undefined">Возвращает
+            целочисленное представление следующего символа в вызывающем
+            входном потоке. По достижении конца потока возвращается
+            значение -1</td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(51,
+            204, 255); font-weight: bold;" valign="undefined"
+            align="undefined">int read(char[] buffer)</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 204);" valign="undefined" align="undefined">Пытается
+            прочитать buffer.length символов в массив buffer , возвращая
+            фактическое количество успешно прочитанных символов. По
+            достижении концапотока возвращается значение -1 </td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(51,
+            204, 255); font-weight: bold;" valign="undefined"
+            align="undefined">abstract int read(char[] buffer, int
+            offset, int numChars)</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 204);" valign="undefined" align="undefined">Пытается
+            прочитать количество символов, определяемое параметром
+            numChars , в массив buffer, начиная с элемента
+            buffer[offset]. По достижении конца потока
+            возвращаетсязначение -1 </td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(51,
+            204, 255); font-weight: bold;" valign="undefined"
+            align="undefined">int read(CharBuffer buffer)</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 204);" valign="undefined" align="undefined">Пытается
+            заполнить буфер, определяемый параметром buffer, и
+            возвращает количество успешно прочитанных символов.<br>
+            По достижении конца потока возвращается значение -1.
+            CharBuffer — это класс, инкапсулирующий последовательность
+            символов, например строку</td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(51,
+            204, 255); font-weight: bold;" valign="undefined"
+            align="undefined">boolean ready()</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 204);" valign="undefined" align="undefined">Возвращает
+            значение true, если следующий запрос на получение символа
+            может быть выполнен без ожидания. В противном случае
+            возвращается значение false</td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(51,
+            204, 255); font-weight: bold;" valign="undefined"
+            align="undefined">void reset()</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 204);" valign="undefined" align="undefined">Сбрасывает
+            входной указатель на ранее установленую метку</td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(51,
+            204, 255); font-weight: bold;" valign="undefined"
+            align="undefined">long skip (void numChars)</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 204);" valign="undefined" align="undefined">Пропускает
+            numChars символов во входном потоке, возвращая фактическое
+            количество пропущенных символов</td>
+        </tr>
+      </tbody>
+    </table>
+    <font color="#ffffcc"> <br>
+    </font> <br>
+    <span style="color: rgb(51, 255, 255);">&nbsp;&nbsp;&nbsp; <b><font
+          color="#ffffcc">Методы определенные в классе Writer:<br>
+          <br>
+        </font></b></span>
+    <table style="text-align: left; width: 80%;" cellspacing="2"
+      cellpadding="2" border="0">
+      <tbody>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 51); font-weight: bold;" valign="undefined"
+            align="undefined">Метод</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 51); font-weight: bold;" valign="undefined"
+            align="undefined">Описание</td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); font-weight:
+            bold; color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">Writer append(char ch)</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 204);" valign="undefined" align="undefined">Добавляет
+            символ c h в конец вызывающего выходного потока, возвращая
+            ссылку на вызывающий<br>
+            поток</td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); font-weight:
+            bold; color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">Writer append(CharSequence chars)</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 204);" valign="undefined" align="undefined">Добавляет
+            последовательность символов chars в конец вызывающего
+            потока, возвращая<br>
+            ссылку на вызывающий поток.<br>
+            CharSequence — это интерфейс, определяющий операции над
+            последовательностями символов, выполняемые в режиме "только
+            чтение"</td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); font-weight:
+            bold; color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">Writer append(CharSequence chars, int
+            begin, int end)</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 204);" valign="undefined" align="undefined">Добавляет
+            последовательность символов chars в конец текущего потока,
+            начиная с<br>
+            позиции, определяемой параметром begin, и заканчивая
+            позицией, определяемой параметром end. Возвращает ссылку на
+            вызывающий поток. CharSequence — это интерфейс, определяющий
+            операции над последовательностями символов, выполняемые в
+            режиме "только чтение"</td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); font-weight:
+            bold; color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">abstract void close()</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 204);" valign="undefined" align="undefined">Закрывает
+            выходной поток. Дальнейшие попытки чтения будут генерировать
+            исключение<br>
+            IOException</td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); font-weight:
+            bold; color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">abstract void flush()</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 204);" valign="undefined" align="undefined">Выполняет
+            принудительную передачу содержимого выходного буфера в место
+            назначения (тем самым очищая выходной буфер)</td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); font-weight:
+            bold; color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">void write(char ch)</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 204);" valign="undefined" align="undefined">Записывает
+            один символ в вызывающий выходной поток. Обратите внимание
+            на то, что параметр имеет тип int, что позволяет вызывать
+            метод write () с выражениями, не приводя их к типу char</td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); font-weight:
+            bold; color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">void write(char[] buffer)</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 204);" valign="undefined" align="undefined">Записывает
+            полный массив символов buffer в вызывающий выходной поток</td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); font-weight:
+            bold; color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">abstract void write(char[] buffer, int
+            offset, int numChars)</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 204);" valign="undefined" align="undefined">Записывает
+            часть массива символов buffer в количестве numChars
+            символов, начиная с элемента buffer[offset], в вызывающйи
+            выходной поток</td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); font-weight:
+            bold; color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">void write(String str)</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 204);" valign="undefined" align="undefined">Записывает
+            строку str в вызывающий выходной поток</td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(51, 51, 51); font-weight:
+            bold; color: rgb(51, 204, 255);" valign="undefined"
+            align="undefined">void write(String str, int offset, int
+            numChars)</td>
+          <td style="background-color: rgb(51, 51, 51); color: rgb(255,
+            255, 204);" valign="undefined" align="undefined">Записывает
+            часть строки str в количестве numChars символов, начиная с
+            позиции,<br>
+            определяемой параметром offset, в вызывающий поток</td>
+        </tr>
+      </tbody>
+    </table>
+    <font color="#ffffcc"><br>
+    </font>
+    <h2><font color="#66cccc"> &nbsp;&nbsp;&nbsp;&nbsp;Консольный ввод с
+        использованием символьных потоков</font></h2>
+    <p>&nbsp;&nbsp;&nbsp; <font color="#ffffcc">Символьные потоки
+        используются для интернационализации программ.<br>
+      </font></p>
+    <font color="#ffffcc">&nbsp;&nbsp;&nbsp; <u>Конструктор:</u></font><font
+      color="#ffffcc"><font color="#ffcc99"><br>
+        &nbsp;&nbsp;&nbsp; BufferedReader br = new BufferedReader(new
+        InputStreamReader(System.in));<br>
+        <br>
+      </font></font><font color="#ffffcc">&nbsp;&nbsp;&nbsp; <span
+        style="color: rgb(255, 204, 153);">System.in</span> - байтовый
+      поток;<br>
+      &nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 204, 153);">InputStreamReader</span>
+      - класс, преобразующий байтовый поток в символьный<br>
+      &nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 204, 153);">BufferedReader</span>
+      - буферизированный входной поток</font><font color="#ffffcc">&nbsp;
+
+    </font>
+    <h3><font color="#ffffcc">&nbsp;&nbsp;&nbsp; <font color="#33ffff">Класс
+          InputStreamReader</font></font></h3>
+    <p>&nbsp;&nbsp;&nbsp; Является адаптером от интерфейса InputStream к
+      инерфейсу Reader.<br>
+    </p>
+    <h3><font color="#33ffff">&nbsp;&nbsp;&nbsp; Чтение символов</font></h3>
+    <p>&nbsp;&nbsp;&nbsp; <font color="#ffffcc">Используется метод <span
+          style="color: rgb(255, 204, 153); font-family: Courier
+          New,Courier,monospace;">read()</span>.<br>
+        &nbsp;&nbsp;&nbsp; Формы:<br>
+        &nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 153);
+          font-family: Courier New,Courier,monospace;"> int read()
+          throws IOException</span> <font color="#999999">//читает
+          одиночный символ в кодировке Unicode. По достижении конца
+          возвращает -1</font><br>
+        &nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 153);
+          font-family: Courier New,Courier,monospace;"> int read(char[]
+          data) throws IOException</span> <font color="#999999">//
+          читает символы из входного потока и помещает их в массив.
+          Процесс подолжается, пока не будет достигнут конец потока, или
+          пока массив data не заполнится символами, или пока не
+          возникнет ошибка. Возвращает число прочитанных символов, а по
+          достижении конца потока возвращает -1</font><br>
+        &nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 204, 153);
+          font-family: Courier New,Courier,monospace;">int read(char[]
+          data, int start, int max) throws IOException</span> <font
+          color="#999999">//помещает прочитанные символы в data, начиная
+          с элемента, определяемого парамтером start. Максимвльное число
+          символов, которое может быть записано опеделяется max.
+          Возвращает число прочитанных символов или -1, если достигнут
+          конец потока.<br>
+        </font></font></p>
+    <p><font color="#ffffcc"><font color="#999999">&nbsp;&nbsp;&nbsp; <font
+            color="#ffffcc">Конец потока устанавливается нажатием
+            клавиши &lt;Enter&gt;.<br>
+          </font></font></font></p>
+    <p><font color="#ffffcc"><font color="#999999"><font color="#ffffcc">&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+
+
+
+            Пример:<br>
+          </font></font></font><br>
+      <font size="-1" color="#ffffcc"><font color="#999999"><font
+            color="#ffffcc"> </font></font></font></p>
+    <pre style="background-color: rgb(43, 43, 43); color: rgb(169, 183, 198); font-family: 'DejaVu Sans Mono';"><font size="-1" color="#ffffcc"><font color="#999999"><font color="#ffffcc"><span style="color: rgb(204, 120, 50);">import </span>java.io.*<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">public class </span>ReadChars {<br>    <span style="color: rgb(204, 120, 50);">public static void </span><span style="color: rgb(255, 198, 109);">main</span>(String[] args) <span style="color: rgb(204, 120, 50);">throws </span>IOException{<br>        <span style="color: rgb(204, 120, 50);">char </span>c<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">        </span>BufferedReader br = <span style="color: rgb(204, 120, 50);">new </span>BufferedReader(<span style="color: rgb(204, 120, 50);">new </span>InputStreamReader(System.<span style="color: rgb(152, 118, 170); font-style: italic;">in</span>))<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">        </span>System.<span style="color: rgb(152, 118, 170); font-style: italic;">out</span>.println(<span style="color: rgb(106, 135, 89);">"Введите символы; окончание ввода - символ точки"</span>)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">        </span><span style="color: rgb(128, 128, 128);">//считывание символов<br></span><span style="color: rgb(128, 128, 128);">        </span><span style="color: rgb(204, 120, 50);">do </span>{<br>            c = (<span style="color: rgb(204, 120, 50);">char</span>) br.read()<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">            </span>System.<span style="color: rgb(152, 118, 170); font-style: italic;">out</span>.println(c)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">        </span>} <span style="color: rgb(204, 120, 50);">while </span>(c != <span style="color: rgb(106, 135, 89);">'.'</span>)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">    </span>}<br>}</font></font></font></pre>
+    <font size="-1" color="#ffffcc"><font color="#999999"><font
+          color="#ffffcc"> </font></font></font>
+    <h3 style="background-color: rgb(51, 51, 51);">&nbsp; <font
+        color="#33ffff">Чтение строк</font></h3>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Для ввода строки
+        используют метод readLine(). Возвращает объект String. По
+        достижении конца потока возвращает null.<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Пример:</font></p>
+    <p> </p>
+    <pre style="background-color: rgb(43, 43, 43); color: rgb(169, 183, 198); font-family: 'DejaVu Sans Mono';"><font size="-1"><span style="color: rgb(204, 120, 50);">import </span>java.io.*<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">public class </span>ReadLines {<br>    <span style="color: rgb(204, 120, 50);">public static void </span><span style="color: rgb(255, 198, 109);">main</span>(String[] args) <span style="color: rgb(204, 120, 50);">throws </span>IOException {<br>        <span style="color: rgb(128, 128, 128);">//Создать объект типа BufferedReader, связанный с потоком System.in<br></span><span style="color: rgb(128, 128, 128);">        </span>BufferedReader br = <span style="color: rgb(204, 120, 50);">new </span>BufferedReader(<span style="color: rgb(204, 120, 50);">new </span>InputStreamReader(System.<span style="color: rgb(152, 118, 170); font-style: italic;">in</span>))<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">        </span>String str<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">        </span>System.<span style="color: rgb(152, 118, 170); font-style: italic;">out</span>.println(<span style="color: rgb(106, 135, 89);">"Введите тектовые строки"</span>)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">        </span>System.<span style="color: rgb(152, 118, 170); font-style: italic;">out</span>.println(<span style="color: rgb(106, 135, 89);">"Признак конца ввода - строка 'stop' "</span>)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">        do </span>{<br>            str = br.readLine()<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">            </span>System.<span style="color: rgb(152, 118, 170); font-style: italic;">out</span>.println(str)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">        </span>} <span style="color: rgb(204, 120, 50);">while </span>(str.equals(<span style="color: rgb(106, 135, 89);">"stop"</span>))<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">    </span>}<br> }</font></pre>
+    <h2><font color="#66cccc">&nbsp;&nbsp;&nbsp; Вывод на консоль с
+        использованием символьных потоков</font></h2>
+    <p>&nbsp;&nbsp;&nbsp; <font color="#ffffcc">В прикладыных
+        программах вывод на консоль реализуется через поток PrintWriter.<br>
+        &nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; Конструктор:<br>
+        <span style="color: rgb(255, 204, 153); font-family: Courier
+          New,Courier,monospace;"> &nbsp;&nbsp;&nbsp; PrintWriter
+          (OutputStream </span><i style="color: rgb(255, 204, 153);
+          font-family: Courier New,Courier,monospace;">outputStream</i><span
+          style="color: rgb(255, 204, 153); font-family: Courier
+          New,Courier,monospace;">, boolean </span><i style="color:
+          rgb(255, 204, 153); font-family: Courier
+          New,Courier,monospace;">flushOnNewLine</i><span style="color:
+          rgb(255, 204, 153); font-family: Courier
+          New,Courier,monospace;">)</span><br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; <span style="color:
+          rgb(255, 204, 153);">outputStream</span> - объект типа
+        OutputStream<br>
+        &nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 204, 153);">flushOnNewLine</span>
+        - должен ли буфер выходного потока сбрасываться каждый раз,
+        когда вызывается метод println. При значении true сбрасывание
+        буфера происходит автоматически.<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; В классе PrintWriter
+        поддерживабтся методы print() и println(). Если значение не
+        относится к простому типу, методы класса вызывают метод
+        toString() для объекта.<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Пример:</font></p>
+    <pre style="background-color: rgb(43, 43, 43); color: rgb(169, 183, 198); font-family: 'DejaVu Sans Mono';"><font size="-1"><span style="color: rgb(204, 120, 50);">import </span>java.io.*<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">public class </span>PrintWriterDemo {<br>    <span style="color: rgb(204, 120, 50);">public static void </span><span style="color: rgb(255, 198, 109);">main</span>(String[] args) {<br>        PrintWriter pw = <span style="color: rgb(204, 120, 50);">new </span>PrintWriter(System.<span style="color: rgb(152, 118, 170); font-style: italic;">out</span><span style="color: rgb(204, 120, 50);">, true</span>)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">        int </span>i = <span style="color: rgb(104, 151, 187);">10</span><span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">        double </span>d = <span style="color: rgb(104, 151, 187);">123.65</span><span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">        </span>pw.println(<span style="color: rgb(106, 135, 89);">"Использование класса PrintWriter"</span>)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">        </span>pw.println(i)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">        </span>pw.println(d)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">        </span>pw.println(i + <span style="color: rgb(106, 135, 89);">" + " </span>+ d + <span style="color: rgb(106, 135, 89);">" = " </span>+ (i + d))<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">    </span>}<br>}</font><span style="color:
+        rgb(102, 204, 204);">&nbsp;&nbsp; <br></span></pre>
+    <h3><span style="color: rgb(51, 255, 255);">&nbsp;&nbsp;&nbsp; Класс
+        BufferedWriter</span></h3>
+    &nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 204);">Записывает
+текст
+
+
+
+
+
+
+
+      в поток вывода символов, буферизируя записанные символы, чтобы
+      обеспечить эффективную запись символов, массивов и строк.<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; FileWriter сразу записывает данные на диск и
+      каждый раз к нему обращается, буфер работает как обертка и
+      ускоряет работу приложения. Буфер будет записывать данные в себя,
+      а потом большим куском файлы на диск.</span><small><code
+        class="language-undefined" style="padding: 3px 5px; font-size:
+        18px; overflow: auto; position: relative; display: inline;
+        text-shadow: rgb(0, 0, 0) 1px 1px 0px; font-style: normal;
+        font-weight: 400; letter-spacing: normal; orphans: 2;
+        text-align: left; text-indent: 0px; text-transform: none;
+        widows: 2; word-spacing: 0px; color: rgb(255, 255, 204);
+        background-color: rgb(51, 51, 51); font-family: Arial;"></code><span
+        class="" style="font-size: 18px; font-style: normal;
+        font-weight: 400; letter-spacing: normal; orphans: 2;
+        text-align: left; text-indent: 0px; text-transform: none;
+        widows: 2; word-spacing: 0px; display: inline ! important;
+        float: none; color: rgb(255, 255, 204); background-color:
+        rgb(51, 51, 51); font-family: Arial;"></span></small><br>
+    <span style="color: rgb(255, 255, 204);">&nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; Конструкторы:<br>
+      <span style="color: rgb(255, 204, 153); font-family: Courier
+        New,Courier,monospace;">BufferedWriter(Writer out</span>)
+      //создает буферный поток вывода который использует размер буфера
+      по умолчанию<br>
+      <span style="font-family: Courier New,Courier,monospace; color:
+        rgb(255, 204, 153);">BufferedWriter(Writer out, int sz)</span>
+      //размер буфера задается параметром sz<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; Пример:<br>
+    </span>
+    <pre style="background-color: rgb(43, 43, 43); color: rgb(169, 183, 198); font-family: 'Courier New';"><small><span style="color: rgb(204, 120, 50);">import </span>java.io.*<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(128, 128, 128);">/* <br></span><span style="color: rgb(128, 128, 128);">Писатель в файл с консоли<br></span><span style="color: rgb(128, 128, 128);">*/<br></span><span style="color: rgb(128, 128, 128);"><br></span><span style="color: rgb(204, 120, 50);">public class </span>Solution {<br>    <span style="color: rgb(204, 120, 50);">public static void </span><span style="color: rgb(255, 198, 109);">main</span>(String[] args) <span style="color: rgb(204, 120, 50);">throws </span>IOException {<br>        BufferedReader br = <span style="color: rgb(204, 120, 50);">new </span>BufferedReader(<span style="color: rgb(204, 120, 50);">new </span>InputStreamReader(System.<span style="color: rgb(152, 118, 170); font-style: italic;">in</span>))<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">        </span>String fileName = br.readLine()<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">        try </span>(BufferedReader reader = <span style="color: rgb(204, 120, 50);">new </span>BufferedReader(<span style="color: rgb(204, 120, 50);">new </span>InputStreamReader(System.<span style="color: rgb(152, 118, 170); font-style: italic;">in</span>))<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">             </span>BufferedWriter writer = <span style="color: rgb(204, 120, 50);">new </span>BufferedWriter(<span style="color: rgb(204, 120, 50);">new </span>FileWriter(fileName))) {<br><br>            String str<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">            do </span>{<br>            str = reader.readLine()<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">            </span>writer.write(str + <span style="color: rgb(106, 135, 89);">"</span><span style="color: rgb(204, 120, 50);">\n</span><span style="color: rgb(106, 135, 89);">"</span>)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">            </span>} <span style="color: rgb(204, 120, 50);">while </span>(str.compareTo(<span style="color: rgb(106, 135, 89);">"exit"</span>)!= <span style="color: rgb(104, 151, 187);">0</span>)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">        </span>} <span style="color: rgb(204, 120, 50);">catch </span>(IOException exc) {<br><br>        }<br>    }<br>}</small></pre>
+    <span style="color: rgb(102, 204, 204);"></span>
+    <h2 style="background-color: rgb(51, 51, 51);">&nbsp;&nbsp;&nbsp; <font
+        color="#ff6600">Файловый ввод-вывод <br>
+      </font></h2>
+    <h3>&nbsp;&nbsp;&nbsp; <font color="#ff6600">Для байтовых потоков:</font></h3>
+    <p>&nbsp;&nbsp;&nbsp; <font color="#ffffcc">Используются два
+        класса: FileInputStream и FileOutputStream. Эти классы
+        последовательно записывают/читают байты из файла/в файл.<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; <b>FileInputStream</b><b>:<br>
+          &nbsp;&nbsp;&nbsp; </b>Конструктор:<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; FileInputStream(String
+        fileName);<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Методы:<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; int read(); - читает один
+        байт из файла и возвращает его как результат. Результат
+        расширяется до int.<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; int available(); -
+        возвращает количество непрочитанных (доступных) байт.<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; void close(); - закрывает
+        поток.<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; <b>FileOutpu</b><b>tStream</b><b>:</b>
+        <br>
+        &nbsp;&nbsp;&nbsp; Конструктор:<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; FileOutputStream(String
+        fileName);<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Методы:<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; void write(int data); -
+        записывает байт, обрезая переменную data до одного байта.<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; void flush(); - записать
+        всю несохраненную информацию на диск.<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; void close(); - закрывает
+        поток, flush при этом вызывается автоматически. <br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Пример программы для
+        копирования файлов:<br>
+      </font></p>
+    <font color="#ffffcc"><font color="#ffcc33"><font face="Courier New,
+          Courier, monospace">&nbsp;&nbsp;&nbsp; public static void
+          main(String[] args) {</font></font></font><br>
+    <font color="#ffffcc"><font color="#ffcc33"><font face="Courier New,
+          Courier, monospace">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          FileInputStream inputStream = new
+          FileInputStream("c:\data.txt");</font></font></font><br>
+    <font color="#ffffcc"><font color="#ffcc33"><font face="Courier New,
+          Courier, monospace">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          FileOutputStream outputStream = new
+          FileOutPutStream("c:\result.txt");</font></font></font><br>
+    <br>
+    <font color="#ffffcc"><font color="#ffcc33"><font face="Courier New,
+          Courier, monospace">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          while(inputStream.available &gt; 0) {<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; int
+          data = inputStream.read();<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          outputStream.write(data);<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+          &nbsp;&nbsp;&nbsp; <br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; inputStream.close();<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; outputStream.close();<br>
+        </font></font></font><font color="#ffffcc"><font color="#ffcc33"><font
+          face="Courier New, Courier, monospace">&nbsp;&nbsp;&nbsp; }</font></font>&nbsp;
+
+
+
+
+
+
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </font><br>
+    <h3>&nbsp;&nbsp;&nbsp; <font color="#ff6600">Для символьных
+        потоков:</font><br>
+    </h3>
+    &nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 204);">Для
+      файлового ввода-вывода использубтся классы FileReader и
+      FileWriter.<br>
+      <br>
+    </span><span style="color: rgb(255, 255, 204);"></span>
+    <h3><span style="color: rgb(51, 255, 255);">&nbsp;&nbsp;&nbsp; Класс
+        FileWriter</span></h3>
+    &nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 204);">Является
+
+
+
+
+
+
+
+      производным от классов OutputStreamWriter и Writer.<br>
+    </span>&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 204);">Часто
+
+
+
+
+
+
+
+      используемые конструкторы:<br>
+      <span style="font-family: Courier New,Courier,monospace; color:
+        rgb(255, 204, 153);">FileWriter(String </span><span
+        style="font-style: italic; font-family: Courier
+        New,Courier,monospace; color: rgb(255, 204, 153);">имя_файла</span><span
+        style="font-family: Courier New,Courier,monospace; color:
+        rgb(255, 204, 153);">) throws IOException</span><br
+        style="font-family: Courier New,Courier,monospace; color:
+        rgb(255, 204, 153);">
+      <span style="font-family: Courier New,Courier,monospace; color:
+        rgb(255, 204, 153);">FileWriter (String </span><span
+        style="font-style: italic; font-family: Courier
+        New,Courier,monospace; color: rgb(255, 204, 153);">имя_файла</span><span
+        style="font-family: Courier New,Courier,monospace; color:
+        rgb(255, 204, 153);">, boolean append) throws IOException</span><br>
+      <br>
+      &nbsp;&nbsp;&nbsp; <span style="font-style: italic; color:
+        rgb(255, 204, 153);">имя_файла</span> - полный путь к файлу;<br>
+      &nbsp;&nbsp;&nbsp; если <span style="font-style: italic;"><span
+          style="color: rgb(255, 204, 153);">append</span> </span>имеет
+      значение&nbsp;true - данные записываются в конец файла, в
+      противном случае пишутся поверх существующих данных.<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; Пример:<br>
+    </span>
+    <pre style="background-color: rgb(43, 43, 43); color: rgb(169, 183, 198); font-family: 'Courier New';"><small><span style="color: rgb(204, 120, 50);">import </span>java.io.*<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">public class </span>KtoD {<br>    <span style="color: rgb(204, 120, 50);">public static void </span><span style="color: rgb(255, 198, 109);">main</span>(String[] args) {<br>        String str<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">        </span>BufferedReader br = <span style="color: rgb(204, 120, 50);">new </span>BufferedReader(<span style="color: rgb(204, 120, 50);">new </span>InputStreamReader(System.<span style="color: rgb(152, 118, 170); font-style: italic;">in</span>))<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">        </span>System.<span style="color: rgb(152, 118, 170); font-style: italic;">out</span>.println(<span style="color: rgb(106, 135, 89);">"Признак конца ввода - строка 'stop' "</span>)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">        try </span>(FileWriter fw = <span style="color: rgb(204, 120, 50);">new </span>FileWriter(<span style="color: rgb(106, 135, 89);">"test.txt"</span>)) { <span style="color: rgb(128, 128, 128);">//создание класса FileWriter<br></span><span style="color: rgb(128, 128, 128);">            </span><span style="color: rgb(204, 120, 50);">do </span>{<br>                System.<span style="color: rgb(152, 118, 170); font-style: italic;">out</span>.print(<span style="color: rgb(106, 135, 89);">": "</span>)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">                </span>str = br.readLine()<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">                if </span>(str.compareTo(<span style="color: rgb(106, 135, 89);">"stop"</span>) == <span style="color: rgb(104, 151, 187);">0</span>) <span style="color: rgb(204, 120, 50);">break;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">                </span>str = str + <span style="color: rgb(106, 135, 89);">"</span><span style="color: rgb(204, 120, 50);">\r\n</span><span style="color: rgb(106, 135, 89);">"</span><span style="color: rgb(204, 120, 50);">; </span><span style="color: rgb(128, 128, 128);">//добваить символы перевода строки<br></span><span style="color: rgb(128, 128, 128);">                </span>fw.write(str)<span style="color: rgb(204, 120, 50);">; </span><span style="color: rgb(128, 128, 128);">//запись строк в файл<br></span><span style="color: rgb(128, 128, 128);">            </span>} <span style="color: rgb(204, 120, 50);">while </span>(str.compareTo(<span style="color: rgb(106, 135, 89);">"stop"</span>) != <span style="color: rgb(104, 151, 187);">0</span>)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">        </span>} <span style="color: rgb(204, 120, 50);">catch </span>(IOException exc) {<br>            System.<span style="color: rgb(152, 118, 170); font-style: italic;">out</span>.println(<span style="color: rgb(106, 135, 89);">"Ошибка ввода-вывода: " </span>+ exc)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">        </span>}<br>    }<br>}</small></pre>
+    <h3>&nbsp;&nbsp;&nbsp; <span style="color: rgb(51, 255, 255);">Класс
+
+
+
+
+
+
+
+        FileReader</span></h3>
+    &nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 204);">Является
+
+
+
+
+
+
+
+      производным от классов InputStreamReader и Reader.<br>
+    </span>&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 204);">Частоиспользуемый
+
+
+
+
+
+
+
+      конструктор:<br>
+      <span style="color: rgb(255, 204, 153); font-family: Courier
+        New,Courier,monospace;">FileReader(String имя_файла) throws
+        FileNotFoundException</span><br>
+      <br>
+      &nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 204, 153);
+        font-style: italic;">имя_файла</span> - полный путь файлу<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; Пример:<br>
+    </span>
+    <pre style="background-color: rgb(43, 43, 43); color: rgb(169, 183, 198); font-family: 'Courier New';"><small><span style="color: rgb(128, 128, 128);">//Пример простой утилиты для чтения данных с диска и вывода их на экран,<br></span><span style="color: rgb(128, 128, 128);">//демонстрирующий использование класса FileReader<br></span><span style="color: rgb(128, 128, 128);"><br></span><span style="color: rgb(204, 120, 50);">import </span>java.io.*<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">public class </span>DtoS {<br>    <span style="color: rgb(204, 120, 50);">public static void </span><span style="color: rgb(255, 198, 109);">main</span>(String[] args) {<br>        String s<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">        </span><span style="color: rgb(128, 128, 128);">//Создать и использовать объект FileReader, помещенный в оболочку на основе класса BufferedReader<br></span><span style="color: rgb(128, 128, 128);">        </span><span style="color: rgb(204, 120, 50);">try </span>(BufferedReader br = <span style="color: rgb(204, 120, 50);">new </span>BufferedReader(<span style="color: rgb(204, 120, 50);">new </span>FileReader(<span style="color: rgb(106, 135, 89);">"text.txt"</span>))) {<br>            <span style="color: rgb(204, 120, 50);">while </span>((s = br.readLine()) != <span style="color: rgb(204, 120, 50);">null</span>) {<br>                System.<span style="color: rgb(152, 118, 170); font-style: italic;">out</span>.println(s)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">            </span>}<br>        } <span style="color: rgb(204, 120, 50);">catch </span>(IOException exc) {<br>            System.<span style="color: rgb(152, 118, 170); font-style: italic;">out</span>.println(<span style="color: rgb(106, 135, 89);">"Ошибка ввода-вывода" </span>+ exc)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">        </span>}<br>    }<br>}</small></pre>
+    <h2><span style="color: rgb(51, 255, 255);">&nbsp;&nbsp;&nbsp; </span><br>
+    </h2>
+    <h2> </h2>
+  </body>
+</html>

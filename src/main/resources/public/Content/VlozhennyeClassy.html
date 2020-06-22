@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>VlozhennyeClassy</title>
+  </head>
+  <body vlink="#7b68ee" text="#ffffcc" link="#00ff7f" alink="#4682b4"
+    bgcolor="#333333">
+    <div align="center">
+      <h1><font color="#33ccff">Вложенные классы</font></h1>
+      <p align="left">&nbsp;&nbsp;&nbsp; Делятся на Nested и Inner.<br>
+      </p>
+      <h2 align="left">&nbsp;&nbsp;&nbsp; <font color="#66ffff">Nested
+          (Вложенные)</font><br>
+      </h2>
+      <p align="left">&nbsp;&nbsp;&nbsp; Должны быть статическими.
+        Определение класса должно быть вложено в другой класс.<br>
+        &nbsp;&nbsp;&nbsp; Не дает никакой жесткой связи с классом
+        предком (связь только логическая).<br>
+      </p>
+      <p align="left">&nbsp;&nbsp;&nbsp; Пример 1:<br>
+      </p>
+      <div align="left">&nbsp;&nbsp;&nbsp; public class Human {<br>
+      </div>
+      <div align="left">&nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Relations relations;<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; String name;<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; int age;<br>
+      </div>
+      <div align="left"><br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; static public enum
+        Relations {&nbsp;&nbsp;&nbsp; <font color="#999999">//вложенные
+          enum всегда статические, наличие ключевого слова не
+          обязательно</font><br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        DIVORCED, ACTIVE_SEARCH, SINGLE, COMPLEX, IN_LOVE<br>
+      </div>
+      <div align="left">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+      </div>
+      <div align="left">&nbsp;&nbsp;&nbsp; }<br>
+      </div>
+      <div align="left">&nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; public class HumanUsage {<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public static void
+        main(String[] args) {<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Human
+        max = new Human.Relations.ACTIVE_SEARCH;<br>
+      </div>
+      <div align="left">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+      </div>
+      <div align="left">&nbsp;&nbsp;&nbsp; }<br>
+      </div>
+      <div align="left"><br>
+        &nbsp;&nbsp;&nbsp; Пример 2:<br>
+      </div>
+      <div align="left">&nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; public class Human {<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Relations relations;<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; String name;<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; int age;<br>
+      </div>
+      <div align="left">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; static public class
+        Relations {<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; private
+        final String name;<br>
+      </div>
+      <div align="left"><br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public
+        Relations(final String name) {</div>
+      <div align="left">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; this.name = name;
+        &nbsp;&nbsp; <br>
+      </div>
+      <div align="left">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; }<br>
+      </div>
+      <div align="left"><br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public
+        String getName() {<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; return name;<br>
+      </div>
+      <div align="left">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; }<br>
+      </div>
+      <div align="left">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+      </div>
+      <div align="left">&nbsp;&nbsp;&nbsp; }<br>
+      </div>
+      <div align="left"><br>
+        &nbsp;&nbsp;&nbsp; public class HumanUsage {<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public static void
+        main(String[] args) {<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; final
+        Human max = new Human();<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        max.relations = new Human.Relations("Single");<br>
+      </div>
+      <div align="left">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+      </div>
+      <div align="left">&nbsp;&nbsp;&nbsp; }<br>
+      </div>
+      <h2 align="left">&nbsp;&nbsp;&nbsp; <font color="#66ffff">Inner
+          (Внутренние)</font></h2>
+      <p align="left">&nbsp;&nbsp;&nbsp; Чтобы создать внутренний класс,
+        необходим instance верхнего класса.<br>
+      </p>
+      <div align="left">&nbsp;&nbsp;&nbsp; <font color="#ffffff">public
+          class Card {<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; private final Srting
+          numer;<br>
+        </font></div>
+      <div align="left"><font color="#ffffff"><br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public Card(final String
+          number) {<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          this.number = number;<br>
+        </font></div>
+      <div align="left"><font color="#ffffff">&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; }<br>
+        </font></div>
+      <div align="left"><font color="#ffffff"><br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public String
+          getNumber() {<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          return number;<br>
+        </font></div>
+      <div align="left"><font color="#ffffff">&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; }<br>
+        </font></div>
+      <div align="left"><font color="#ffffff">&nbsp;&nbsp;&nbsp; <br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public double
+          withdraw(final double amountToWithDraw) {<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          return Account.this.withdraw(amountToWithdraw); //если
+          использовать просто this, то он будет указывать на instance
+          класса Card.<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //нам
+          нужен instance класса Account<br>
+        </font></div>
+      <div align="left"><font color="#ffffff">&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; }<br>
+          &nbsp;&nbsp;&nbsp; }<br>
+        </font></div>
+      <div align="left"><font color="#ffffff"><br>
+          &nbsp;&nbsp;&nbsp;<font color="#ffffcc"> Создание класса:</font><br>
+        </font></div>
+      <div align="left"><font color="#ffffff">&nbsp;&nbsp;&nbsp; <br>
+          &nbsp;&nbsp;&nbsp; public class Account {<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public static void
+          main(String[] args) {<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; final
+          Account myAccount = new Account("123qwer123", "Slava");<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font
+            color="#c0c0c0">// final Account.Card myCard = new
+            Account.Card("1111 2222 3333 4444"); так выглядело бы
+            создание Nested класса</font><br>
+        </font></div>
+      <div align="left"><font color="#ffffff">&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; final Account.Card
+          myCard = myAccount.new Card("1111 2222 3333 4444");<br>
+        </font></div>
+      <div align="left"><font color="#ffffff">&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; }<br>
+        </font></div>
+      <div align="left"><font color="#ffffff">&nbsp;&nbsp;&nbsp; }<br>
+        </font></div>
+      <div align="left"><font color="#ffffff"><br>
+        </font></div>
+    </div>
+  </body>
+</html>

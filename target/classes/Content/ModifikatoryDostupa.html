@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>ModifikatoryDostupa</title>
+  </head>
+  <body link="#0000EE" vlink="#551A8B" bgcolor="#333333" alink="#EE0000"
+    text="#000000">
+    <h1 align="center"><font color="#00cccc">Модификаторы доступа</font></h1>
+    <font color="#ffffcc">Если все классы в программе относятся к одному
+      пакету, то отсутствие модификатора доступа равнозначно
+      модификатору <b>public</b>.</font><br>
+    <h2><font color="#66cccc">Уровни доступа к членам классов</font></h2>
+    &nbsp;&nbsp;&nbsp; <b><font color="#3366ff">public</font></b> <font
+      color="#ffffcc">- виден другим классам из текущего пакета и из
+      внешних пакетов;</font><br>
+    &nbsp;&nbsp;&nbsp; <b><font color="#3366ff">private</font></b> <font
+      color="#ffffcc">- доступен только в текущем классе;</font><br>
+    &nbsp;&nbsp;&nbsp; <b><font color="#3366ff">protected</font></b> <font
+      color="#ffffcc">- доступен в том же классе, в том же пакете либо в
+      потомках класса, даже если они находятся в другом пакете;</font><br>
+    &nbsp;&nbsp;&nbsp; <b><font color="#3366ff">default</font></b> <font
+      color="#ffffcc">- виден всем классам в текущем пакете.</font><br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+    <table border="1" cellspacing="2" cellpadding="2" width="100%">
+      <tbody>
+        <tr>
+          <td valign="top"><font color="#ffffcc"><br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc"><b>private<br>
+              </b>(закрытый член)<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc"><b>default<br>
+              </b>(член, доступный по умолчанию)<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc"><b>protected<br>
+              </b>(защищенный член)<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc"><b>public<br>
+              </b>(открытый член)<br>
+            </font> </td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#ffffcc">Доступен в том же
+              классе<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc">Да<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc">Да<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc">Да<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc">Да<br>
+            </font> </td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#ffffcc">Доступен из подкласса в
+              том же пакете<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc">Нет<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc">Да<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc">Да<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc">Да<br>
+            </font> </td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#ffffcc">Доступен из любого
+              класса в том же пакете<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc">Нет<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc">Да<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc">Да<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc">Да<br>
+            </font> </td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#ffffcc">Доступен из подкласса в
+              любом пакете<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc">Нет<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc">Нет<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc">Да<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc">Да<br>
+            </font> </td>
+        </tr>
+        <tr>
+          <td valign="top"><font color="#ffffcc">Доступен из всякого
+              класса в любом пакете<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc">Нет<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc">Нет<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc">Нет<br>
+            </font> </td>
+          <td valign="top"><font color="#ffffcc">Да<br>
+            </font> </td>
+        </tr>
+      </tbody>
+    </table>
+    <p><font color="#ffffcc">Имя класса, объявленного как <b>открытый
+          (public)</b>, должно совпадать с именем файла, в котором
+        находится исходный код класса.</font><br>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  
+  
+  <title>Работа со сканером в Java</title>
+  <style>
+     .colortext {
+	     color:#1E90FF;
+		 }
+	 .colortext1 {
+         color:orange;
+		 }
+	 .colortext2 {
+         color:#800080;
+         }	
+     .colortext3 {
+         color:#32CD32;
+         }
+	 .colortext4 {
+         color:#FF4500;
+         }		 
+   </style>		 
+  
+  <link href="D:%5CYandexDisk%5C%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%5CHTML%5CProjects%5CJavaInf%5CContent%5CCSS%5CScanJava.css" rel="stylesheet" type="text/css">
+</head>
+
+
+ <body leftmargin="30">
+
+  
+<h1 align="center">Работа со сканером в Java</h1>
+
+  <!-- Комментарий -->
+  
+<p>Сканер предназначен для считывания с консоли введенных данных (числа, либо слова).</p>
+
+     
+<table cellpadding="10" width="900">
+
+     <tbody>
+    <tr>
+
+         <td><img src="D:%5CYandexDisk%5C%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%5CHTML%5CProjects%5CJavaInf%5CContent%5CVertexAcademy%5CImages%5CScanJava%5CImg01.jpg" height="" width="Npx"></td>
+
+		 <td width="500">
+             
+      <p>Сейчас мы работаем с пакетом <b>java.util</b>. В нем есть класс <b>Scanner</b> и у него есть <b>методы</b>.</p>
+	
+             
+      <p><b>Методы</b> - это действия, которые может выполнить Scanner.</p>
+  
+             
+      <p>Чтобы использовать сканер необходимо выполнить три шага:</p>
+    
+	         
+      <p><b>Шаг №1:</b> Сделать импорт сканера из пакета java.util<br>
+
+	               import java.util.Scanner;</p>
+
+	         
+      <p><b>Шаг №2:</b> Объявить сканер:<br>
+
+                   Scanner scan = new Scanner(System.in);</p>
+
+             
+      <p><b>Шаг №3:</b> Вызвать соответствующий метод для считывания с консоли. Например:<br>
+
+                   int number = scan.nextInt();</p>
+	 
+	         Познакомимся с четырьмя методами сканера:
+			     
+      <ol>
+
+                     <li>next (); - считать слово</li>
+
+		             <li>nextLine (); - считать целую строку</li>
+
+		             <li>nextInt (); - считать число типа Int</li>
+
+		             <li>nextDouble (); - считать число типа double</li>
+        <li>netxByte(); - считать байт</li>
+        <li>nextShort(); - считать число типа short</li>
+        <li>nextLong(); - считать число типа лонг</li>
+        <li>nextFloat(); - считать число типа float</li>
+        <li>nextBoolean(); - считать число булевого типа</li>
+
+				
+      </ol>
+	 
+	         
+         </td>
+
+	 </tr>
+
+     
+  </tbody>
+</table>
+	
+	 
+<div>
+	 
+<h2>Пример №1 - с методом nextInt()</h2>
+
+	 
+<p>Задание: ввести любое число, программы должны вывести какое число мы ввели</p>
+
+	 
+<p>Решение:<br>
+
+	     </p>
+<pre>		 <span class="colortext">import</span> java.util.Scanner; <span class="colortext1">// импорт сканера</span>
+         
+         <span class="colortext2">class</span> <span class="colortext">Test</span> {<br>	         <span class="colortext2">public static void</span> <span class="colortext">main</span>(<span class="colortext2">String</span> args[]){<br>		         System.out.<span class="colortext">print</span>(<span class="colortext3">"Введите любое целое число от 1 до 10: "</span>);<br>		         <span class="colortext">Scanner</span> scan = <span class="colortext2">new</span> Scanner(System.<span class="colortext2">in</span>);<br>		         <span class="colortext2">int</span> number = scan.<span class="colortext">nextInt</span>();<br>		         System.out.<span class="colortext">println</span> (<span class="colortext3">"Вы ввели число "</span> <span class="colortext">+</span> number);	 	<br>		     }<br>		 }<br>		 </pre>
+
+	 	 
+	 
+<h3>Комментарий:</h3>
+
+	 
+<p><span class="colortext">Scanner</span> scan = <span class="colortext2">new</span> Scanner (system.<span class="colortext2">in</span>);<br>
+С помощью Scanner scan мы указали что переменная будем иметь имя scan и
+будет относиться к классу Scanner. Обязательно перед именем переменной
+прописать Scanner, а имя можно задать любое.<br>
+
+	 </p>
+
+     
+<p> <span class="colortext2">int</span> number = scan.<span class="colortext">nextInt</span>();<br>
+
+         С помощью int number мы указали, что переменная number относится к типу int.<br>
+
+         = scan.nextInt(); - метод сканера nextInt() отвечает за то, чтобы считать введенное пользователем число с консоли.
+     </p>
+
+	 </div>
+
+	 
+<div>
+     
+<h2>Пример №2 - с методом nextInt()</h2>
+
+	 
+<p>Задание: попросить ввести ввести два числа, после вывести на экран их сумму</p>
+
+	 
+<p>Решение:<br>
+
+	     </p>
+<pre>		     <span class="colortext">import</span> java.util.Scanner; <span class="colortext1">// импорт сканера</span>
+ 
+             <span class="colortext2">public class</span> <span class="colortext">Test</span> {<br>	             <span class="colortext2">public static void</span> <span class="colortext">main</span>(<span class="colortext2">String</span>[] args) {<br> <br>		             Scanner k <span class="colortext">=</span> <span class="colortext2">new</span> <span class="colortext">Scanner</span>(System.in);<br>		             System.out.<span class="colortext">println</span> (<span class="colortext3">"Введите 2 любых целых числа: "</span>);<br>		             <span class="colortext2">int</span> number1 <span class="colortext">=</span> <span class="colortext">k.nextInt</span>();<span class="colortext1">//считывает первое число и присваивает значение в number1</span>
+		             <span class="colortext2">int</span> number2 <span class="colortext">=</span> <span class="colortext">k.nextInt</span>();<span class="colortext1">//считывает второе число и присваивает значение в number2</span>
+		             System.out.print(number1 <span class="colortext">+</span> number2);<span class="colortext1">//выводит сумму number1 + number2</span>
+	             }
+             }
+		 </pre>
+
+	 	 
+	 </div>
+
+	 
+<div>
+	 
+<h2>Пример №3 - с методом nextLine()</h2>
+
+	 
+<p>Задание: запросить ввод слова или фразы, а затем вывести его на экран.</p>
+
+	 
+<p>Решение:<br>
+
+	     </p>
+<pre>		     <span class="colortext">import</span> java.util.Scanner; <span class="colortext1">// импорт сканнера</span>
+ 
+             <span class="colortext2">public class</span> <span class="colortext">Test</span> {<br>	             <span class="colortext2">public static void</span> <span class="colortext">main</span>(<span class="colortext2">String</span>[] args) {<br> <br>		         <span class="colortext">Scanner</span> sc = <span class="colortext2">new</span> <span class="colortext">Scanner</span>(System.<span class="colortext2">in</span>);<br>		         System.out.<span class="colortext">println</span>(<span class="colortext3">"Введите любое слово или фразу: "</span>);<br>		         <span class="colortext2">String</span> phrase1 = sc.<span class="colortext">nextLine</span>();<br>		         System.out.<span class="colortext">println</span>(phrase1);<br>	             }<br>             }<br>		 </pre>
+
+	 	 
+	 
+<h3>Комментарий:</h3>
+
+     
+<p>Шаг №1: Импортировали сканер из пакета java.util:<br>
+
+	     <span class="colortext">import</span> java.util.Scanner; <span class="colortext1">// импорт сканера</span></p>
+
+	 
+<p>Шаг №2: объявили сканер:<br>
+
+         	 <span class="colortext">Scanner</span> sc = <span class="colortext2">new</span> <span class="colortext">Scanner</span>(System.<span class="colortext2">in</span>);</p>
+
+	 
+<p>Шаг №3: считали слово или фразу с консоли<br>
+
+             <span class="colortext2">String</span> phrase1 = sc.<span class="colortext">nextLine</span>();
+			 </p>
+<ul>
+
+			     <li>С помощью String phrase1 мы объявили переменную с именем phrase1 относящуюся к типу String</li>
+
+				 <li>= sc.nextLine(); отвечает за считываение введенного
+пользователем слова или фразы. То есть с помощью метода nextLine()
+считываем введенное слово или фразу и присваеваем его переменной phrase1</li>
+
+			 
+</ul>
+	 
+			 	 
+	 </div>
+		 
+	 
+<div>		 
+	 
+<h2>Пример №4 - с методом nextLine()</h2>
+
+	 
+<p>Задание: сделать запрос на ввод нескольких фраз и вывести их одной строчкой.</p>
+
+	 
+<p>Решение:<br>
+
+	     </p>
+<pre>		     <span class="colortext">import</span> java.util.Scanner; <span class="colortext1">// импорт сканера</span>
+ 
+             <span class="colortext2">public class</span> <span class="colortext">Test</span> {<br>                 <span class="colortext2">public static void</span> <span class="colortext">main</span>(String[] args) {<br> <br>                 <span class="colortext">Scanner</span> sc = <span class="colortext2">new</span> <span class="colortext">Scanner</span>(System.<span class="colortext2">in</span>);<br>                 System.out.<span class="colortext">println</span>(<span class="colortext3">"Введите любые 2 слова или фразу: "</span>);<br>                 <span class="colortext2">String</span> phrase1 = sc.<span class="colortext">nextLine</span>();<br>                 <span class="colortext2">String</span> phrase2 = sc.<span class="colortext">nextLine</span>();<br>                 System.out.<span class="colortext">println</span>(phrase1 <span class="colortext">+</span> <span class="colortext" 3="">"</span> <span class="colortext3">"</span> <span class="colortext">+</span> phrase2);<br>                 }<br>             }<br>		 </pre>
+
+	 	 
+	 </div>
+
+	 
+<div>
+	 
+<h2>Пример №5 - с методом next()</h2>
+
+	 
+<p>Задание: сделать запрос на ввод любого слова или фразы и чтобы программа вывела в консоль все, до первого пробела.</p>
+
+	 
+<p>Решение:<br>
+
+	 </p>
+<pre>	     <span class="colortext">import</span> java.util.Scanner; <span class="colortext1">// импорт сканера</span>
+ 
+         <span class="colortext2">public class</span> <span class="colortext">Test</span> {<br>	         <span class="colortext2">public static void</span> <span class="colortext">main</span>(<span class="colortext2">String</span>[] args) {<br> <br>		     <span class="colortext">Scanner</span> sc = new <span class="colortext">Scanner</span>(System.<span class="colortext2">in</span>);<br>		     System.out.<span class="colortext">println</span>(<span class="colortext3">"Введите любое слово или фразу: "</span>);<br>		     <span class="colortext2">String</span> phrase1 = sc.<span class="colortext">next</span>();<br>		     System.out.<span class="colortext">println</span>(phrase1);<br>	        }<br>        }<br>	 </pre>
+
+	 
+	 </div>
+
+	 
+<div>
+	 
+<h2>Пример №6 - с методом nextDouble()</h2>
+
+	 
+<p>Задание: сделать запрос на ввод дробного числа, вывести введенное число на консоль</p>
+
+	 
+<p>Решение:<br>
+
+	 </p>
+<pre>	     <span class="colortext">import</span> java.util.Scanner; <span class="colortext1">// импорт сканера</span>
+ 
+         <span class="colortext2">class</span> <span class="colortext">Test</span> {<br>	         <span class="colortext2">public static void</span> <span class="colortext">main</span>(<span class="colortext2">String</span> args[]){<br>		         System.out.<span class="colortext">print</span>(<span class="colortext3">"Введите любое дробное число: "</span>);<br>		         <span class="colortext">Scanner</span> scan = new <span class="colortext">Scanner</span>(System.<span class="colortext2">in</span>);<br>		         <span class="colortext2">double</span> number = scan.<span class="colortext">nextDouble</span>();<br>		         System.out.<span class="colortext">println</span> (<span class="colortext3">"Вы ввели число "</span> <span class="colortext">+</span> number);<br>	        }<br>         }<br>	 </pre>
+
+	 
+	 </div>
+
+	 
+<h3>Комментарий:</h3>
+
+	 
+<p><span class="colortext4">ВНИМАНИЕ - БАГ!!!</span></p>
+
+	 
+<p>В коде все числа <span class="colortext2">double</span> пишутся через точку (5.3). В консоли нужно вводить число через запятую (5,3), иначе программа выдаст ошибку.</p>
+
+ 
+</body>
+</html>

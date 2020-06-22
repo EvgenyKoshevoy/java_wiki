@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>StaticNonStaticMethod</title>
+  </head>
+  <body>
+    <h1 align="center">Статические методы и переменные</h1>
+    <h2>Статические методы</h2>
+    <p><br>
+    </p>
+    <table border="1" cellspacing="2" cellpadding="2" width="100%">
+      <tbody>
+        <tr>
+          <td valign="top">Как выглядит код:</td>
+          <td valign="top">Что происходит на самом деле:</td>
+        </tr>
+        <tr>
+          <td valign="top">Cat cat = new Cat();<br>
+            String name = cat.getName();<br>
+            cat.setAge(17);<br>
+            cat.setChildren(cat1, cat2, cat3);</td>
+          <td valign="top">Cat cat = new Cat();<br>
+            String name = cat.getName(<font color="#ff0000">cat</font>);<br>
+            cat.setAge(<font color="#ff0000">cat</font>,17);<br>
+            cat.setChildren(<font color="#ff0000">cat</font>,cat1, cat2,
+            cat3);</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>При вызове метода, на самом деле вызывается метод класса, первым
+      агрументом в который передается "тот самый объект". Внутри метода
+      он получает имя <font color="#ff0000">this</font>. Именно с ним и
+      его данными происходят все действия.<br>
+    </p>
+    <p>Вот как работает статический метод:<br>
+    </p>
+    <table border="1" cellspacing="2" cellpadding="2" width="100%">
+      <tbody>
+        <tr>
+          <td valign="top">Так выглядит код:</td>
+          <td valign="top">Что происходит на самом деле:<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">Cat cat1 = new Cat();<br>
+            Cat cat2 = new Cat();<br>
+            int catCount = Cat.getAllCatsCount();</td>
+          <td valign="top">Cat cat1 = new Cat();<br>
+            Cat cat2 = new Cat();<br>
+            int catCount = Cat.getAllCatsCount(<font color="#ff0000">null</font>);<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>При вызове статического метода никакого объекта внутрь не
+      передается, то есть <font color="#ff0000">this</font> равен <font
+        color="#ff0000">null</font>. Статический метод не имеет доступ к
+      нестатическим переменным и методам. Ему нечего передать в качестве
+      this.<br>
+    </p>
+    <h2>Статические переменные</h2>
+    <p>Статические переменные существуют в одном экземпляре и обращаться
+      к ним нужно поп имени класса (внутри класса можно просто про
+      имени).<br>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,858 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+
+    
+  
+  
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+
+    
+  
+  
+  <title>Interfeisy</title>
+</head>
+
+
+<body alink="#ee0000" bgcolor="#333333" link="#0000ee" text="#000000" vlink="#551a8b">
+
+
+
+    
+<h1 align="center"><font color="#ffffcc">Интерфейсы</font></h1>
+
+
+
+    
+<p>&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 255);">Напоминает абстрактный класс, у которого все методы абстрактные.</span></p>
+
+
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; В интерфейсе указывается
+        что именно следует делать, но не как это делать.<br>
+
+
+
+      </font></p>
+
+
+
+    
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; Может быть реализован в
+        любом колличестве классов. В одном классе может быть реализовано
+        любое количество интерфейсов.<br>
+
+
+
+      </font></p>
+
+
+
+    
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; Для реализации
+        интерфейсов в классе должны быть предоставлены тела реализуемых
+        методов, описанных в этом интерфейсе.<br>
+
+
+
+      </font></p>
+
+
+
+    
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; Интерфейсы объявляются с
+        помощью ключеового слова <b>interface</b>:<br>
+
+
+
+      </font></p>
+
+
+
+    <font color="#ffcc99"><i>доступ</i> interface <i>имя</i> {<br>
+
+
+
+      &nbsp;&nbsp;&nbsp; <i>возвращаемый_тип
+        имя_метода_1(список_параметров);</i><i><br>
+
+
+
+      </i><i>&nbsp;&nbsp;&nbsp; возвращаемый_тип
+        имя_метода_2(список_параметров);</i><i><br>
+
+
+
+      </i><i>&nbsp;&nbsp;&nbsp; тип переменная_1 =
+        значение;&nbsp;&nbsp;&nbsp; </i><i><br>
+
+
+
+      </i><i>&nbsp;&nbsp;&nbsp; тип переменная_2 = значение;</i><br>
+
+
+
+      &nbsp;&nbsp;&nbsp; //..<br>
+
+
+
+      &nbsp;&nbsp;&nbsp; <i>возвращаемый_т</i><i>ип
+        имя_метода_N(список_параметров);</i><i><br>
+
+
+
+      </i><i>&nbsp;&nbsp;&nbsp; тип переменная_N = значение;</i><br>
+
+
+
+    </font><font color="#ffffff"><font color="#ffcc99">}</font><br>
+
+
+
+      <br>
+
+
+
+      досуп - public, либо не указывается<br>
+
+
+
+      <br>
+
+
+
+      &nbsp;&nbsp;&nbsp; Методы объявленные в интерфейсы неявно
+      считаются открытыми.<br>
+
+
+
+      <br>
+
+
+
+      &nbsp;&nbsp;&nbsp; Переменные объявленные в интерфейсе не являются
+      переменными экземпляра. Неявно обозначаются ключевыми словами
+      public, final и static (обязательно подлежат инициализации). По
+      сути они являются константами.<br>
+
+
+
+      <br>
+
+
+
+      &nbsp;&nbsp;&nbsp; Пример:<br>
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+      public interface Series {</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+      &nbsp;&nbsp;&nbsp; int getNext();</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+      &nbsp;&nbsp;&nbsp; void reset();</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+      &nbsp;&nbsp;&nbsp; void setStart(int x);</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+      }<br>
+
+<br>
+
+</span></font><font color="#ffffff"><span style="color: rgb(255, 204, 153);"><span style="color: rgb(255, 255, 255);"><span style="font-weight: bold;">Используется если:</span><br>
+
+&nbsp;&nbsp;&nbsp; - ожидается, что несвязанные классы бубудт реализовывать интерфейс;<br>
+
+&nbsp;&nbsp;&nbsp; - требуется определить поведение конкретного типа данных и не важно кто его реализует;<br>
+
+&nbsp;&nbsp;&nbsp; - если хочешь использовать множественное наследование типа;<br>
+<br>
+<span style="font-weight: bold;">Чтобы поддержать реализацию интерфейса нужно:</span><br>
+&nbsp;&nbsp;&nbsp; - унаследоваться от него;<br>
+&nbsp;&nbsp;&nbsp; - реализовать объявленные в нем методы;<br>
+&nbsp;&nbsp;&nbsp; - методы должны делать то, для чего они предназначены;<br>
+
+</span></span></font><font color="#ffffff"><span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;"></span>
+
+      <br>
+
+
+
+    </font>
+    
+<h2><font color="#ffff33">&nbsp;&nbsp;&nbsp; Реализация интерфейсов</font></h2>
+
+
+
+    
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; Для реализации
+        используется ключевое слово implements.<br>
+
+
+
+      </font></p>
+
+
+
+    
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; Общая форма реализации:<br>
+
+
+
+      </font></p>
+
+
+
+    <font color="#ffcc99">class <i>имя_класса</i> extends <i>супер_класс</i>
+      implements <i>интерфейс</i> {<br>
+
+
+
+      &nbsp;&nbsp;&nbsp; //телов= класса<br>
+
+
+
+      }</font><br>
+
+
+
+    <br>
+
+
+
+    <font color="#ffffff">&nbsp;&nbsp;&nbsp; Если в классе
+      реализовывается несколько интерфейсов, то их имена должны быть
+      указаны через запятую. Extends указывать не бязательно.<br>
+
+
+
+      <br>
+
+
+
+      &nbsp;&nbsp;&nbsp; Реализуемые методы интерфейса должны быть
+      объявлены открытыми (public).<br>
+
+
+
+      <br>
+
+
+
+      &nbsp;&nbsp;&nbsp; Пример:<br>
+
+
+
+      <br>
+
+
+
+      <font color="#ffcc99">class ByTwos implements Series {<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; int start;<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; int val;<br>
+
+
+
+        <br>
+
+
+
+        &nbsp;&nbsp;&nbsp; ByTwos(){<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; start = 0;<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; val = 0;<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+
+
+        <br>
+
+
+
+        &nbsp;&nbsp;&nbsp; public int getNext() {<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; val += 2;<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return val;<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+
+
+        <br>
+
+
+
+        &nbsp;&nbsp;&nbsp; public reset() {<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; start = 0;<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; val = 0;<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+
+
+        <br>
+
+
+
+        &nbsp;&nbsp;&nbsp; public void setStart(int x) {<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; start = x;<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; val = x;<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+
+
+        }<br>
+
+
+
+        <br>
+
+
+
+        <font color="#ffffff">&nbsp;&nbsp;&nbsp; Класс реализующий
+          интерфейс может содержать дополнительные переменные и методы.<br>
+
+
+
+          <br>
+
+
+
+          &nbsp;&nbsp;&nbsp; Если класс реализует не все методы
+          итерфейса, то он должен быть объявлен как abstract. Далее он
+          может быть использован как суперкласс, а в его подклассах
+          завершится раелиация методов.<br>
+
+
+
+          <br>
+
+
+
+        </font></font></font>
+    
+<h2><span style="color: rgb(255, 255, 51);">&nbsp;&nbsp;&nbsp;
+        Применение интерфейных ссылок</span></h2>
+
+
+
+    <span style="color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp; В Java
+      можно объявлять переменные, хранящие ссылки на интерфейс. Она
+      может ссылаться на любой объект, <span style="font-weight: bold;">реализующий</span>
+      ее тип интерфейса.<br>
+
+
+
+      <br>
+
+
+
+      &nbsp;&nbsp;&nbsp; При вызове метода для объекта по интерфейсной
+      ссылке выполняется варинт метода, реализованный в классе данного
+      объекта.<br>
+
+
+
+      <br>
+
+
+
+      &nbsp;&nbsp;&nbsp; Переменная ссылки на интерфейс содержит
+      информацию только о методах, объявленных в интерфейсе. Ее нельзя
+      испольовать для доступа к переменным и методам, которые
+      поддерживаются в этом объекте, но не объявлены в интерфейсе.<br>
+
+
+
+      <br>
+
+
+
+    </span><span style="color: rgb(255, 255, 255);"></span>
+    
+<h2><font color="#ffff33">&nbsp;&nbsp;&nbsp; Наследование
+        интерфейсов</font></h2>
+
+
+
+    
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; Синтаксис наследования
+такой же как при наследовании классов. Может наследоваться только от
+интерфейсов. Интерфейсов родителей может быть много.<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; <br>
+
+
+
+        &nbsp;&nbsp;&nbsp; Если класс реализует интрфейс наследующий
+        другой, он должен реализовать все методы, объявленные в
+        интерфейсах по всей цепочке наследования.<br>
+
+
+
+      </font></p>
+
+
+
+    
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; Пример:<br>
+
+
+
+      </font></p>
+
+
+
+    <font color="#ffcc99" face="Courier New, Courier, monospace">interface
+
+      A {<br>
+
+
+
+      &nbsp;&nbsp;&nbsp; void meth1();<br>
+
+
+
+      &nbsp;&nbsp;&nbsp; void meth2();<br>
+
+
+
+    </font><font color="#ffffff"><font color="#ffcc99" face="Courier
+        New, Courier, monospace">}<br>
+
+
+
+        <br>
+
+
+
+        interface B extends A {<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; void meth3();<br>
+
+
+
+        }<br>
+
+
+
+        <br>
+
+
+
+        class MyClass implements B {<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; public void meth1() {//...};<br>
+
+
+
+        <br>
+
+
+
+        &nbsp;&nbsp;&nbsp; public void meth2() {//...};<br>
+
+
+
+        <br>
+
+
+
+        &nbsp;&nbsp;&nbsp; public void meth3() {//...};<br>
+
+
+
+        }</font><br>
+
+
+
+    </font><br>
+
+
+
+    
+<h2><font color="#ffff33">&nbsp;&nbsp;&nbsp; Методы по умолчанию</font></h2>
+
+
+
+    
+<p>&nbsp;&nbsp;&nbsp; <font color="#ffffff">Объявление метода
+        начинается с ключевого слова <b>default</b>. Данные методы
+        реализуются в интерфейсе для испольованию по умолчанию. Этот
+        метод не нужно реализовавыть в классе обязательно, он является
+        опциональным.<br>
+
+
+
+      </font></p>
+
+
+
+    
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; Класс может определить
+        собственную реализацию метода.<br>
+
+
+
+      </font></p>
+
+
+
+    
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; Пример:<br>
+
+
+
+      </font></p>
+
+
+
+    <font color="#ffcc99" face="Courier New, Courier, monospace">public
+      interface MyIF {<br>
+
+
+
+      &nbsp;&nbsp;&nbsp; int getUserID(); <font color="#999999">//Определение
+
+        обычного метода</font><br>
+
+
+
+      <br>
+
+
+
+      &nbsp;&nbsp;&nbsp; default int getAdminID() {<br>
+
+
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return 1;<br>
+
+
+
+      &nbsp;&nbsp;&nbsp; }<br>
+
+
+
+    </font><font color="#ffffff"><font color="#ffcc99" face="Courier
+        New, Courier, monospace">}<br>
+
+
+
+        <br>
+
+
+
+        <font color="#999999">//метод по умолчанию не используется</font><br>
+
+
+
+        class MyIFImp implements MyIF{<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; public int getUserID() {<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return 100;<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+
+
+        }<br>
+
+
+
+        <br>
+
+
+
+        <font color="#999999">//реализация обоих методов</font><br>
+
+
+
+        class MyIFImp2 {<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; public int getUserID() {<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return 100;<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; <br>
+
+
+
+        &nbsp;&nbsp;&nbsp; //Метод по умолчанию переопределен<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; public int getAdminID() {<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return 46;<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+
+
+        }<br>
+
+
+
+        <br>
+
+
+
+      </font></font>
+    
+<h2><font color="#ffff33"><font face="Courier New, Courier,
+          monospace">&nbsp;&nbsp;&nbsp; </font></font><font color="#ffff33">Множественное наследование</font></h2>
+
+
+
+    
+<p>&nbsp;&nbsp;&nbsp; <font color="#ffffff">Пример:<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; Класс MyClass реализует два интерфейса: Alpha
+        и Beta. <br>
+
+
+
+        &nbsp;&nbsp;&nbsp; Если оба интерфейса предоставляют метод
+        reset() реализованный по умолчанию порядок реализации метода
+        классом следующий:<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; - приоритет имеет метод, переопределенный в
+        подклассе;<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; - если один интерфейс расширяет другой, то
+        приоритет отдается наследющему интерфейсу;<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; - если класс не переопределяет метод при
+        использовании двух интеряейсов возникнет ошибка.<br>
+
+
+
+      </font></p>
+
+
+
+    <font color="#ffffff">&nbsp;&nbsp;&nbsp; На заданную по умолчанию
+      реализацию можно ссылаться явно с помощью ключевого слова <b>super</b>:</font><font color="#ffffff"><br>
+
+
+
+      &nbsp;&nbsp;&nbsp; <font color="#ffcc99" face="Courier New,
+        Courier, monospace">имя_интерфейса.super.имя_метода();<br>
+
+
+
+      </font></font><br>
+
+
+
+    <font color="#ffffff"><font color="#ffcc99" face="Courier New,
+        Courier, monospace">&nbsp; </font></font><font color="#ffffff"><font color="#ffcc99"><font color="#ffffff">Если из интерфейса Beta
+          нужно обратиться к методу по умолчаию интерфейса Alpha
+          используется следующая конструкция:</font></font></font><font color="#ffffff"><font color="#ffcc99" face="Courier New, Courier,
+        monospace"><br>
+
+
+
+        &nbsp;&nbsp;&nbsp; <br>
+
+
+
+        &nbsp;&nbsp;&nbsp; Aplpha.super.reset();<br>
+
+
+
+      </font></font>
+    
+<h2><font color="#ffffff">&nbsp;&nbsp;&nbsp; <font color="#ffff33">Статические
+          методы интерфейса</font></font></h2>
+
+
+
+    
+<p>&nbsp;&nbsp;&nbsp; <font color="#ffffff">Вызов метода:<br>
+
+
+
+        <font color="#ffcc99">имя_интерфейса.имя_статического_метода();<br>
+
+
+
+        </font></font></p>
+
+
+
+    
+<p><font color="#ffffff"><font color="#ffcc99"><font color="#ffffff">&nbsp;&nbsp;&nbsp;
+            Пример:<br>
+
+
+
+          </font></font></font></p>
+
+
+
+    <font color="#ffcc99" face="Courier New, Courier, monospace">public
+      interface MyIF {<br>
+
+
+
+      &nbsp;&nbsp;&nbsp; static int getUniversalID() {<br>
+
+
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return 0;<br>
+
+
+
+      &nbsp;&nbsp;&nbsp; }<br>
+
+
+
+      }</font><br>
+
+
+
+    
+<p><font color="#ffffff"><font color="#ffcc99" face="Courier New,
+          Courier, monospace"> </font></font>&nbsp;&nbsp;&nbsp; <font color="#ffffff">Пример вызова:</font><br>
+
+
+
+      <font color="#ffcc99" face="Courier New, Courier, monospace">int
+        uID = MyIF.getUniversalID();<br>
+
+
+
+      </font></p>
+
+
+
+    
+<p><font color="#ffcc99"><font color="#ffffff">&nbsp;&nbsp;&nbsp;
+          Для вызова метода не требуется реализовывать интерфейс или
+          создавать экземпляр интерфейса. Статические методы интерфейса
+          не наследуются и не реализуются классом или производными
+          интерфейсами.<br>
+
+
+
+        </font></font></p>
+
+
+
+    
+<h2><font color="#ffcc99"><font color="#ffffff"><font color="#ffff33">&nbsp;&nbsp;&nbsp; Закрытые методы
+            интерфейса</font></font></font></h2>
+
+
+
+    
+<p>&nbsp;&nbsp;&nbsp; <font color="#ffffff">Определяются с помощью
+        ключевого слова <b>private</b>.<br>
+
+
+
+        &nbsp;&nbsp;&nbsp; Его невозможно использоват в коде,
+        находящемся за пределами интерфейса, в котором этот метод
+        определен. Данный метод не наследуется подчиненными
+        интерфейсами.<br>
+
+
+
+      </font></p>
+
+
+
+    <font color="#ffcc99"><font face="Courier New, Courier, monospace">&nbsp;&nbsp;&nbsp;
+
+      </font></font><br>
+
+
+
+    <font color="#ffffff"><font color="#ffcc99"><font color="#ffffff"> </font></font></font>
+  
+</body>
+</html>

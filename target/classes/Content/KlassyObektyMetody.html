@@ -1,0 +1,315 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+    
+  
+  <meta content="text/html; charset=windows-1251" http-equiv="content-type">
+
+
+    
+  
+  <title>KlassyObektyMetody</title>
+</head>
+
+
+<body style="background-color: rgb(51, 51, 60); color: rgb(0, 0, 0);" alink="#ee0000" link="#0000ee" vlink="#551a8b">
+
+
+    
+<h1 style="text-align: center; background-color: rgb(51, 51, 60);"><font color="#99ff99">Классы, объекты, методы</font><br>
+</h1>
+<h2 style="background-color: rgb(51, 51, 60); color: rgb(144, 240, 144);">Классы<br>
+
+
+    </h2>
+
+
+    
+<h3 style="background-color: rgb(51, 51, 60);"><font color="#33ff33">Общая
+
+        форма определения класса</font></h3>
+
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">class
+      имя_класса {</span><br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+
+      тип переменная1;</span><br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+
+      тип переменная2;</span><br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+
+      //...</span><br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+
+      тип переменнаяN;</span><br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+
+    <br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+
+      //объявление методов</span><br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+
+      тип метод1 (параметры) {</span><br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+
+
+      &nbsp;&nbsp;&nbsp; //тело метода</span><br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+
+      }</span><br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+
+      тип метод2 (параметры) {</span><br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+
+
+      &nbsp;&nbsp;&nbsp; //тело метода</span><br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+
+      }</span><br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+
+      //...</span><br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+
+      тип методN (параметры) {</span><br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+
+
+      &nbsp;&nbsp;&nbsp; //тело метода</span><br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+
+      }</span><br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">}<br>
+
+
+      <br>
+
+
+    </span><span style="font-family: Arial; color: rgb(255, 204, 153);"></span>
+    
+<h3><font color="#33ff33">Абстрактный класс</font></h3>
+
+<font color="#ffffff"><br>
+
+- Может содержать объявление метода без его реализации.<br>
+
+<br>
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">public abstract class ChessItem {</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; public int x, y;</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; private int value;</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; public int getValue() {</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return value;</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; }</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; public abstract void draw(); &nbsp;&nbsp;&nbsp; //абстрактный метод, реализация отсутствует</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">}<br>
+
+<br>
+
+</span></font><font color="#ffffff">Класс, содержащий один или несколько
+      абстрактных методов должен быть объявлен как абстрактный. </font><br>
+
+<font color="#ffffff"><span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;"></span>
+      <br>
+
+- У него не может быть объектов.<br>
+
+
+      <br>
+
+- Подкласс, наследующий абстрактный класс должен реализовать все
+      абстрактные методы суперкласса, иначе он так же должен быть
+      объявлен как абстрактный.<br>
+
+
+      <br>
+
+- Атрибут <font color="#ccffff"><b>abstr</b><b>act </b><font color="#ffffff">наследуется до тех пор, пока не будет
+          достигнута полная реализация класса.<br>
+
+<br>
+
+<span style="font-weight: bold;">Использовать если:<br>
+
+</span>&nbsp;&nbsp;&nbsp; - хочешь поделиться кодом между несколькими тесносвязанными классами;<br>
+
+&nbsp;&nbsp;&nbsp; - что классы, расширяющий абстрактный класс, имеют
+много общих методов или полей, или требуют других модификаторов доступа
+кроме public (protected или private);<br>
+
+&nbsp;&nbsp;&nbsp; - нужно объявить не статические или не-final поля.
+Это позволяет определять методы, которые могут получить доступ и
+изменить состояние объекта, которому они принадлежат.<br>
+</font></font></font><span style="color: rgb(255, 255, 255);"></span><font color="#ffffff"><font color="#ffcc99"><br>
+
+
+      </font></font>
+    
+<h2 style="background-color: rgb(51, 51, 60); color: rgb(144, 240, 144);">&nbsp;&nbsp;&nbsp; <br>
+</h2>
+<span style="color: rgb(255, 255, 255);"><br>
+
+
+    </span><span style="color: rgb(255, 255, 255);"></span>
+    
+<h3><span style="color: rgb(132, 220, 132);">Вызов перегруженных
+        конструкторов через this()</span></h3>
+
+
+    <br style="color: rgb(255, 255, 255);">
+
+
+    
+<pre class="bg-light" style="font-family: SFMono-Regular,Menlo,Monaco,Consolas,&quot;Liberation Mono&quot;,&quot;Courier New&quot;,monospace; font-size: 14.4px; margin-top: 0px; overflow: auto; display: block; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; background-color: rgb(51, 51, 60) ! important; color: rgb(255, 204, 153);"><code class="java" style="padding: 0px; font-family: SFMono-Regular,Menlo,Monaco,Consolas,&quot;Liberation Mono&quot;,&quot;Courier New&quot;,monospace; font-size: inherit; background-color: transparent;">class Cat{<br>    int age;<br>    int birthday;<br>    <br>    <span style="color: rgb(153, 153, 153);">// Инициализируем переменные явно</span><br>    Cat(int i, int j) {<br>        age = i;<br>        birthday = j;<br>    }<br>    <br>    <span style="color: rgb(153, 153, 153);">// Инициализируем переменные одним и тем значением</span><br>    Cat(int i) {<br>        this(i, i); // вызывается Cat(i, i);<br>    }<br>    <br>    <span style="color: rgb(153, 153, 153);">// Присвоим значения по умолчанию 0</span><br>    Cat() {<br>        this(0); // вызывается Cat(0);<br>    }<br>}</code></pre>
+
+
+    <br style="color: rgb(255, 255, 255);">
+
+
+    
+<h2 style="background-color: rgb(51, 51, 60); color: rgb(144, 240, 144);">Оператор new</h2>
+
+
+    <span style="color: rgb(255, 255, 255);"> Общая форма:</span><br style="color: rgb(255, 255, 255);">
+
+
+    <span style="color: rgb(255, 255, 255);"> переменная_класса = </span><span style="font-weight: bold; color: rgb(255, 255, 255);">new</span><span style="color: rgb(255, 255, 255);"> имя_класса(список_аргументов);</span><br style="color: rgb(255, 255, 255);">
+
+
+    <br style="color: rgb(255, 255, 255);">
+
+
+    <span style="color: rgb(255, 255, 255);"> Оператор </span><span style="font-weight: bold; color: rgb(255, 255, 255);">new</span><span style="color: rgb(255, 255, 255);"> возвращает ссылку на вновь
+      созданный объект, которую получает </span><span style="font-style: italic; color: rgb(255, 255, 255);">переменная_класса</span><span style="color: rgb(255, 255, 255);"> в результате присваивания. </span><br style="color: rgb(255, 255, 255);">
+
+
+    <br style="color: rgb(255, 255, 255);">
+
+
+  
+</body>
+</html>

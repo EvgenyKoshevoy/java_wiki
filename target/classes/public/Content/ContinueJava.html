@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Оператор continue в Java</title>
+  <style>
+  .clrorng {
+	     color:#FF4500;
+		 }
+		 
+.clrbl {
+	     color:#4169E1;
+		 }
+
+.clrpr {
+         color:#8B008B;
+         }
+
+.clrgr {
+         color:#228B22
+		 }
+.clrrd {
+         color:#DC143C
+         }		 
+		 
+.clrMB {
+		 color:#191970
+		 }
+.text1 {
+        
+}		 
+  </style>
+ </head>
+ <body leftmargin="30">
+  <h1 align="center"><span class="clrMB">Оператор continue в Java</span></h1>
+  <!-- Комментарий -->
+  <p>Оператор <span class="clrorng">continue</span> - это один из операторов перехода. Он <span class="clrorgn">игнорирует</span> часть кода.</p>
+  <p><span class="clrorng">Continue</span> позволяет опустить участок кода и вернуться в начало цикла.</p>
+  <h3>Синтаксис</h3>
+  <p><span class="clrpr">continue;</span></p>
+  <p>В коде будет выглядеть так:</p>
+  <pre>
+     <span class="clrpr">class</span> <span class="clrbl">Test</span> {
+ 
+         <span class="clrpr">public static void</span> <span class="clrbl">main</span> (<span class="clrpr">String</span> [] args) {
+ 
+             <span class="clrpr">for</span> (<span class="clrpr">int</span> i <span class="clrbl">=</span> <span class="clrrd">1</span>; i <span class="clrbl"><=</span> <span class="clrrd">7</span>; i<span class="clrbl">++</span>){
+                 System.out.<span class="clrbl">println</span>(i <span class="clrbl">+</span> <span class="clrgr">": я выполянюсь перед continue!"</span>);
+                 <span class="clrpr">if</span> (i <span class="clrbl">></span> <span class="clrrd">2</span>)
+                     <span class="clrpr">continue</span>;
+                 System.out.<span class="clrbl">println</span>(<span class="clrgr">"     "</span><span class="clrbl">+</span> i <span class="clrbl">+</span> <span class="clrgr">": я выполянюсь всего два раза ;(")</span>;
+             }
+         }
+     }
+  </pre>
+  <p>Перед нами цикл for. Допустим нам нужно чтобы первая строка выполнялась 7 раз:<br>
+     System.out.<span class="clrbl">println</span>(i <span class="clrbl">+</span> <span class="clrgr">": я выполянюсь перед continue!"</span>);</p>
+  <p>А вторая строка всего два раза:<br>
+     System.out.<span class="clrbl">println</span>(<span class="clrgr">"     "</span><span class="clrbl">+</span> i <span class="clrbl">+</span> <span class="clrgr">": я выполянюсь всего два раза ;("</span>);</p>	
+  Перед вторым выводом в консоль задаем условие:
+     <pre>
+     <span class="clrpr">if</span> (i <span class="clrbl">></span> <span class="clrrd">2</span>);
+	 <span class="clrpr">continue</span>;
+	 </pre>	  	 
+  <p>Таким образом когда i будет больше 2 оператор continue будет перенаправлять в начало цикла, вторая строка не будет выведена в консоль. Все, что после continue - игнорируется.</p>  
+ </body>
+</html>

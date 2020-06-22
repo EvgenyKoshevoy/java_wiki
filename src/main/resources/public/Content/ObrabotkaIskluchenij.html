@@ -1,0 +1,1884 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+
+
+    
+  
+  
+  
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+
+
+    
+  
+  
+  
+  <title>ObrabotkaIskluchenij</title>
+</head>
+
+
+<body alink="#ee0000" bgcolor="#333333" link="#0000ee" text="#000000" vlink="#551a8b">
+
+
+
+
+    
+<h1 align="center"><font color="#ffffcc">Обработка исключений</font></h1>
+
+
+
+
+    
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; Все классы исключений
+        являются потомками класса <b>Throwable</b>.<br>
+
+
+
+
+      </font></p>
+
+
+
+
+    <font color="#ffffff">&nbsp;&nbsp;&nbsp; Подклассы:<br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; - Exception (Ошибки, связанные с работой
+      программы)<br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; - RuntimeExcteption (служит
+      для представления различных видов ошибок)<br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; - Error (Ошибки, возникающий в виртуальной
+      машине Java)<br>
+
+
+<br>
+
+
+</font>
+<h2><span style="color: rgb(255, 255, 51);">&nbsp;&nbsp;&nbsp; Типы исключений</span></h2>
+
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(51, 204, 0);">Проверяемые</span>&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 102, 0);">Непроверяемые</span><span style="color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp;<br>
+
+
+</span>
+<table style="text-align: left; width: 1074px; margin-left: 0px;" border="0" cellpadding="2" cellspacing="2">
+
+
+  <tbody>
+
+
+    <tr align="center">
+
+
+      <td colspan="3" rowspan="1" style="width: 1018px;" valign="undefined"><span style="color: rgb(255, 255, 255);">Object</span></td>
+
+
+    </tr>
+
+
+    <tr align="center">
+
+
+      <td colspan="3" rowspan="1" style="width: 1018px;" valign="undefined"><span style="color: rgb(255, 255, 255);"><span style="color: rgb(51, 204, 0);">Throwable</span></span></td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td colspan="1" rowspan="1" style="text-align: center; width: 1018px;" valign="undefined"><span style="color: rgb(255, 255, 255);"><span style="color: rgb(255, 102, 0);">Error</span></span></td>
+
+
+      <td colspan="2" rowspan="1" style="text-align: center;" valign="undefined"><span style="color: rgb(255, 255, 255);"><span style="color: rgb(51, 204, 0);">Exception</span></span></td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td colspan="1" rowspan="1" style="text-align: center; width: 1018px;" valign="undefined">
+      
+      
+      <table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2">
+
+
+        <tbody>
+
+
+          <tr>
+
+
+            <td style="text-align: center; color: rgb(255, 102, 0);" valign="undefined">OutOfMemoryError</td>
+
+
+            <td style="text-align: center; color: rgb(255, 102, 0);" valign="undefined">StackOverFlowError</td>
+
+
+            <td style="text-align: center; color: rgb(255, 102, 0);" valign="undefined">LinkageError</td>
+
+
+          </tr>
+
+
+        
+        
+        </tbody>
+      
+      
+      </table>
+
+
+      </td>
+
+
+      <td style="text-align: center; color: rgb(255, 102, 0);" valign="undefined">RuntimeException</td>
+
+
+      <td style="text-align: center; color: rgb(51, 204, 0);" valign="undefined"> IOException</td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td colspan="1" rowspan="1" style="text-align: center; width: 1018px;" valign="undefined"></td>
+
+
+      <td style="text-align: center;" valign="undefined">
+      
+      
+      <table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2">
+
+
+        <tbody>
+
+
+          <tr>
+
+
+            <td style="color: rgb(255, 102, 0);" align="undefined" valign="undefined">IllegalArgumentException</td>
+
+
+            <td style="color: rgb(255, 102, 0);" align="undefined" valign="undefined">ArithmeticException</td>
+
+
+            <td style="color: rgb(255, 102, 0);" align="undefined" valign="undefined">IndexOutOfBoundsException</td>
+
+
+          </tr>
+
+
+          <tr>
+
+
+            <td style="color: rgb(255, 102, 0);" align="undefined" valign="undefined">NumberFormatException</td>
+
+
+            <td style="color: rgb(255, 102, 0);" align="undefined" valign="undefined"></td>
+
+
+            <td style="color: rgb(255, 102, 0);" align="undefined" valign="undefined">ArrayIndexOutOfBoundsException</td>
+
+
+          </tr>
+
+
+        
+        
+        </tbody>
+      
+      
+      </table>
+
+
+      </td>
+
+
+      <td style="text-align: center; color: rgb(51, 204, 0);" valign="undefined">
+      
+      
+      <table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2">
+
+
+        <tbody>
+
+
+          <tr>
+
+
+            <td style="color: rgb(51, 204, 0);" align="undefined" valign="undefined">FileNotFoundException</td>
+
+
+            <td style="color: rgb(51, 204, 0);" align="undefined" valign="undefined">SocketException</td>
+
+
+          </tr>
+
+
+        
+        
+        </tbody>
+      
+      
+      </table>
+
+
+      </td>
+
+
+    </tr>
+
+
+  
+  
+  </tbody>
+</table>
+
+
+<span style="color: rgb(255, 255, 255);"></span><font color="#ffffff">
+
+      <br>
+
+
+
+
+    </font>
+    
+<h2><font color="#ffff33">&nbsp;&nbsp;&nbsp; Обработка исключений</font></h2>
+
+<span style="color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp; Способ 1:<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; -с помощью блока try{} catch{}<br>
+
+&nbsp;&nbsp;&nbsp; <br>
+
+&nbsp;&nbsp;&nbsp; Способ 2:<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; - пробросить исключение вверх по стеку вызовов<br>
+
+&nbsp;&nbsp;&nbsp; Проброс осуществляется с помощью слова <span style="font-weight: bold;">throws</span>.<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+
+&nbsp;&nbsp;&nbsp; Пример:<br>
+
+&nbsp;&nbsp;&nbsp; method1() throws exception1, exception2, ..., exceptionN {<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //...<br>
+
+&nbsp;&nbsp;&nbsp; }<br>
+
+<br>
+
+&nbsp;&nbsp;&nbsp; Теперь если кто-то захочет использовать method1, он
+должен будет обработать это исключение в своем методе при помощи try -
+catch, либо пробросить его дальше:<br>
+
+<br>
+
+&nbsp;&nbsp;&nbsp; method2() throws exception1, exception 2 {<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; method1();<br>
+
+&nbsp;&nbsp;&nbsp; }</span>
+<h2>&nbsp;&nbsp;&nbsp; <font color="#ffff33">Ключевые слова</font></h2>
+
+
+
+
+    
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; Для обработки исключений
+        предусмотрены 5 ключевых слов:<br>
+
+
+
+
+        <br>
+
+
+
+
+      </font></p>
+
+
+
+
+    
+<ul>
+
+
+
+
+      <li><font color="#ffffff">&nbsp;&nbsp;&nbsp; try (Блок кода, в
+          котором требуется отслеживать появление исключений)<br>
+
+
+
+
+        </font></li>
+
+
+
+
+      <li><font color="#ffffff">&nbsp;&nbsp;&nbsp; catch</font></li>
+
+
+
+
+      <li><font color="#ffffff">&nbsp;&nbsp;&nbsp; throw (Используется
+          для генерирования исключения вручную)<br>
+
+
+
+
+        </font></li>
+
+
+
+
+      <li><font color="#ffffff">&nbsp;&nbsp;&nbsp; throws (Используется
+          для обработки исключений, за пределами метода, в которых они
+          возникают)<br>
+
+
+
+
+        </font></li>
+
+
+
+
+      <li><font color="#ffffff">&nbsp;&nbsp;&nbsp; finally (Код, который
+          должен быть выполнен в любом случае, после выхода из блока
+          try)</font></li>
+
+
+
+
+    
+</ul>
+
+
+
+
+    
+<h3><font color="#ffffff">&nbsp;&nbsp;&nbsp; <font color="#ffff00">Использование
+
+          try и catch</font></font></h3>
+
+
+
+
+    
+<p>&nbsp;&nbsp;&nbsp; <font color="#ffffff">Используются совместно:<br>
+
+
+
+
+      </font></p>
+
+
+
+
+    <font color="#ffffff"><font color="#ffcc99" face="Courier New,
+        Courier, monospace">try {<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; //блок кода, в котором должны отслеживаться
+        ошибки<br>
+
+
+
+
+        }<br>
+
+
+
+
+        catch (тип_исключения1 объект_исключения){<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; //обработчик исключения тип_исключения1<br>
+
+
+
+
+        }<br>
+
+
+
+
+        <br>
+
+
+
+
+        catch (тип_исключения2 объект_исключения) {<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; //обработчик исключения тип_исключения2<br>
+
+
+
+
+        }<br>
+
+
+
+
+        <br>
+
+
+
+
+      </font></font><font color="#ffffff"><font color="#ffcc99"><font color="#ffffff">&nbsp;&nbsp;&nbsp; Catch выполняется только
+          при появлении исключения.<br>
+
+
+
+
+          &nbsp;&nbsp;&nbsp; При возникновении исключения выполнение
+          блока try прекращается и начинается выполнение блока catch<br>
+
+
+
+
+        </font></font></font>
+    
+<h4><font color="#ffcc00">&nbsp;&nbsp;&nbsp; Устранение программных
+        ошибок</font></h4>
+
+
+
+
+    
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; Пример:<br>
+
+
+
+
+      </font></p>
+
+
+
+
+    <font color="#ffcc99" face="Courier New, Courier, monospace">class
+      ExcDemo3 {<br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; public static void main(String[] args) {<br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; int[] numer = {4, 8, 16 ,
+      32, 64, 128};<br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; int[] denum = {2, 0, 4, 4,
+      0, 8};<br>
+
+
+
+
+      <br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; for (int i =0; i &lt;
+      numer.length; i++) {<br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; try{<br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; System.out.println(numer[i] + " / " denum[i] "
+      равно " + numer[i] / denum[i]);<br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; catch
+      (ArithmeticException exc) {<br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; <font color="#999999">//Перехват исключения</font><br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; System.out.println("Попытка деления на нуль!");<br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; }<br>
+
+
+
+
+      }<br>
+
+
+
+
+      <br>
+
+
+
+
+    </font><font color="#ffcc99"><font color="#ffffff">&nbsp;&nbsp;&nbsp;
+
+        Обработанное исключения удаляется из системы. На каждом шаге
+        цикла блок try выполняется заново, а все возникшие ранее
+        исключения считаются обработанными. Благодаря этому в программе
+        могут обрабатываться повторно возникающие исключения.<br>
+
+
+
+
+        <br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; Выражения catch проверяются в том порядке, в
+        котором они встречаются в программе.<br>
+
+
+
+
+        <br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; При множественном использовании инструкции <b>catch</b>,
+        первым должен быть указан тип исключения, генерируемого
+        подклассом, иначе вместе с исключением суперкласса будут
+        перехвачены и все исключения подклассов, что вызовет ошибку.<br>
+
+
+
+
+        <br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; То есть, если планируется ловить исключение
+        Throwable и ArrayIndexOutOfBoundException, то вервым стоит
+        указывать ArrayIndexOutOfBoundException а затем уже Throwable. В
+        таком случает Trowable будет перехватывать все исключения кроме
+        ArrayIndexOutOfBoundException.<br>
+
+
+
+
+        <br>
+
+
+
+
+      </font></font>
+    
+<h4>&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 204, 0);">Вложенные
+        блоки try</span></h4>
+
+
+
+
+    &nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 255);">Исключение
+возникшее
+      во внутрненнем блоке try и не перехваченное связанным с ним
+      блоком catch распространяется во внешнйи блок try и обрабатывается
+      связанным с ним блоком catch.<br>
+
+
+
+
+      <br>
+
+
+
+
+    </span><span style="color: rgb(255, 255, 255);"></span>
+    
+<h3><span style="color: rgb(255, 255, 0);">&nbsp;&nbsp;&nbsp;
+        Генерирование исключений (ключевое слово throw)</span></h3>
+
+
+
+
+    &nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 255);">Общая
+      форма:<br>
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+
+      throw <span style="font-style: italic;">объект_исключения</span>;</span><br>
+
+
+
+
+      <br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; Пример:<br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; <span style="font-family: Courier New,Courier,monospace; color: rgb(255, 204, 153);">try {</span><br style="font-family: Courier New,Courier,monospace; color: rgb(255, 204, 153);">
+
+
+
+
+      <span style="font-family: Courier New,Courier,monospace; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //...</span><br style="font-family: Courier New,Courier,monospace; color: rgb(255, 204, 153);">
+
+
+
+
+      <span style="font-family: Courier New,Courier,monospace; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; throw
+        new ArithmeticException();</span><br style="font-family: Courier New,Courier,monospace; color: rgb(255, 204, 153);">
+
+
+
+
+      <span style="font-family: Courier New,Courier,monospace; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp; }</span><br style="font-family: Courier New,Courier,monospace; color: rgb(255, 204, 153);">
+
+
+
+
+      <br style="font-family: Courier New,Courier,monospace; color: rgb(255, 204, 153);">
+
+
+
+
+      <span style="font-family: Courier New,Courier,monospace; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp; catch
+        (ArithmeticException exc) {</span><br style="font-family: Courier New,Courier,monospace; color: rgb(255, 204, 153);">
+
+
+
+
+      <span style="font-family: Courier New,Courier,monospace; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //...</span><br style="font-family: Courier New,Courier,monospace; color: rgb(255, 204, 153);">
+
+
+
+
+      <span style="font-family: Courier New,Courier,monospace; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp; }<br>
+
+
+
+
+      </span></span><span style="color: rgb(255, 255, 255);"><span style="font-family: Courier New,Courier,monospace; color: rgb(255, 204, 153);"></span></span>
+    
+<h4>&nbsp;&nbsp;&nbsp; <span style="color: rgb(51, 51, 51);">П<span style="color: rgb(255, 204, 0);">Повторное генерирование
+          исключений</span></span></h4>
+
+
+
+
+    &nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 204, 153);"><span style="font-family: Courier New,Courier,monospace;">class
+        Rethrow {<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; public static void genException() {<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; //...<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; try {<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //...<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; catch (ArithmeticException exc){<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //...<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; catch (ArrayIndexOutOfBoundsException exc) {<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //...<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; throw exc; //повторное
+        генерирование исключения<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+
+
+
+        }<br>
+
+
+
+
+        <br>
+
+
+
+
+        class RethrowDemo {<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; public static void main(String[] args) {<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; try {<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        Rethrow.genException();<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; catch
+        (ArrayIndexOutOfBoundsException exc) {<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        //Повторный перехват исключения<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //...<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+
+
+
+        }</span></span>&nbsp;&nbsp;
+<br>
+
+
+
+
+    
+<h3><font color="#ffff00">&nbsp;&nbsp;&nbsp; Ключевое слово finally</font></h3>
+
+
+
+
+    
+<p>&nbsp;&nbsp;&nbsp; <font color="#ffffff">Выполняется по
+        завершении блока try/catch не зависимо от того, каким образом
+        завершается блок try / catch.<br>
+
+
+
+
+      </font></p>
+
+
+
+
+    
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; Форма записи:<br>
+
+
+
+
+      </font></p>
+
+
+
+
+    <font color="#ffcc99" face="Courier New, Courier, monospace">try {<br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; //Блок кода, в котором отслеживаются ошибки<br>
+
+
+
+
+    </font><font color="#ffffff"><font color="#ffcc99" face="Courier
+        New, Courier, monospace">}<br>
+
+
+
+
+        catch (тип_исключения_1 объект_исключения){<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; //Обработчик исключения тип_исключения_1<br>
+
+
+
+
+        }<br>
+
+
+
+
+        catch (тип_исключения_2 объект_исключения) {<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; //Обработчик исключения тип_исключения_2<br>
+
+
+
+
+        }<br>
+
+
+
+
+        //...<br>
+
+
+
+
+        finally {<br>
+
+
+
+
+        &nbsp;&nbsp;&nbsp; //код блока finally<br>
+
+
+
+
+        }</font><br>
+
+
+
+
+      <br>
+
+
+
+
+    </font>
+    
+<h3><font color="#ffff00">&nbsp;&nbsp;&nbsp; Ключевое слово throws</font></h3>
+
+
+
+
+    
+<p>&nbsp;&nbsp;&nbsp; <font color="#ffffff">Общая форма:<br>
+
+
+
+
+      </font></p>
+
+
+
+
+    <font color="#ffcc99">возвращаемый_тип имя_метода
+      (список_параметров) throws список_исключений {<br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; //Тело метода<br>
+
+
+
+
+    </font><font color="#ffffff"><font color="#ffcc99">}<br>
+
+
+
+
+        <br>
+
+
+
+
+        <font color="#ffffff">список_исключений - разделенный запятыми
+          список, в котором указываются исключения, генерируемые
+          методом.<br>
+
+<br>
+
+</font></font></font>
+<h2><span style="color: rgb(255, 255, 204);">&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 51);">Создание собственных исключений</span></span></h2>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 255);"><span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">public class DogIsNotReadyException extends Exception {</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public DofIsNotReadyException(String message) {</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; super(message);</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; }</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; public class Dog {</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; publci static void main(String[] args) {</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //...</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public void walk() throws DogIsNotReadyException {</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //...</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if (true) {</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //...</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else {</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; throw new DogIsNotReadyException();</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</span><br style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">
+
+<span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; }</span></span><font color="#ffffff"><font color="#ffcc99"><font color="#ffffff">
+
+<br>
+
+</font></font></font>
+<h2> <span style="color: rgb(255, 255, 0);">Класс
+        Throwable</span></h2>
+
+
+
+
+    &nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 255);">Наиболее
+      часто используемые методы:<br>
+
+
+
+
+      &nbsp;&nbsp;&nbsp; <br>
+
+
+
+
+    </span>
+    
+<table style="text-align: left; width: 984px; margin-left: 46px;" border="0" cellpadding="8" cellspacing="2">
+
+
+
+
+      <tbody>
+
+
+
+
+        <tr>
+
+
+
+
+          <td style="text-align: center; width: 463px;" valign="undefined"><span style="color: rgb(51, 204, 255); font-weight: bold;">Метод</span></td>
+
+
+
+
+          <td style="width: 479px; text-align: center;" valign="undefined"><span style="color: rgb(51, 204, 255); font-weight: bold;">Описание</span></td>
+
+
+
+
+        </tr>
+
+
+
+
+        <tr>
+
+
+
+
+          <td style="width: 463px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">Throwable <span style="font-weight: bold;">fillInStackTrace()</span></td>
+
+
+
+
+          <td style="width: 479px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">Возвращает
+            объект типа Throwable, содержащий полную трассировку стека
+            исключений.
+            Пригоден для повторного генерирования исключений</td>
+
+
+
+
+        </tr>
+
+
+
+
+        <tr>
+
+
+
+
+          <td style="width: 463px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">String <span style="font-weight: bold;">getLocalizedMessage()</span></td>
+
+
+
+
+          <td style="width: 479px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">Возвращает описание
+            исключений реализованное по региональным стандартам</td>
+
+
+
+
+        </tr>
+
+
+
+
+        <tr>
+
+
+
+
+          <td style="width: 463px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">String <span style="font-weight: bold;">getMessage()</span></td>
+
+
+
+
+          <td style="width: 479px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">Возвращает описание
+            исключения</td>
+
+
+
+
+        </tr>
+
+
+
+
+        <tr>
+
+
+
+
+          <td style="width: 463px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">void <span style="font-weight: bold;">printStackTrace()</span></td>
+
+
+
+
+          <td style="width: 479px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">Выводит трассировку
+            стека исключений</td>
+
+
+
+
+        </tr>
+
+
+
+
+        <tr>
+
+
+
+
+          <td style="width: 463px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">void <span style="font-weight: bold;">printStackTrace(</span>PrintStream
+            <span style="font-style: italic;">поток</span><span style="font-weight: bold;">)</span></td>
+
+
+
+
+          <td style="width: 479px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">Выводит трассировку
+            трассировку стека исключений в указанный поток</td>
+
+
+
+
+        </tr>
+
+
+
+
+        <tr>
+
+
+
+
+          <td style="width: 463px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">void <span style="font-weight: bold;">printStackTrace(</span>PrintWriter
+            <span style="font-style: italic;">поток</span><span style="font-weight: bold;">)</span></td>
+
+
+
+
+          <td style="width: 479px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">Направляет трассировку
+            стека исключений в указанный поток</td>
+
+
+
+
+        </tr>
+
+
+
+
+        <tr>
+
+
+
+
+          <td style="width: 463px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">String <span style="font-weight: bold;">toString()</span></td>
+
+
+
+
+          <td style="width: 479px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">Возвращает
+            объект типа String, содержащий полное описание исключения.
+            Этот метод
+            вызывается из метода println() при выводе объекта типа
+            Throwable</td>
+
+
+
+
+        </tr>
+
+
+
+
+      
+  
+  
+  
+  </tbody>
+    
+</table>
+
+
+
+
+    <span style="color: rgb(255, 255, 255);"></span><br>
+
+
+<h2><span style="color: rgb(255, 255, 51);">&nbsp;&nbsp;&nbsp; Встроенные классы исключений</span></h2>
+
+
+
+<span style="color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp; Непроверяемые исключения, определнные в пакете java.lang:<br>
+
+
+
+<br>
+
+
+
+</span>
+<table style="text-align: left; width: 977px; margin-left: 42px;" border="0" cellpadding="2" cellspacing="2">
+
+
+
+  <tbody>
+
+
+
+    <tr>
+
+
+
+      <td style="text-align: center; font-weight: bold; color: rgb(51, 204, 255); width: 433px;" valign="undefined">Исключение</td>
+
+
+
+      <td style="width: 526px; text-align: center; font-weight: bold; color: rgb(51, 204, 255);" valign="undefined">Описание</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="color: rgb(255, 204, 153); width: 433px;" align="undefined" valign="undefined">ArithmeticException</td>
+
+
+
+      <td style="color: rgb(255, 255, 255); width: 526px;" align="undefined" valign="undefined">Арифметическая ошибка, например попытка деления на нуль</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="color: rgb(255, 204, 153); width: 433px;" align="undefined" valign="undefined">ArгayIndexOutOfBoundsException</td>
+
+
+
+      <td style="color: rgb(255, 255, 255); width: 526px;" align="undefined" valign="undefined">Попытка обращения за пределы массива</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="color: rgb(255, 204, 153); width: 433px;" align="undefined" valign="undefined">ArrayStoreException</td>
+
+
+
+      <td style="color: rgb(255, 255, 255); width: 526px;" align="undefined" valign="undefined">Попытка ввести в массив элемент, несовместимый с ним по типу</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="color: rgb(255, 204, 153); width: 433px;" align="undefined" valign="undefined">ClassCastException</td>
+
+
+
+      <td style="color: rgb(255, 255, 255); width: 526px;" align="undefined" valign="undefined">Недопустимое приведение типов</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="color: rgb(255, 204, 153); width: 433px;" align="undefined" valign="undefined">EnumConstNotPresentException</td>
+
+
+
+      <td style="color: rgb(255, 255, 255); width: 526px;" align="undefined" valign="undefined">Попытка использования нумерованного значения, которое не было определено ранее</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="color: rgb(255, 204, 153); width: 433px;" align="undefined" valign="undefined">IllegalArgumentException</td>
+
+
+
+      <td style="color: rgb(255, 255, 255); width: 526px;" align="undefined" valign="undefined">Недопустимый параметр при вызове метода</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="color: rgb(255, 204, 153); width: 433px;" align="undefined" valign="undefined">IllegalCallerException</td>
+
+
+
+      <td style="color: rgb(255, 255, 255); width: 526px;" align="undefined" valign="undefined">Метод невозможно вызвать с помощью вызывающего кода корректным образом (появилось в JDK 9)</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="color: rgb(255, 204, 153); width: 433px;" align="undefined" valign="undefined">IllegalMonitorStateException</td>
+
+
+
+      <td style="color: rgb(255, 255, 255); width: 526px;" align="undefined" valign="undefined">Недопустимая операция контроля, например ожидание разблокировки потока</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="color: rgb(255, 204, 153); width: 433px;" align="undefined" valign="undefined">IllegalStateException</td>
+
+
+
+      <td style="color: rgb(255, 255, 255); width: 526px;" align="undefined" valign="undefined">Недопустимое состояние среды выполнения или приложения</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="color: rgb(255, 204, 153); width: 433px;" align="undefined" valign="undefined">IllegalThreadStateException</td>
+
+
+
+      <td style="color: rgb(255, 255, 255); width: 526px;" align="undefined" valign="undefined">Запрашиваемая операция несовместима с текущим состоянием потока</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="color: rgb(255, 204, 153); width: 433px;" align="undefined" valign="undefined">IndexOutOfBoundsException</td>
+
+
+
+      <td style="color: rgb(255, 255, 255); width: 526px;" align="undefined" valign="undefined">Недопустимое значение индекса</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="color: rgb(255, 204, 153); width: 433px;" align="undefined" valign="undefined">LayerInstantiationException</td>
+
+
+
+      <td style="color: rgb(255, 255, 255); width: 526px;" align="undefined" valign="undefined">Невозможно создать уровень модуля (появилось в JDK 9)</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="color: rgb(255, 204, 153); width: 433px;" align="undefined" valign="undefined">NegativeArraySizeException</td>
+
+
+
+      <td style="color: rgb(255, 255, 255); width: 526px;" align="undefined" valign="undefined">Создание массива отрицательного размера</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="color: rgb(255, 204, 153); width: 433px;" align="undefined" valign="undefined">NullPointerException</td>
+
+
+
+      <td style="color: rgb(255, 255, 255); width: 526px;" align="undefined" valign="undefined">Недопустимое использование пустой ссылки</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="color: rgb(255, 204, 153); width: 433px;" align="undefined" valign="undefined">NumberFormatException</td>
+
+
+
+      <td style="color: rgb(255, 255, 255); width: 526px;" align="undefined" valign="undefined">Неверное преобразование символьной строки в число</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="color: rgb(255, 204, 153); width: 433px;" align="undefined" valign="undefined">SecurityException</td>
+
+
+
+      <td style="color: rgb(255, 255, 255); width: 526px;" align="undefined" valign="undefined">Попытка нарушить систему защиты</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="color: rgb(255, 204, 153); width: 433px;" align="undefined" valign="undefined">StringlndexOutOfBounds</td>
+
+
+
+      <td style="color: rgb(255, 255, 255); width: 526px;" align="undefined" valign="undefined">Попытка обращения к символьной строке за ее пределами</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="color: rgb(255, 204, 153); width: 433px;" align="undefined" valign="undefined">TypeNotPresentException</td>
+
+
+
+      <td style="color: rgb(255, 255, 255); width: 526px;" align="undefined" valign="undefined">Неизвестный тип</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="color: rgb(255, 204, 153); width: 433px;" align="undefined" valign="undefined">UnsupportedOperationException</td>
+
+
+
+      <td style="color: rgb(255, 255, 255); width: 526px;" align="undefined" valign="undefined">Неподдерживаемая операция</td>
+
+
+
+    </tr>
+
+
+
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+<br>
+
+
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 255);">Проверяемые исключения, определенные в пакете java.lang:<br>
+
+
+
+<br>
+
+
+
+</span>
+<table style="text-align: left; width: 979px; margin-left: 40px;" border="0" cellpadding="2" cellspacing="2">
+
+
+
+  <tbody>
+
+
+
+    <tr>
+
+
+
+      <td style="width: 433px; color: rgb(51, 204, 255);" align="undefined" valign="undefined">Исключение</td>
+
+
+
+      <td style="width: 526px; color: rgb(51, 204, 255);" align="undefined" valign="undefined">Описание</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="width: 433px; color: rgb(255, 204, 153);" align="undefined" valign="undefined">ClassNotFoundException</td>
+
+
+
+      <td style="width: 526px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">Класс не найден</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="width: 433px; color: rgb(255, 204, 153);" align="undefined" valign="undefined">CloneNotSupportedException</td>
+
+
+
+      <td style="width: 526px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">Попытка клонирования объекта, не реализующего интерфейс Cloneable</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="width: 433px; color: rgb(255, 204, 153);" align="undefined" valign="undefined">IllegalAccessException</td>
+
+
+
+      <td style="width: 526px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">Доступ к классу запрещен</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="width: 433px; color: rgb(255, 204, 153);" align="undefined" valign="undefined">InstantiationException</td>
+
+
+
+      <td style="width: 526px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">Попытка создания объекта абстрактного класса или интерфейса</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="width: 433px; color: rgb(255, 204, 153);" align="undefined" valign="undefined">InterruptedException</td>
+
+
+
+      <td style="width: 526px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">Прерывание одного потока другим</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="width: 433px; color: rgb(255, 204, 153);" align="undefined" valign="undefined">NoSuchFieldException</td>
+
+
+
+      <td style="width: 526px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">Требуемое поле не существует</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="width: 433px; color: rgb(255, 204, 153);" align="undefined" valign="undefined">NoSuchMethodException</td>
+
+
+
+      <td style="width: 526px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">Требуемый метод не существует</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="width: 433px; color: rgb(255, 204, 153);" align="undefined" valign="undefined">ReflectiveOperationException</td>
+
+
+
+      <td style="width: 526px; color: rgb(255, 255, 255);" align="undefined" valign="undefined">Суперкласс исключений, связанных с рефлексией</td>
+
+
+
+    </tr>
+
+
+
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+<span style="color: rgb(255, 255, 255);"></span>
+<h3><span style="color: rgb(255, 255, 0);">&nbsp;&nbsp;&nbsp; Цепочные исключения</span></h3>
+
+
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 255);">Позволяет указывать одно исключение как причину появления другого (то есть найти истинную причину исключения).<br>
+
+
+
+<br>
+
+
+
+&nbsp;&nbsp;&nbsp;<span style="font-weight: bold;"> Конструкторы:&nbsp;&nbsp;</span>&nbsp; <br>
+
+
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 204, 153);">Throwable (Throwable причинное_исключение)</span><br>
+
+
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; - <span style="font-style: italic;">причинное_исключение</span> - исключение, послужившее причиной текущего исключения<br>
+
+
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 204, 153);">Throwable (String сообщение, Throwable причинное_исключение)<br>
+
+
+
+<br>
+
+
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 255, 255);">Эти же конструкторы введены в классы Error, Exception, RuntimeException.</span><br>
+
+
+
+</span><br>
+
+
+
+&nbsp;&nbsp;&nbsp;<span style="font-weight: bold;"> Методы:</span><br>
+
+
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 204, 153);">Throwable getCause()</span><br>
+
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; - возвращает исключение, которое
+стало причиное текущего исключения. Если такого не было - возвращает
+null.<br>
+
+
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 204, 153);">Throwable initCause(Throwable причинное_исключение)</span><br>
+
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; - связывает причинное исключение
+с исключением, которое должно быть сгенерировано, возвращая ссылку на
+него.<br>
+
+
+
+&nbsp;&nbsp;&nbsp; </span><font color="#ffffff"><font color="#ffcc99">
+      </font></font>
+  
+</body>
+</html>

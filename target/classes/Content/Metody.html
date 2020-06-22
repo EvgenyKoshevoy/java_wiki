@@ -1,0 +1,574 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+    
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    
+  <title>Metody</title>
+</head>
+
+
+  <body alink="#ee0000" bgcolor="#333333" link="#0000ee" text="#000000" vlink="#551a8b">
+
+    <span style="color: rgb(255, 255, 255);"></span>
+    
+<h1 align="center"><font color="#99ff99">Методы</font><br>
+
+    </h1>
+
+    <span style="color: rgb(255, 255, 255);">Общий синтаксис объявления
+      метода:</span><br style="color: rgb(255, 255, 255);">
+
+    <br style="color: rgb(255, 255, 255);">
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">возвращаемый_тип
+
+
+
+
+
+
+
+      имя (список_параметров) {</span><br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+
+
+      //тело метода</span><br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+    <span style="font-family: Arial; color: rgb(255, 255, 255);"><span style="color: rgb(255, 204, 153);">}</span><br>
+
+      <br>
+
+    </span><span style="color: rgb(255, 255, 255);"><span style="font-weight: bold;">возвращаемый_тип</span> - тип данных,
+      возвращаемый методом. Им может быть любой допустимый тип, в том
+      числе и тип класса.</span><br style="color: rgb(255, 255, 255);">
+
+    <span style="color: rgb(255, 255, 255);"> Если метод не возвращает
+      значение, то для него указывают тип </span><span style="font-family: Arial; color: rgb(255, 255, 255);">void.<br>
+
+      <br>
+
+    </span><span style="color: rgb(255, 255, 255);"><span style="font-weight: bold;">список_параметров</span> -
+      последовательность разделенных запятыми параметров, для которых
+      указывается тип и имя. Параметры представляют собой переменные,
+      которые получают значения, передаваемые им в виде аргуметов при
+      вызове метода. Если у метода отсутствуют параметры, список
+      параметров оказывается пустым.&nbsp; <br>
+
+      <font color="#ccffff"><br>
+
+        <b>Сигнатура метода</b> - <font color="#ffffff">включает в себя
+          название метода и типы параметров в определеном порядке.</font></font><br style="color: rgb(255, 255, 255);">
+
+    </span> <br style="color: rgb(255, 255, 255);">
+
+    
+<h3><font color="#33ff33">Возврат из метода</font></h3>
+
+    <span style="color: rgb(255, 255, 255);"> Осуществляется двумя
+      способами. Первый - достижение закрывающей фигурной скобки. Второй
+      - через оператор </span><span style="font-family: Arial; color: rgb(255, 255, 255);">return.<br>
+
+      <br>
+
+    </span><span style="color: rgb(255, 255, 255);">Есть две
+      разновидности </span><span style="font-family: Arial; color: rgb(255, 255, 255);">return:<br>
+
+      1. </span><span style="color: rgb(255, 255, 255);">Для методов
+      типа void не возвращающих значение;</span><br style="color: rgb(255, 255, 255);">
+
+    <span style="color: rgb(255, 255, 255);"> 2. Для методов
+      возвращающих значение.</span><br style="color: rgb(255, 255, 255);">
+
+    <br style="color: rgb(255, 255, 255);">
+
+    <span style="color: rgb(255, 255, 255);"> Для типа <span style="font-weight: bold;">void</span>:</span><br style="color: rgb(255, 255, 255);">
+
+    <br style="color: rgb(255, 255, 255);">
+
+    <span style="color: rgb(255, 204, 153);"> void myMeth() {</span><br style="color: rgb(255, 204, 153);">
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; int i;</span><br style="color: rgb(255, 204, 153);">
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; for
+      (i=1; i &lt; 10; i++) {</span><br style="color: rgb(255, 204, 153);">
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; if (i ==5) return; //цикл завершится &nbsp;на
+      значении 5</span><br style="color: rgb(255, 204, 153);">
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; System.out.println();</span><br style="color: rgb(255, 204, 153);">
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; }</span><br style="color: rgb(255, 204, 153);">
+
+    <span style="color: rgb(255, 204, 153);"> }</span><br style="color: rgb(255, 255, 255);">
+
+    <br style="color: rgb(255, 255, 255);">
+
+    <span style="color: rgb(255, 255, 255);"> Синтаксис:</span><br style="color: rgb(255, 255, 255);">
+
+    <br style="color: rgb(255, 255, 255);">
+
+    <span style="color: rgb(255, 204, 153);"> void myMeth() {</span><br style="color: rgb(255, 204, 153);">
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; //...</span><br style="color: rgb(255, 204, 153);">
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; if
+      (done) return;</span><br style="color: rgb(255, 204, 153);">
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp;
+      //...&nbsp;&nbsp; </span><br style="color: rgb(255, 204, 153);">
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; if
+      (error) return;</span><br style="color: rgb(255, 204, 153);">
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; //...</span><br style="color: rgb(255, 204, 153);">
+
+    <span style="color: rgb(255, 204, 153);"> }</span><br style="color: rgb(255, 255, 255);">
+
+    <br style="color: rgb(255, 255, 255);">
+
+    <span style="color: rgb(255, 255, 255); font-weight: bold;">Возврат
+      значения:</span><br>
+
+    <span style="color: rgb(255, 255, 255);"> Синтаксис:</span><br style="color: rgb(255, 255, 255);">
+
+    <span style="color: rgb(255, 204, 153);"><span style="font-weight: bold;"> return</span> значение;</span><br style="color: rgb(255, 255, 255);">
+
+    <br style="color: rgb(255, 255, 255);">
+
+    
+<h3 style="background-color: rgb(51, 51, 60);"><font color="#33ff33">Использование
+
+
+
+
+        параметров</font></h3>
+
+    <span style="font-weight: bold; color: rgb(255, 255, 255);">Аргумент</span><span style="color: rgb(255, 255, 255);"> - значение передаваемое методу</span><br style="color: rgb(255, 255, 255);">
+
+    <span style="font-weight: bold; color: rgb(255, 255, 255);">Параметр</span><span style="color: rgb(255, 255, 255);"> - &nbsp;переменная, получающая
+      аргумент. Объявляется в скобках после имени метода.</span><br style="color: rgb(255, 255, 255);">
+
+    <br style="color: rgb(255, 255, 255);">
+
+    <span style="color: rgb(255, 255, 255);"> Параметров может быть
+      несколько, типы могут быть разными:</span><br style="color: rgb(255, 255, 255);">
+
+    <br style="color: rgb(255, 255, 255);">
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">myMeth
+      (int a, double b, String name) {</span><br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+    <span style="font-family: Arial; color: rgb(255, 204, 153);">&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+
+
+      //...</span><br style="font-family: Arial; color: rgb(255, 204, 153);">
+
+    <span style="font-family: Arial; color: rgb(255, 255, 255);"><span style="color: rgb(255, 204, 153);">}</span></span><span style="font-family: Arial;"></span>
+    
+<h3 style="background-color: rgb(51, 51, 60);"><font color="#33ff33">Методы
+
+
+
+
+        с переменным числом аргументов</font></h3>
+
+    
+<p style="color: rgb(255, 255, 255); background-color: rgb(51, 51, 60);">Пример:</p>
+
+    
+<p style="color: rgb(255, 255, 255); background-color: rgb(51, 51, 60);"><span style="color: rgb(255, 204, 153);">static void
+        vaTest(int ... v) {</span><br style="color: rgb(255, 204, 153);">
+
+      <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; //..</span><br style="color: rgb(255, 204, 153);">
+
+      <span style="color: rgb(255, 204, 153);"> }</span><br>
+
+    </p>
+
+    
+<p style="color: rgb(255, 255, 255); background-color: rgb(51, 51, 60);">Может объявляться со обычными аргументами:<br>
+
+    </p>
+
+    
+<p style="color: rgb(255, 255, 255); background-color: rgb(51, 51, 60);"><span style="color: rgb(255, 204, 153);">static void
+        vaTest2(String msg, int ... v) {</span><br style="color: rgb(255, 204, 153);">
+
+      <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; //..</span><br style="color: rgb(255, 204, 153);">
+
+      <span style="color: rgb(255, 204, 153);"> }</span><br>
+
+    </p>
+
+    
+<p style="color: rgb(255, 255, 255); background-color: rgb(51, 51, 60);">Ограничеия:<br>
+
+      - список параметров переменной длины указывается последним;<br>
+
+      - список параметров переменной длины в методе можно указать только
+      один раз;<br>
+
+    </p>
+
+    
+<h3 style="color: rgb(255, 255, 255); background-color: rgb(51, 51, 60);"><font color="#33ff33">Перегрузка методов</font></h3>
+
+    
+<p><font color="#ffffff">Условия:<br>
+
+        - тип или число параметров в каждом из перегружаемых методов
+        должны быть разными<br>
+
+        - тип возвращаемого значения не учитывается при перегрузке<br>
+
+      </font> </p>
+
+    <font color="#ffffff"> </font>
+    
+<p><font color="#ffffff">Пример:</font></p>
+
+    <font color="#ffffff"> </font>
+    
+<p><font color="#ffcc99" face="Courier New, Courier, monospace">void
+        ovlDemo() {<br>
+
+        &nbsp;&nbsp;&nbsp; //..<br>
+
+        }</font></p>
+
+    <font color="#ffcc99" face="Courier New, Courier, monospace"> </font>
+    
+<p><font color="#ffcc99" face="Courier New, Courier, monospace">void
+        ovlDemo(int i) {<br>
+
+        //...<br>
+
+        }<br>
+
+      </font> </p>
+
+    <font color="#ffcc99" face="Courier New, Courier, monospace"> </font>
+    
+<p><font color="#ffcc99" face="Courier New, Courier, monospace">int
+        ovlDemo(int a, int b) {<br>
+
+        &nbsp;&nbsp;&nbsp; //..<br>
+
+        }<br>
+
+      </font> </p>
+
+    <font color="#ffcc99" face="Courier New, Courier, monospace"> </font>
+    
+<p><font color="#ffcc99" face="Courier New, Courier, monospace">double
+
+        ovlDemo(double a, double b) {<br>
+
+        &nbsp;&nbsp;&nbsp; //..<br>
+
+        }</font><font color="#ffffff"><br>
+
+      </font> </p>
+
+    <font color="#ffffff"> </font>
+    
+<p><font color="#ffffff">Следующая попытка перегрузки скомпелируется
+        с ошибкой, т.к. тип возвращаемого значения не учитывается при
+        перегрузке:<br>
+
+      </font> </p>
+
+    <font color="#ffffff"> </font>
+    
+<p><font color="#ffcc99" face="Courier New, Courier, monospace">void
+        ovlDemo(int a) {<br>
+
+        &nbsp;&nbsp;&nbsp; //..<br>
+
+        }<br>
+
+      </font> </p>
+
+    <font color="#ffcc99" face="Courier New, Courier, monospace"> int
+      ovlDemo(int a) { //компилятор неразличит два этих метода<br>
+
+      &nbsp;&nbsp;&nbsp; //..<br>
+
+      }</font>
+    
+<p><font color="#ffffff">Создание методов с одинаковыми названиями,
+        но с разными параметрами.<br>
+
+      </font></p>
+
+    <font color="#ffffff"><font color="#ffcc99" face="Courier New,
+        Courier, monospace">public void sayHi(String firstGuest) {<br>
+
+        &nbsp;&nbsp;&nbsp; //...<br>
+
+        }<br>
+
+        <br>
+
+        public void sayHi(String firstGuest, String secondGuest) {<br>
+
+        &nbsp;&nbsp;&nbsp; //...<br>
+
+        }<br>
+
+        <br>
+
+      </font></font><font color="#ffffff"><font color="#ffcc99"><font color="#ffffff">Для методов с переменной длиной аргументов:</font><br>
+
+      </font></font><font color="#ffffff"><font color="#ffcc99" face="Courier New, Courier, monospace"><br>
+
+        public void sayHi(String...names) {<br>
+
+        &nbsp;&nbsp;&nbsp; for (String name: names) {<br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println("Say
+        Hello" + name);<br>
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+        }<br>
+
+        <br>
+
+      </font></font><font color="#ffffff"><font color="#ffcc99"><font color="#ffffff">&nbsp;&nbsp;&nbsp; В процессе определения
+          метода, который нужно вызвать, типы могут только расширяться,
+          но не сужаться.</font></font></font><font color="#ffffff"><font color="#ffcc99" face="Courier New, Courier, monospace"><br>
+
+        &nbsp; </font></font><font color="#ffffff"><font color="#ffcc99"><font color="#ffffff">Пример:</font></font></font><font color="#ffffff"><font color="#ffcc99" face="Courier New, Courier,
+        monospace"><br>
+
+        <br>
+
+        class Cat {<br>
+
+        &nbsp;&nbsp;&nbsp; public static void print(short n) {<br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println(n);<br>
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+        &nbsp;&nbsp;&nbsp; public static void print(Integer n) {<br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println(n);<br>
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+        <br>
+
+        &nbsp;&nbsp;&nbsp; public static void main(String[] args) {<br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Cat.print((byte) 1); <font color="#999999">//byte будет расширен до short и лишь потом до
+          int. Будет вызван первый метод.</font><br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Cat.print(1); <font color="#999999">//неявно будет выполнено разрешенное
+          преобразование от int к Integer. Сработает второй метод.</font><br>
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+        &nbsp;}<br>
+
+        <br>
+
+      </font></font><font color="#ffffff"><font color="#ffcc99"><font color="#ffffff">Следует всегда указывать оператор
+          преобразования типа, чтобы знать какой метод вызовется.</font><br>
+
+      </font></font><font color="#ffffff"><font color="#ffcc99" face="Courier New, Courier, monospace"><br>
+
+      </font></font><br>
+
+    
+<h3 style="color: rgb(255, 255, 255); background-color: rgb(51, 51, 60);"><font color="#33ff33">Переопределение методов</font></h3>
+
+    
+<p><font color="#ffffff">Пример:<br>
+
+      </font></p>
+
+    <font color="#ffffff"><font color="#ffcc99">class A {<br>
+
+        &nbsp;&nbsp;&nbsp; int i, j;<br>
+
+        <br>
+
+        &nbsp;&nbsp;&nbsp; A(int a, int b) {<br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; i = a;<br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; j = b;<br>
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+        <br>
+
+        &nbsp;&nbsp;&nbsp; void show() {<br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println("i and
+        j: " + i + " " + j);<br>
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+      </font></font>
+    
+<p><font color="#ffffff"><font color="#ffcc99">}<br>
+
+        </font></font></p>
+
+    
+<p><font color="#ffffff"><font color="#ffcc99">class B extends A {<br>
+
+          &nbsp;&nbsp;&nbsp; int k;<br>
+
+        </font></font></p>
+
+    <font color="#ffffff"><font color="#ffcc99">&nbsp;&nbsp;&nbsp; B(int
+        a, int b, int c) {<br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; super(a, b);<br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; k = c;<br>
+
+      </font></font><font color="#ffffff"><font color="#ffcc99">&nbsp;&nbsp;&nbsp;
+
+
+
+        }<br>
+
+        <br>
+
+        &nbsp;&nbsp;&nbsp; void show() {<br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println("k: " +
+        k);<br>
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+      </font></font>
+    
+<p><font color="#ffffff"><font color="#ffcc99">}<br>
+
+        </font></font></p>
+
+    
+<p><font color="#ffffff"><font color="#ffcc99"><font color="#ffffff">Если
+
+
+
+            метод show() вызывается для объекта типа В, выбирается
+            версия этого метода, определенная в классе В. Для доступа к
+            методу суперкласса требуется использование ключевого слова <font style="color: rgb(51, 204, 255);" color="#3366ff"><i>super</i></font>.<br>
+
+          </font></font></font></p>
+
+    
+<p><font color="#ffffff"><font color="#ffcc99"><font color="#ffffff">Пример:<br>
+
+          </font></font></font></p>
+
+    <font color="#ffffff"><font color="#ffcc99"><font color="#ffffff"><font color="#ffcc99">class B extends A {<br>
+
+            &nbsp;&nbsp;&nbsp; int k;<br>
+
+            <br>
+
+            &nbsp;&nbsp;&nbsp; B(int a, int b, int c) {<br>
+
+            &nbsp;&nbsp;&nbsp; super(a, b);<br>
+
+            &nbsp;&nbsp;&nbsp; k = c;<br>
+
+            &nbsp;&nbsp;&nbsp; }<br>
+
+            <br>
+
+            &nbsp;&nbsp;&nbsp; void show() {<br>
+
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; super.show(); <font color="#999999">//вызов метода show() определенного в
+              суперклассе</font><br>
+
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println("k:
+            " + k);<br>
+
+            &nbsp;&nbsp;&nbsp; }<br>
+
+          </font></font></font></font><font color="#ffffff"><font color="#ffcc99"><font color="#ffffff"><font color="#ffcc99">}<br>
+
+            <br>
+
+            <font color="#ffffff">Методы с разными сигнатурами не
+              переопределяются, а перегружаются!<br>
+
+              <br>
+
+              У переопределенного метода должен быть тот же тип
+              возвращающемого значения, что и у метода родителя.<br>
+
+              <br>
+
+              Модификатор доступа у переопределяемого метода должен
+              совпадать с оригинальным. <br>
+
+              <br>
+
+              Наследовать и переопределять можно только нестатические
+              методы. Статические методы не наследуются и не
+              переопределяются.<br>
+
+              <br>
+
+              Набор методов, которые можно &nbsp;вызвать у переменной,
+              определяется
+              типом переменной, а какая именно сработает реализация
+              метода
+              определяется типом объекта.<br>
+
+              <br>
+
+              <br>
+
+              <br>
+
+            </font></font></font></font></font>
+    
+<h3><font color="#33ff33">Абстрактые методы</font><br>
+
+    </h3>
+
+    <font color="#ffffff">Объявляется с использованием спецификации <font color="#ccffff"><b>abstract</b></font>. Такой метод не имеет
+      тела и не реализуется в суперклассе, т.е. он должен быть
+      переопределен в подклассе.<br>
+
+      <br>
+
+      Синтаксис:<br>
+
+      &nbsp;&nbsp;&nbsp; <font color="#ffcc99">abstract <i>тип имя
+          (список_парамет</i><i>ров</i><i>)</i>;<br>
+
+        <br>
+
+        <font color="#ffffff">Спецификация abstract може тприменяться
+          только к обычным методам (не к статическим или конструкторам).</font></font></font>
+  
+</body>
+</html>

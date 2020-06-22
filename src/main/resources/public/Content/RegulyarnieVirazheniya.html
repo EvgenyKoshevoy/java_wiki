@@ -1,0 +1,733 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>RegulyarnieVirazheniya</title>
+  </head>
+  <body vlink="#7b68ee" text="#ffffcc" link="#00ff7f" alink="#4682b4"
+    bgcolor="#333333">
+    <div align="center">
+      <h1><font color="#99ff99">Регулярные выражения</font></h1>
+      <div align="left"><font color="#ffffcc">&nbsp;&nbsp;&nbsp;
+          Обработка регулярных выражений поддерживается классами Pattern
+          и Matcher.<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; Matcher - входная последовательность.<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; Pattern - шаблон для поиска.<br>
+          <br>
+        </font>
+        <h2><font color="#ffffcc">&nbsp;&nbsp;&nbsp; <font
+              color="#66ff99">Класс Pattern</font></font></h2>
+        &nbsp;&nbsp;&nbsp; <font color="#ffffcc">Конструкторы не
+          определяются. Вместо этого вызывается фабричный метод
+          compile():<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; static Patter
+          compile(String шаблон)<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          шаблон - регулярное выражение, которое требуется использовать.<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; Метод преобразует шаблон в символьную
+          строку для сопоставления средствами класса Matcher. Возвращает
+          объект типа Pattern. <br>
+          <br>
+          &nbsp;&nbsp;&nbsp; Как только объект Pattern получен, можно
+          вызвать фабричный метод matcher() для создания объекта
+          Matcher:<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Matcher
+          matcher(charSequence строка)<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          строка - последовательность символов сопоставляемая с
+          шаблоном, называется <i>входной последовательностью</i>.<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; Так же методу можно передать символьную
+          строку.<br>
+          <br>
+        </font>
+        <h2><font color="#ffffcc">&nbsp;&nbsp;&nbsp; <font
+              color="#66ff99">Класс Matcher</font><br>
+          </font></h2>
+        <font color="#ffffcc">&nbsp;&nbsp;&nbsp; Не имеет конструкторов.
+          Для создания используется фабричный метод matcher(), описанный
+          в классе Pattern.<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; Методы:<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#33ccff"><b>boolean
+
+
+
+
+              matche</b><b>s()</b></font> - определяет совпадает ли
+          последовательность символов с шаблоном.<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          Возварщает true если совпадает вся последовательность (для
+          проверки совпадения подпоследовательности используется другой
+          метод), &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; иначе false.<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <b><font
+              color="#33ccff">boolean find()</font></b> - определяет
+          совпадает ли подпоследовательность с шаблоном.<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          Возвращает true, если подпоследовательность совпадает с
+          шаблоном, иначе false. Можно вызвать неоднократно, при каждом
+          вызове сравнение начинается с того места, где было завершено
+          предыдущее сравнение.<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <b><font
+              color="#33ccff">String group()</font></b> - возвращает
+          символьную строку, содержащую последнюю совпавшую
+          последовательность. Если совпадений не обнаружено генерируется
+          исключение IllegalStateException.<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <b><font
+              color="#33ccff">int start()</font></b> - возвращает индекс
+          текущего совпадения во входной последовательности символов.<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <b><font
+              color="#33ccff">int end()</font></b> - возвращает индекс
+          следующий, после текущего совпадения.<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#33ccff"><b>String
+
+
+
+
+              replaceAll(String новая_строка)</b></font> - каждую
+          совпавшую последовательность заменяет другой
+          последовательность новая_строка.<br>
+          <br>
+        </font>
+        <h2><font color="#ffffcc"> &nbsp;&nbsp;&nbsp; </font></h2>
+        <h2><font color="#ffffcc">&nbsp;&nbsp;&nbsp; <font
+              color="#66ff99">Синтаксис регулярных выражений</font></font></h2>
+        <p>&nbsp;&nbsp;&nbsp; <font color="#ffffcc">Если регулярное
+            выражение составлено не правильно генерируется исключение:
+            PatternSyntaxException</font><br>
+        </p>
+        <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Шаблон определяется
+            так:<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ffcc99">"шаблон"</font><br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; То есть если
+            определить <font color="#ffcc99">"xy"</font>, то с этим
+            шаблоном может совпадать только последовательность xy.<br>
+          </font></p>
+        <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Символы вроде новой
+            строки и табуляции указываются в виде <font color="#ffcc99">\</font>
+            (\n)<br>
+          </font></p>
+        <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Класс символов<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Является набором
+            символов: <font color="#ffcc99">[набор_символов]</font><br>
+          </font></p>
+        <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Обратный набор
+            символов<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<font color="#ffcc99">
+              [^набор_символов]</font><br>
+          </font></p>
+        <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Диапазон символов<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ffcc99">[1
+
+
+
+              - 9]</font><br>
+          </font></p>
+        <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Метасимвол <b><font
+                color="#ffcc99">.</font></b> - совпадает с любым
+            символом<br>
+          </font></p>
+        <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Квантор определяет
+            сколько раз совпадает выражение:&nbsp;&nbsp;&nbsp; <br>
+          </font></p>
+        <table width="80%" cellspacing="2" cellpadding="2" border="1">
+          <tbody>
+            <tr>
+              <td valign="top"><b><font color="#ffffcc">Квантор<br>
+                  </font></b></td>
+              <td valign="top"><font color="#ffffcc"><b>Описание<br>
+                  </b></font></td>
+            </tr>
+            <tr>
+              <td valign="top"><font color="#ffffcc">+<br>
+                </font></td>
+              <td valign="top"><font color="#ffffcc">Обозначает
+                  совпадение один раз или больше<br>
+                </font></td>
+            </tr>
+            <tr>
+              <td valign="top"><font color="#ffffcc">*<br>
+                </font></td>
+              <td valign="top"><font color="#ffffcc">Обозначает
+                  совпадение нуль раз или больше<br>
+                </font></td>
+            </tr>
+            <tr>
+              <td valign="top"><font color="#ffffcc">?<br>
+                </font></td>
+              <td valign="top"><font color="#ffffcc">Обозначает
+                  совпадение нуль раз или один<br>
+                </font></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <div align="left">
+        <h2>&nbsp;&nbsp;&nbsp; <font color="#66ff99">Обращение с
+            классами символов</font></h2>
+        <p><font color="#ffcc99">public class RegExpr7 {<br>
+            <br>
+            &nbsp;&nbsp;&nbsp; public static void main(String[] args) {<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Pattern pat =
+            Pattern.compile("[a-z]+");<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Matcher mat =
+            pat.matcher("this is a test.");<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; while(mat.find()) {<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            System.out.println("Совпадение: " + mat.group());<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+            &nbsp;&nbsp;&nbsp; }<br>
+            }<br>
+          </font></p>
+        <h2><font color="#ffcc99"><font color="#66ff99">&nbsp;&nbsp;&nbsp;
+
+
+              Применение метода replaceAll()</font></font></h2>
+        <p><font color="#ffcc99">// Применить метод replaceAll()<br>
+            // Входная последовательность Jon заменяется выходной
+            последовательостью Eric<br>
+            <br>
+            public class RegExpr8 {<br>
+            <br>
+            &nbsp;&nbsp;&nbsp; public static void main(String[] args) {<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; String str = "Jon
+            Jonathan Frank Ken Todd";<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // Регулярное
+            выражение Jon.*? выполняет сопоставленеи с любой символьной
+            строкой, начинающейся с <br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // Jon после которой
+            следует нуль или больше символов<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Pattern pat =
+            Pattern.compile("Jon.*?");<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Matcher mat =
+            pat.matcher(str);<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            System.out.println("Исходная последовательность: " + str);<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; str =
+            mat.replaceAll("Eric");<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            System.out.println("Измененная последовательность: " + str);<br>
+            &nbsp;&nbsp;&nbsp; }<br>
+            }<br>
+          </font></p>
+        <h2><font color="#ffcc99"><font color="#99ff99">&nbsp;&nbsp;&nbsp;
+
+
+              Применение метода split()</font></font></h2>
+        <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Синтаксис:<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; String[]
+            split(CharSequence строка)<br>
+          </font></p>
+        <p><font color="#ffcc99">// Применнеие метода split()<br>
+            <br>
+            public class RegExpr9 {<br>
+            <br>
+            &nbsp;&nbsp;&nbsp; public static void main(String[] args) {<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Pattern pat =
+            Pattern.compile("[ ,.!]+");<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; String[] str =
+            pat.split("one two, alpha9 12!done");<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; for(int i = 0; i &lt;
+            str.length; i++) {<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            System.out.println("Следующая лексима: " + str[i]);<br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+            &nbsp;&nbsp;&nbsp; }<br>
+            }</font><br>
+        </p>
+        <h3>&nbsp;&nbsp;&nbsp; <font color="#66ff99">Квантификаторы</font></h3>
+        <table width="80%" cellspacing="0" cellpadding="4" border="0">
+          <tbody>
+            <tr>
+              <td valign="top"><br>
+              </td>
+              <td valign="top"><b>Аналог<br>
+                </b></td>
+              <td valign="top"><b>Пример<br>
+                </b></td>
+              <td valign="top"><b>Описаие<br>
+                </b></td>
+            </tr>
+            <tr>
+              <td valign="top">?<br>
+              </td>
+              <td valign="top">{0,1}<br>
+              </td>
+              <td valign="top">a?<br>
+              </td>
+              <td valign="top">Одно или ноль вхождений "а"<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">+<br>
+              </td>
+              <td valign="top">{1,}<br>
+              </td>
+              <td valign="top">a+<br>
+              </td>
+              <td valign="top">Одно или более вхождений "а"<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">*<br>
+              </td>
+              <td valign="top">{0,}<br>
+              </td>
+              <td valign="top">a*<br>
+              </td>
+              <td valign="top">Ноль или более вхождений "а"<br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <font color="#66ff99">&nbsp;&nbsp; </font><br>
+        <br>
+        &nbsp;&nbsp;&nbsp; Пример : a{10, 20} - определить, содержится
+        ли в документе от 10 до 20 букв. <br>
+      </div>
+      <div align="left">&nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; + - соответствует максимально возможному
+        значению.&nbsp;&nbsp;&nbsp; <br>
+        <br>
+      </div>
+      <div align="left">&nbsp;&nbsp;&nbsp; Пример: &lt;a
+        href="helloworld.htm" title="Привет мир!"&gt;Привет
+        мир!&lt;/a&gt;&nbsp; <br>
+      </div>
+      <div align="left"><br>
+        &nbsp;&nbsp;&nbsp; ".*" - шаблон соответствует тексту,
+        заключенному в двойные кавычки. Найдет следующее:<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; "helloworld.htm"
+        title="Привет мир!"<br>
+      </div>
+      <div align="left"><br>
+        &nbsp;&nbsp;&nbsp; ".*?" - за счет ? этот шаблон ищет наименьшее
+        из возможых вхождений. Найдет следующее:<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; "helloworld.htm" "Привет
+        мир!"<br>
+        <h3><font color="#66ff99">&nbsp;&nbsp;&nbsp;&nbsp; Модификаторы</font></h3>
+        <p>&nbsp;&nbsp;&nbsp; Символ "-" перед модификатором (кроме U)
+          создае его отрицание.<br>
+        </p>
+        <table width="80%" cellspacing="2" cellpadding="4" border="0">
+          <tbody>
+            <tr>
+              <td valign="top">g</td>
+              <td valign="top">глобальный поиск, обрабатываются все
+                совпадения с шаблоном поиска</td>
+            </tr>
+            <tr>
+              <td valign="top">i</td>
+              <td valign="top">игнорировать регистр</td>
+            </tr>
+            <tr>
+              <td valign="top">m</td>
+              <td valign="top">многострочный поиск</td>
+            </tr>
+            <tr>
+              <td valign="top">s</td>
+              <td valign="top">текст восприимается как одна строка.
+                Символ "." будет включать и перевод строки</td>
+            </tr>
+            <tr>
+              <td valign="top">u</td>
+              <td valign="top">используется кодировка UTF</td>
+            </tr>
+            <tr>
+              <td valign="top">U</td>
+              <td valign="top">инвертировать жадность</td>
+            </tr>
+            <tr>
+              <td valign="top">x</td>
+              <td valign="top">игнорировать все неэкранированные пробелы
+                и перечисленные в классе символы</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>&nbsp;&nbsp;&nbsp; <font color="#66ff99">Спецсимволы</font></h3>
+        <table width="90%" cellspacing="0" cellpadding="4" border="0">
+          <tbody>
+            <tr>
+              <td valign="top"><b>Символ</b><b><br>
+                </b></td>
+              <td valign="top"><b>Аналог</b><b><br>
+                </b></td>
+              <td valign="top"><b>Описание</b><b><br>
+                </b></td>
+            </tr>
+            <tr>
+              <td valign="top">()<br>
+              </td>
+              <td valign="top"><br>
+              </td>
+              <td valign="top">Подмаска, вложенное выражение<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">[]<br>
+              </td>
+              <td valign="top"><br>
+              </td>
+              <td valign="top">Групповой символ<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">{a,b}<br>
+              </td>
+              <td valign="top"><br>
+              </td>
+              <td valign="top">Колличество вхождений от a до b<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">|<br>
+              </td>
+              <td valign="top"><br>
+              </td>
+              <td valign="top">Логическое или (в случае с
+                односимвольными альтернативами использовать [])<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">\<br>
+              </td>
+              <td valign="top"><br>
+              </td>
+              <td valign="top">Экранирование спецсимвола<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">.<br>
+              </td>
+              <td valign="top"><br>
+              </td>
+              <td valign="top">Любой символ, кроме перевода строки<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">\d<br>
+              </td>
+              <td valign="top">[0-9]<br>
+              </td>
+              <td valign="top">десятичная цифра<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">\D<br>
+              </td>
+              <td valign="top">[^\d]<br>
+              </td>
+              <td valign="top">любой символ, кроме десятичной цифры<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">\f<br>
+              </td>
+              <td valign="top"><br>
+              </td>
+              <td valign="top">конец (разрыв) страницы<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">\n<br>
+              </td>
+              <td valign="top"><br>
+              </td>
+              <td valign="top">перевод строки<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">\pL<br>
+              </td>
+              <td valign="top"><br>
+              </td>
+              <td valign="top">буква в кодировке UTF-8 при использовании
+                модификатора u<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">\r<br>
+              </td>
+              <td valign="top"><br>
+              </td>
+              <td valign="top">возврат каретки<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">\s<br>
+              </td>
+              <td valign="top">[\t\v\r\n\f]<br>
+              </td>
+              <td valign="top">пробел<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">\S<br>
+              </td>
+              <td valign="top">[^\s]<br>
+              </td>
+              <td valign="top">любой символ кроме пробела<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">\t<br>
+              </td>
+              <td valign="top"><br>
+              </td>
+              <td valign="top">табуляция<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">\w<br>
+              </td>
+              <td valign="top">[0-9a-z_]<br>
+              </td>
+              <td valign="top">любая цифра, буква или знак подчеркивания<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">\W<br>
+              </td>
+              <td valign="top">[^\w]<br>
+              </td>
+              <td valign="top">любой символ кроме цифры, буквы или знака
+                подчеркивания<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">\v<br>
+              </td>
+              <td valign="top"><br>
+              </td>
+              <td valign="top">вертикальая табуляция<br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>&nbsp;&nbsp;&nbsp; <font color="#66ff99">Спецсимволы внутри
+            символьного класса</font></h3>
+        <table width="80%" cellspacing="0" cellpadding="4" border="0">
+          <tbody>
+            <tr>
+              <td valign="top"><br>
+              </td>
+              <td valign="top"><b>Пример</b><b><br>
+                </b></td>
+              <td valign="top"><b>Описание</b><b><br>
+                </b></td>
+            </tr>
+            <tr>
+              <td valign="top">^<br>
+              </td>
+              <td valign="top">[^da]<br>
+              </td>
+              <td valign="top">отрицание, любой символ кроме d или a<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">-<br>
+              </td>
+              <td valign="top">[a-z]<br>
+              </td>
+              <td valign="top">интервал, любой символ от a до z<br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>&nbsp;&nbsp;&nbsp; <font color="#66ff99">Позиция внутри
+            строки</font></h3>
+        <table width="90%" cellspacing="0" cellpadding="4" border="0">
+          <tbody>
+            <tr>
+              <td valign="top"><br>
+              </td>
+              <td valign="top"><b>Пример</b><b><br>
+                </b></td>
+              <td valign="top"><b>Соответствие</b><b><br>
+                </b></td>
+              <td valign="top"><b>Описание</b><b><br>
+                </b></td>
+            </tr>
+            <tr>
+              <td valign="top">^<br>
+              </td>
+              <td valign="top">^a<br>
+              </td>
+              <td valign="top"><b>a</b>aa aaa<br>
+              </td>
+              <td valign="top">начало строки<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">$<br>
+              </td>
+              <td valign="top">a$<br>
+              </td>
+              <td valign="top">aaa aa<b>a</b><br>
+              </td>
+              <td valign="top">конец строки<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">\A<br>
+              </td>
+              <td valign="top">\Aa<br>
+              </td>
+              <td valign="top"><b>a</b>aa aaa<br>
+                aaa aaa<br>
+              </td>
+              <td valign="top">начало текста<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">\z<br>
+              </td>
+              <td valign="top">a\z<br>
+              </td>
+              <td valign="top">aaa aaa<br>
+                aaa aa<b>a</b><br>
+              </td>
+              <td valign="top">конец текста<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">\b<br>
+              </td>
+              <td valign="top">a\b<br>
+                \ba<br>
+              </td>
+              <td valign="top">aa<b>a</b> aa<b>a<br>
+                  a</b>aa <b>a</b>aa<br>
+                <b></b></td>
+              <td valign="top">граница слова, утверждение: предыдущий
+                символ словесный, а следующий нет и наоборот<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">\B<br>
+              </td>
+              <td valign="top">\Ba\B<br>
+              </td>
+              <td valign="top">a<b>a</b>a a<b>a</b>a<br>
+              </td>
+              <td valign="top">отсутствие границы слова<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">\G<br>
+              </td>
+              <td valign="top">\Ga<br>
+              </td>
+              <td valign="top"><b>aaa</b> aaa<br>
+              </td>
+              <td valign="top">предыдущий успешный поиск. Поиск
+                остановился на 4й позиции, там где не нашлось а<br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>&nbsp;&nbsp;&nbsp; <font color="#66ff99">Якоря</font></h3>
+        <p>&nbsp;&nbsp;&nbsp; Указывают на начало или конец чего либо.<br>
+          &nbsp;&nbsp;&nbsp; <br>
+          &nbsp;&nbsp;&nbsp; Шаблон, чоответствующий строке,
+          начинающейся с цифры: ^[0-9]+ <br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ^ - начало строки<br>
+        </p>
+        <h3>&nbsp;&nbsp;&nbsp; <font color="#66ff99">Утверждения</font></h3>
+        <p>&nbsp;&nbsp;&nbsp; Найти слово, включающее букву q, за
+          которой не следует последовательность "werty": <font
+            face="Courier New, Courier, monospace" color="#ffff33">[^\s]*q(?!werty)[^\s]*</font><br>
+        </p>
+        <h3>&nbsp;&nbsp;&nbsp; <font color="#66ff99">Экранирование</font>&nbsp;&nbsp;&nbsp;
+
+          <br>
+        </h3>
+        <table width="80%" cellspacing="0" cellpadding="4" border="0">
+          <tbody>
+            <tr>
+              <td valign="top"><b>Выражение</b><b><br>
+                </b></td>
+              <td valign="top"><b>Соответствие</b><b><br>
+                </b></td>
+            </tr>
+            <tr>
+              <td valign="top">\<br>
+              </td>
+              <td valign="top">экранирует следующий за ним символ<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">\Q<br>
+              </td>
+              <td valign="top">экранирует все символы до \E<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">\E<br>
+              </td>
+              <td valign="top">прекращает экранирование, начатое с \Q<br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <div align="left">
+        <h3>&nbsp;&nbsp;&nbsp; <font color="#66ff99">Группы и диапазоны</font></h3>
+        <p>&nbsp;&nbsp;&nbsp; Содержит ли строка шестнадцатиричные
+          цифры: [A-Fa-f0-9]<br>
+        </p>
+        <p>&nbsp;&nbsp;&nbsp; Поиск ab или bc: (ab | bc)<br>
+        </p>
+        <p>&nbsp;&nbsp;&nbsp; Поиск aaa123aaa: (aaa | bbb)[0-9]+\1<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; \1 - ссылается на первую
+          предыдущую группу (ааа)<br>
+        </p>
+        <p>&nbsp;&nbsp;&nbsp; Найти вхождение слова wish с предыдущими и
+          последующими символами, если это не буквы или цифры:
+          ([^A-Za-z0-9])(wish)([^A-Za-z0-9])<br>
+        </p>
+      </div>
+      <div align="left">&nbsp;&nbsp;&nbsp; Пример:<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Вывести все числа во
+        второй файл, которые есть в первом файле.<br>
+      </div>
+      <div align="left">&nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font face="Courier New,
+          Courier, monospace" color="#33cc00">Pattern pattern =
+          Pattern.compile("\\b[\\d]+\\b");<br>
+          &nbsp;&nbsp;&nbsp; Matcher matcher;<br>
+        </font></div>
+      <div align="left"><font face="Courier New, Courier, monospace"
+          color="#33cc00">&nbsp;&nbsp;&nbsp; <br>
+          &nbsp;&nbsp;&nbsp; while(matcher.find()) {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mat.group();<br>
+        </font></div>
+      <div align="left"><font face="Courier New, Courier, monospace"
+          color="#33cc00">&nbsp;&nbsp;&nbsp; }</font><br>
+      </div>
+      <div align="left"><br>
+      </div>
+    </div>
+  </body>
+</html>

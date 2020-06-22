@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>TipOptional</title>
+  </head>
+  <body vlink="#7b68ee" text="#ffffcc" link="#00ff7f" bgcolor="#333333"
+    alink="#4682b4">
+    <h1 align="center"><font color="#66ffff">Тип Optional</font></h1>
+    <p>&nbsp;&nbsp;&nbsp; <font color="#ffff33"><b>java.util.Optional 8</b></font><br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">T
+        orElse(T other)</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращает присутствующее значение типа Optional или другое
+      значение other, если присутствующее значение Optional оказывается
+      пустым.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>Optional&lt;String&gt;
+        optionalValue = wordList.stream().filter(s -&gt;
+        s.contains("fred")).findFirst();</i><i><br>
+      </i><i>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        System.out.println(optionalValue.orElse("No word") + "contains
+        fred");</i><br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">T
+        orElseGet(Supplier&lt;? extends T&gt; other)</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращает присутствующее значение типа Optional или результат
+      вызова функции other(), если присутствующее значение типа Optional
+      оказывается пустым.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>String
+        result = optionalString.orElse("N/A");</i><i><br>
+      </i><i>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        result = optionalString.orElseGet(() -&gt;
+        Locale.getDefault().getDisplayName());</i><br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">&lt;X
+        extends Throwable&gt; T orElseThrow(Supplier&lt;? extends X&gt;
+        exceptionSupplier)</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращает значение типа Optional или результат функции
+      exceptionSupplier(), если присутствующее значение типа Optional
+      оказывается пустым.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>String
+        result = optionalString.orElseThrow(IllegalStateException::new);</i><br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">void
+        ifPresent(Consumer&lt;? super T&gt; consumer)</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Передает
+      присутствубщее значение типа Optional функции consumer(), если это
+      значение оказывается не пустым.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>Optional&lt;String&gt;
+        optionalValue = wordList.stream().filter(s -&gt;
+        s.contains("red")).findFirst();&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; </i><i><br>
+      </i><i>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        optionalValue.ifPresent(s -&gt; System.out.println(s + "
+        contains red"));</i><br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">&lt;U&gt;
+        Optional&lt;U&gt; map(Function&lt;? super T, ? extends U&gt;
+        mapper)</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращает результат присутствубщего значения типа Optional
+      функции mapper(), если это значение оказывается не пустым и
+      результат не равен null, а иначе - пустое значение типа Optional.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>Optional&lt;Boolean&gt;
+        added = optionalValue.map(results::add);</i><i><br>
+      </i></p>
+    <p>&nbsp;&nbsp;&nbsp; <font color="#ffff33"><b>java.util.Optional 8</b></font><br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">T
+        get()</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращает присутствующее значение типа Optional или генерирует
+      исключение типа NoSuchElementException, если это значение
+      оказывается пустым.<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">boolean
+        isPresent()</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращает логическое значение true, если присутствубщее значение
+      типа Optional оказывается не пустым.<br>
+    </p>
+    <h3>&nbsp;&nbsp;&nbsp; <font color="#ffff99">Формирование
+        необязательных значений</font></h3>
+    <p>&nbsp;&nbsp;&nbsp; <font color="#ffff33"><b>java.util.Optional 8</b></font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">static&lt;T&gt;
+        Optional&lt;T&gt; of(T value)<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; static&lt;T&gt;
+        Optional&lt;T&gt; ofNullable(T value)</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращают результат типа Optional с заданным значением. Если
+      заданное значение value равно null, то первый метод генерирует
+      исключение типа NullPointerException, а второй метод возвращает
+      пустое значение типа Optional.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>Optional&lt;Double&gt;
+        result2 =
+Optional.of(-4.0).flatMap(OptionalTest::inverse).flatMap(OptionalTest::squareRoot);</i>&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">static
+        &lt;T&gt; Optional&lt;T&gt; empty()</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращает пустое значение типа Optional.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>Optional&lt;String&gt;
+        optionalString = Optional.empty();</i><br>
+    </p>
+    <h3>&nbsp;&nbsp;&nbsp; <font color="#ffff99">Сочетание функций
+        необязательных значений с методом flatMap()</font></h3>
+    <p>&nbsp;&nbsp;&nbsp; Есть метод f() {return Optional&lt;T&gt;
+      object}.<br>
+      &nbsp;&nbsp;&nbsp; У типа T есть метод g(){return
+      Optional&lt;U&gt; object}<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; Если сделать s.f().g() то получится конфликт,
+      т.к. результат вызова s.f() относится к Optional&lt;T&gt;, а не к
+      типу T.<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; Вместо этого нужно сделать следующее:<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Optional&lt;U&gt; result =
+      s.f().flatMap(T::g);<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; Если объект, получаемый в результате вызова
+      s.f(), присутствует, то к нему применяется метод g(). В противном
+      случае возвращается пустой объект типа Optional.<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp;<font color="#ffff33"><b> java.util.Optional 8</b></font><br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">&lt;U&gt;
+        Optional&lt;U&gt; flatMap(Function&lt;? super T,
+        Optional&lt;U&gt;&gt; mapper)</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращает результат применения функции mapper() к присутствубщему
+      значению типа Optional или же пустое значение типа Optional, если
+      присутствующее значение оказывается пустым.<br>
+    </p>
+  </body>
+</html>

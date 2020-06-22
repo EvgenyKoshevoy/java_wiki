@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Logirovanie</title>
+  </head>
+  <body vlink="#551A8B" text="#000000" bgcolor="#333333" alink="#EE0000"
+    link="#0000EE">
+    <h1 align="center"><font color="#99ffff">Логирование</font></h1>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; System.err.println -
+        стандартный вывод записи в консоль (для быстрого дебага).<br>
+      </font></p>
+    <h3><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Уровни логирования:</font></h3>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; -
+        OFF: логи не пишутся, все игнорится;<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; - FATAL: ошибка, после
+        которой приложение не смоежет работать и будет остановлено;<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; - ERROR: уровень ошибок,
+        когда есть проблемы которые нудно решить. Ошибка не
+        останавливает работу, остальные запросы могут работать
+        некоррректно;<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; - WARN: логи, которые
+        содержат предостережения;<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; - INFO: для важных
+        действий в приложении (ожидаемые действия системы);<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; - DEBUG: для отладки
+        приложения ("method1 начал работу");<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; - TRACE: менее
+        приоритетные логи для отладки;<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; - ALL: для записи всех
+        логов системы.<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Для logback:<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; - TRACE<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; - DEBUG<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; - INFO<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; - WARN<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; - ERROR<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Если включить кровень
+        логирования INFO, то будут логироваться все уровни от INFO до
+        FATAL.<br>
+      </font></p>
+    <h2><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Запись и отправка логов</font></h2>
+    <p>&nbsp;&nbsp;&nbsp; <font color="#ffffcc">На примере log4j.<br>
+        &nbsp;&nbsp;&nbsp; - для записив файл - DailyRollingFileAppender;<br>
+        &nbsp;&nbsp;&nbsp; - для получения данных в консоль приложения -
+        ConsoleAppender;<br>
+        &nbsp;&nbsp;&nbsp; - для записи логов в базу данных -
+        JDBCAppender;<br>
+        &nbsp;&nbsp;&nbsp; - для контроля передачи через TCP/IP;<br>
+        &nbsp;&nbsp;&nbsp; - чтобы запись логов не била по
+        быстродействию - S\ASyncAppender.<br>
+      </font></p>
+    <h2><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Узлы логирования<br>
+      </font></h2>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Создать логгер:<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Logger logger =
+        LoggerFactory.getLogger(MainDemo.class);<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Сделать запись в лог:<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; logger.trace("some text
+        with argument={}", argument);<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; logger.debug("some text
+        script={}", script);<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; logger.info("some text
+        port={}", port);<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; logger.warn("some text");<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Logger.error("some text
+        host={}", host);<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Пример для
+        com.github.romankh3.logginglecture.MainDemo:<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Узлы:<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; RootLogger (главный узел,
+        принимает все логи приложения)<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        com&nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; com.github<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; com.github.romankh3<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        com.github.romankh3.logginglecture<br>
+      </font></p>
+    <h3><font color="#ffffcc">&nbsp;&nbsp;&nbsp; Настройка
+        Log4j.properties</font></h3>
+    <p>&nbsp;&nbsp;&nbsp; <font color="#ffffcc">log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender<br>
+        &nbsp;&nbsp;&nbsp; log4j.appender.FILE=org.apache.log4j.RollingFileAppender<br>
+      </font></p>
+    <p><font color="#ffffcc">&nbsp;&nbsp;&nbsp; <br>
+      </font></p>
+  </body>
+</html>

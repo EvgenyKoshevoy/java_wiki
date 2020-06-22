@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Константы в Java</title>
+  <link href="D:\YandexDisk\Документы\HTML\Projects\JavaInf\Content\CSS\ConstJava.css" rel="stylesheet" type="text/css"/>
+  <style>
+     .colororng {
+	     color:#FF4500;
+		 }
+	 .text1 {
+	     color:#696969;
+         font-size: 18px;
+         }
+	 .clrbl {
+	     color:#4169E1;
+		 }
+	 .clrpr {
+         color:#8B008B;
+         }
+     .clrgr {
+         color:#228B22
+		 }
+	 .clrrd {
+         color:#DC143C
+         }		 
+  </style>
+ </head>
+ <body leftmargin="30">
+  <h1 align="center">Константы в Java</h1>
+  <!-- Комментарий -->
+  <h2>Как сделать переменную константой?</h2>
+  <p>1. Чтобы сделать переменную константой необходимо использовать ключевое слово <span class="colororng">final</span></p>.
+  <p>2. Константы <span class="colororng">принято писать большими буквами</span>, чтобы отличить их от обычных переменных.</p>
+  <p>3. Если в программе происходит попытка изменить константу, компилятор javac выдаст ошибку, потому что <span class="colororng">значение константы можно задать 1 раз</span>.</p>
+  <h2>Задача:</h2>
+  <p>Вычислить периметр круга при разных значениях радиуса:</p>
+  <p><span class="text1">R = 10 см</span></p>
+  <p><span class="text1">R = 25 см</span></p>
+  <h3>Решение:</h3>
+  <p><img src="D:\YandexDisk\Документы\HTML\Projects\JavaInf\Content\VertexAcademy\Images\ConstJava\Img01.png"/></p>
+  <p>Периметр круга вычисляется по формуле <span class="text1">P = 2πR</span></p>
+  <p><span class="text1">P</span> - периметр круга (длина окружности)</p>
+  <p><span class="text1">π</span> - Число Пи (3,1415)</p>
+  <p><span class="text1">R</span> - радиус круга (окружности)</p>
+  <div>
+     <pre>
+	     <span class="clrpr">class</span> <span class="clrbl">Test</span> {
+ 
+             <span class="clrpr">public static void</span> <span class="clrbl">main</span>(<span class="clrpr">String</span>[] args) {
+                 <span class="clrpr">final double</span> Pi = <span class="clrrd">3.1415926536</span>;
+                 <span class="colororng">// Константа Pi с типом данных для чисел c плавающей точкой</span>
+                 <span class="clrpr">double</span> lengthl = <span class="clrrd">2</span><span class="clrbl">*Pi*</span><span class="clrrd">10</span>;
+                 <span class="clrpr">double</span> length2 = <span class="clrrd">2</span><span class="clrbl">*Pi*</span><span class="clrrd">25</span>;
+                 System.out.<span class="clrbl">println</span> (<span class="clrgr">"Периметр круга при радиусе 10 см равен "</span> <span class="clrbl">+</span> lengthl <span class="clrbl">+</span> <span class="clrgr">", а при радиусе 25 см равен "</span> + length2);
+             }
+         }
+	 </pre>
+  </div>
+  <h3>Комментарии к коду:</h3>
+  <p><span class="clrpr">final double</span> Pi = <span class="clrrd">3.1415926536</span>;<br>
+     В этой строчке переменную с названием Pi сделали константой, добавив в начале ключевое слово final. Если изменить значение этой величины, компилятор javac выдаст ошибку, т.к. значение переменной можно задавать только 1 раз.</p>
+  
+  
+ </body>
+</html>

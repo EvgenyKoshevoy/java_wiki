@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  
+  
+  <title>Условный оператор if в Java. Оператор switch.</title>
+  <link href="D:%5CYandexDisk%5C%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%5CHTML%5CProjects%5CJavaInf%5CContent%5CCSS%5CIIfJava.css" rel="stylesheet" type="text/css">
+
+  
+  <style>
+     .clrMB {
+	     color:#191970
+		     }  
+	 .clrpr {
+         color:#8B008B;
+         }	
+	 .clrorng {
+	     color:#FF4500;
+		 }	
+	 .clrbl {
+	     color:#4169E1;
+		 }	
+	 .clrgr {
+         color:#228B22
+		 }
+	 .clrrd {
+         color:#DC143C
+         }	 
+  </style>
+</head>
+
+
+ <body leftmargin="30">
+
+  
+<h1 align="center">Условный оператор if в Java. Оператор switch.</h1>
+
+  <!-- Комментарий -->
+  
+<h4>В Java есть так называемые конструкции ветвления:</h4>
+
+  
+<p>1. Условный оператор if</p>
+
+  
+<p>2. Оператор switch</p>
+
+  
+<h4>Общая форма улсловного оператор if такая:</h4>
+
+  
+<p>
+     <span class="clrpr">if</span> (условие) {<br>
+
+	 <span class="clrorng">//действие(-я), которые выполняются, если услвое истинно;</span><br>
+
+	 }<br>
+
+	 <span class="clrpr">else if</span> (условие) {<br>
+
+	 <span class="clrorng">//действие(-я), которые выполняются, если услвое истинно;</span><br>
+
+	 }<br>
+
+	 <span class="clrpr">else if</span> (условие){<br>
+
+	 <span class="clrorng">//действие(-я), которые выполняются, если услвое истинно;</span><br>
+
+	 }<br>
+
+	 <span class="clrpr">else</span> (условие) {<br>
+
+	 <span class="clrorng">//действие(-я), которые выполняются, если услвое истинно;</span><br>
+
+	 }<br>
+
+   </p>
+
+   
+<h4><span class="clrorng">Важно:</span></h4>
+   
+   
+<ul type="square">
+
+     <li>Оператор всегда начинается со слова if, после которого идут скобки с условием.</li>
+
+	 <li>После круглых скобок никогда не ставится точка с запятой.</li>
+
+	 <li>Чтобы указать альтернативный вариант (если не выполняется, тогда...) используется слово else.</li>
+
+	 <li>Если условий несколько, то кажде из них будет выполнятся
+комбинацией else if. Последний вариант записывается через else без
+условия.</li>
+
+   
+</ul>
+<span style="font-weight: bold;">Возможные операции сравнения:</span><br>
+&lt; - меньше;<br>
+&lt;= - меньше или равно;<br>
+&gt; - больше;<br>
+&gt;= - больше или равно;<br>
+== - равно;<br>
+!= - не равно.
+   
+<h2>Задача №1</h2>
+
+  
+<p>Необходимо написать программму, где требуется вывести запрос на ввод
+числа от 1 до 3, п рограмма должна сказать, какое число ввел
+пользователь.</p>
+
+  
+<h3>Решение:</h3>
+
+  
+<pre>         <span class="clrbl">import</span> java.util.Scanner; <span class="clrorng">// подключаем сканер</span>		 <br>         <span class="clrpr">class</span> <span class="clrbl">Test</span> {<br>	         <span class="clrpr">public static void</span> <span class="clrbl">main</span> (<span class="clrpr">String</span> [] args) {<br> <br>		         System.out.<span class="clrbl">print</span> (<span class="clrgr">"Введите число 1, 2 или 3: "</span>); <br>		         <span class="clrbl">Scanner</span> inputFigure = <span class="clrpr">new</span> <span class="clrbl">Scanner</span> (System.<span class="clrpr">in</span>); <br>		         <span class="clrpr">int</span> i = inputFigure.<span class="clrbl">nextInt</span> (); <br>		         <span class="clrpr">if</span> ( i<span class="clrbl">==</span><span class="clrrd">1</span>) { <br>			         System.out.<span class="clrbl">println</span> (<span class="clrgr">"Вы ввели число 1"</span>);<br>		             }<br>		         <span class="clrpr">else if</span> (i<span class="clrbl">==</span><span class="clrrd">2</span>) {<br>			         System.out.<span class="clrbl">println</span> (<span class="clrgr">"Вы ввели число 2"</span>);<br>		             }<br>		         <span class="clrpr">else if</span> (i<span class="clrbl">==</span><span class="clrrd">3</span>) {<br>			         System.out.<span class="clrbl">println</span> (<span class="clrgr">"Вы ввели число 3"</span>);<br>		             }<br>		         <span class="clrpr">else</span> {<br>			         System.out.<span class="clrbl">println</span> (<span class="clrgr">"Вы ввели число не равное 1, 2 или 3"</span>);<br>		             }<br>	         }<br>         }<br>  </pre>
+
+  
+<h3>Комментарии:</h3>
+
+  
+<p>1. В условии сказано, что нам нужно ввести число на выбор 1, 2 или
+3. Первое что нужно сделать - предлождить ввести число. Поэтому пишем в
+коде: </p>
+<p>System.out.<span class="clrbl">print</span> (<span class="clrgr">"Введите число 1, 2 или 3: "</span>);</p>
+
+  
+  
+<p>2. Пользователь вводит число, а мы должны его считать с консоли. Для этого <span class="clrorng">подключаем сканнер</span>:
+     </p>
+<p><span class="clrbl">import</span> java.util.Scanner;</p>
+
+  
+  
+<p>3. Далее с помощью сканера присваеваем в переменную i число, которое ввел пользователь:
+     </p>
+<p><span class="clrbl">Scanner</span> inputFigure = <span class="clrpr">new</span> <span class="clrbl">Scanner</span> (System.<span class="clrpr">in</span>); <br>
+
+		<span class="clrpr">int</span> i = inputFigure.<span class="clrbl">nextInt</span> ();</p>
+
+  
+  
+<p>4. Проверяем равно ли i 1. Если i равно 1, будет выведено на экран сообщение "Вы ввели число 1"
+     </p>
+<p><span class="clrpr">if</span> ( i<span class="clrbl">==</span><span class="clrrd">1</span>) {<br>
+ 
+			         System.out.<span class="clrbl">println</span> (<span class="clrgr">"Вы ввели число 1"</span>);<br>
+
+		             }</p>
+
+  
+  
+<p>5. Если i не равно 1, то проверяем равно ли i 2. Если i равно 2 выводится на экран сообщение "Вы ввели число 2"
+     </p>
+<p><span class="clrpr">else if</span> (i<span class="clrbl">==</span><span class="clrrd">2</span>) {
+			         System.out.<span class="clrbl">println</span> (<span class="clrgr">"Вы ввели число 2"</span>);
+		             }</p>
+
+  
+  
+<p>6. Если i не равно 1 или 2 проверяем равно ли i 3. Если i равно 3 выводится на экран сообщение "Вы ввели число равное 3"
+     </p>
+<p><span class="clrpr">else if</span> (i<span class="clrbl">==</span><span class="clrrd">3</span>) {
+			         System.out.<span class="clrbl">println</span> (<span class="clrgr">"Вы ввели число 3"</span>);
+		             }</p>
+
+  
+  
+<p>7. Если все предыдщие шаги оказались false, оператор перейдет к
+выполнению кода, который написан в else и выведет сообщение "Вы ввели
+число не равно 1, 2 или 3" </p>
+<p><span class="clrpr">else</span> {
+			         System.out.<span class="clrbl">println</span> (<span class="clrgr">"Вы ввели число не равное 1, 2 или 3"</span>);
+		             }</p>
+
+	 И оператор будет закончен. Конец программы.				 
+  
+  
+<p>8. Обратить внимание на то, что в if (i == 1) используется двойное
+равеноство ==. Очень распространенная ошибка использовать = (присвоение
+значения переменной) вместо == (проверка равна ли переменная указанному
+значению).</p>
+
+  
+<h2>Задача №2</h2>
+
+  
+<p>Необходимо написать программу, где предлагается ввести число 1. Если
+введно число 1, программы должна вывести "Вы ввели число 1". Если
+пользователь ввел другое число, программа должна вообще ничего не
+делать.</p>
+
+  
+<h3>Решение:</h3>
+
+  
+<pre>     import java.util.Scanner; // подключаем сканер<br>     class Test {<br>	     public static void main (String [] args) {<br> <br>		     System.out.print ("Введите число 1: "); <br>		     Scanner inputFigure = new Scanner (System.in); <br>		     int i = inputFigure.nextInt (); <br>		     if ( i==1) { <br>			     System.out.println ("Вы ввели число 1");<br>		         }<br>	     }<br>     }<br>  </pre>
+
+  
+<h3>Комментарий:</h3>
+
+  
+<p>Как видно из решения задачи if есть, но else нет.</p>
+
+  
+<p>Так сделано потому, что выполнять код требуется только когда условие истинно.</p>
+
+  
+<h2>Оператор switch (ветвление с помощью переключателей)</h2>
+
+  
+<p>Конструкции с if else при большом колисестве условий могут быть
+громоздкими. Там, где надо повторять проверку одного и тогоже значения
+переменной есть более элегантное решение с помощью оператора switch.</p>
+
+  
+<h3><span class="clrorng">Общая форма оператора switch</span></h3>
+
+  
+<pre>     <span class="clrpr">switch</span> (проверяемая-переменная){<br>     <span class="clrpr">case</span> значение<span class="clrrd">1</span>: <br>         код-для-высполнения-при-переменная==значение1;<br>         <span class="clrpr">break</span>;<br>     <span class="clrpr">case</span> значение<span class="clrrd">2</span>: <br>         код-для-высполнения-при-переменная==значение2;<br>         <span class="clrpr">break</span>;<br>     <span class="clrpr">case</span> значение<span class="clrrd">3</span>: <br>         код-для-высполнения-при-переменная==значение3;<br>         <span class="clrpr">break</span>;<br>     <span class="clrpr">default</span>: <br>         код-для-выполнения-если-значение-переменной-не-предусмотрено-в-case;<br>     }<br>   </pre>
+
+   
+<p><span class="clrorng">Важно:</span> каждый case должен закрываться в
+конце с помощью break. Благодяря break программа прекращает выполнять
+код и выходит из условного оператора.</p>
+
+  
+<h2>Задача №3</h2>
+
+  
+<pre>     import java.util.Scanner; // импорт сканера<br> <br>     class Test {<br>	     public static void main(String args[]){<br>		     System.out.println("Введите 1, 2, 3 или 4");<br>		     Scanner scan = new Scanner(System.in);<br>		     int number = scan.nextInt();<br> <br>		     switch (number){<br>		     case 1: System.out.println ("Вы ввели число 1"); break;<br>		     case 2: System.out.println ("Вы ввели число 2"); break;<br>		     case 3: System.out.println ("Вы ввели число 3"); break;<br>		     case 4: System.out.println ("Вы ввели число 4"); break;<br>		     default: System.out.println("Вы ввели неправильное число");<br>		}<br>	}<br>}<br>  </pre>
+
+  
+<h3>Комментарии:</h3>
+
+  
+<p>Проверяем значение переменной number
+     </p>
+<p><span class="clrpr">switch</span> (number)</p>
+
+  
+  
+<p>Для этого прописываем все возможные значения переменной number и код, который будет выполняться при том или ином занчении
+     </p>
+<pre>	     case 1: System.out.println ("Вы ввели число 1"); break;<br>         case 2: System.out.println ("Вы ввели число 2"); break;<br>         case 3: System.out.println ("Вы ввели число 3"); break;<br>         case 4: System.out.println ("Вы ввели число 4"); break;<br>	 </pre>
+
+  
+  
+<p>Если пользователь введет число, которое не равно 1, 2, 3 или 4 тогда отработает эта строчка:
+     </p>
+<p><span class="clrpr">default</span>: System.out.<span class="clrbl">println</span>(<span class="clrgr">"Вы ввели неправильное число"</span>);</p>
+
+  
+ 
+</body>
+</html>

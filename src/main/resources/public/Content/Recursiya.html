@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Recursiya</title>
+  </head>
+  <body>
+    <div align="center">
+      <h1>Рекурсия</h1>
+      <p align="left">Примеры:<br>
+      </p>
+      <p align="left">class StringConv {<br>
+        &nbsp;&nbsp;&nbsp; String str;<br>
+      </p>
+      <p align="left">&nbsp;&nbsp;&nbsp; StringConv(String s) { <font
+          color="#666666">//конструктор класса</font><br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; str = s;<br>
+        &nbsp;&nbsp;&nbsp; }<br>
+      </p>
+      <p align="left">&nbsp;&nbsp;&nbsp; void stringConv(int index) { <font
+          color="#666666">//рекурсивный метод</font><br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(index !=
+        str.length()-1) <font color="#666666">//базовый случай для
+          рекурсии. Пока index не равен последнему элементу массива
+          функция вызывает сама себя</font><br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        stringConv(index + 1) <font color="#666666">//с индексом +1</font><br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        System.out.print(str.charAt(index));<br>
+      </p>
+      <p align="left">&nbsp;&nbsp;&nbsp; }<br>
+      </p>
+      <p align="left">}<br>
+      </p>
+      <p align="left">class StringConvTest {<br>
+        &nbsp;&nbsp;&nbsp; public static void main(String[] args) {<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; StringConv s = new
+        String("Рекурсия");<br>
+      </p>
+      <p align="left">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        s.stringConv(0); <font color="#666666">//вызвать метод, указав
+          значение начального индекса 0</font><br>
+      </p>
+      <p align="left">&nbsp;&nbsp;&nbsp; }<br>
+      </p>
+      <p align="left">}<br>
+      </p>
+      <p align="left">
+        <meta http-equiv="content-type" content="text/html;
+          charset=UTF-8">
+      </p>
+    </div>
+  </body>
+</html>

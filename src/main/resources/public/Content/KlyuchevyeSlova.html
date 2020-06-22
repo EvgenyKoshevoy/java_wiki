@@ -1,0 +1,422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+    
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    
+  <title>KlyuchevoeSlovoStatic</title>
+</head>
+
+
+  <body alink="#ee0000" bgcolor="#333333" link="#0000ee" text="#000000" vlink="#551a8b">
+
+    <font color="#ffffff"> </font>
+    
+<h1 align="center"><font color="#ffff99">Ключевые слова</font></h1>
+
+    
+<h2><font color="#ffffff"><font color="#ffff66">Ключевое слово
+          static</font><br>
+
+      </font></h2>
+
+    <font color="#ffffff"> </font>
+    
+<p><font color="#ffffff">Доступ к переменной static осуществляется
+        напрямую, без создания объекта и обращения через него к
+        экземпляру класса.<br>
+
+      </font> </p>
+
+    <font color="#ffffff"> </font>
+    
+<p><font color="#ffffff">Пример статической переменной:<br>
+
+      </font> </p>
+
+    <font color="#ffffff"> </font>
+    
+<p><font color="#ffcc99">class StaticDemo {<br>
+
+        &nbsp;&nbsp;&nbsp; int x; <font color="#999999">//обычная
+          переменная экземпляра</font><br>
+
+        &nbsp;&nbsp;&nbsp; static int val; <font color="#999999">//статическая
+
+
+          переменная</font><br>
+
+        &nbsp;&nbsp;&nbsp; //..<br>
+
+      </font> </p>
+
+    <font color="#ffcc99"> </font>
+    
+<p><font color="#ffcc99">&nbsp;&nbsp;&nbsp; }<br>
+
+      </font> </p>
+
+    <font color="#ffcc99"> </font>
+    
+<p><font color="#ffcc99">class SDemo {<br>
+
+        &nbsp;&nbsp;&nbsp; public static void main(String[] args){</font></p>
+
+    <font color="#ffcc99"> </font>
+    
+<p><font color="#ffcc99">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        StaticDemo ob1 = new StaticDemo();<br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; StaticDemo.y = 19; <font color="#999999">//обращение к статической переменной</font><br>
+
+      </font> </p>
+
+    <font color="#ffcc99"> </font>
+    
+<p><font color="#ffffff"><font color="#ffcc99">&nbsp;&nbsp;&nbsp; }<br>
+
+          }</font><br>
+
+      </font> </p>
+
+    <font color="#ffffff"> </font>
+    
+<p><font color="#ffffff">Ограничения на применение методов типа
+        static:<br>
+
+      </font> <font color="#ffffff"><br>
+
+      </font> </p>
+
+    <font color="#ffffff"> </font>
+    
+<ul>
+
+      <li><font color="#ffffff">в методе типа static допускается
+          непосредственный вызов только других методов static;</font></li>
+
+      <li><font color="#ffffff">для метода типа static непосредственно
+          доступными оказываются только другие данные типа static,
+          определенные в его классе;</font></li>
+
+      <li><font color="#ffffff">в методе типа static должна
+          отсутствовать ссылка this;</font></li>
+
+    
+</ul>
+
+    <font color="#ffffff"> Пример некорректно созданного статического
+      метода:<br>
+
+      <br>
+
+      <font color="#ffcc99">class StaticError {<br>
+
+        &nbsp;&nbsp;&nbsp; int denom = 3;<br>
+
+        &nbsp;&nbsp;&nbsp; static int val = 1024;<br>
+
+        <br>
+
+        &nbsp;&nbsp;&nbsp; //ошибка! К нестатическим переменным нельзя
+        обращаться из статического метода.<br>
+
+        &nbsp;&nbsp;&nbsp; static int valDivDenom() {<br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return val / denom; <font color="#999999">//не пройдет компиляцию</font><br>
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+        } </font><br>
+
+      <br>
+
+    </font>
+    
+<h3><font color="#ffcc66">Статические блоки</font></h3>
+
+    <font color="#ffffff"> </font>
+    
+<p><font color="#ffffff">Статический блок выполняется при первой
+        загрузке класса, еще до того как класс будет использован.<br>
+
+      </font> </p>
+
+    <font color="#ffffff"> </font>
+    
+<p><font color="#ffffff">Пример:<br>
+
+      </font> </p>
+
+    <font color="#ffffff"> </font>
+    
+<p><font color="#ffffff">class StaticBlock {<br>
+
+        &nbsp;&nbsp;&nbsp; static double rootOf2;<br>
+
+        &nbsp;&nbsp;&nbsp; static double rootOf3;<br>
+
+      </font> </p>
+
+    <font color="#ffffff"> </font>
+    
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; static {&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <font color="#999999">//этот блок выполнится при загрузке класса</font><br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; rootOf2 = Math.sqrt(2.0);<br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; rootOf3 = Math.sqrt(3.0);<br>
+
+      </font> </p>
+
+    <font color="#ffffff"> </font>
+    
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; }<br>
+
+      </font> </p>
+
+    <font color="#ffffff"> </font>
+    
+<p><font color="#ffffff">}</font></p>
+
+    
+<h2 style="background-color: rgb(51, 51, 60);"><font color="#ffff66">Ключевое
+
+        слово this</font></h2>
+
+    <span style="color: rgb(255, 255, 255);"> Ключевое слово this
+      обозначает именно тот объект, по ссылке на которой действует
+      вызываемый метод.</span><br style="color: rgb(255, 255, 255);">
+
+    <br style="color: rgb(255, 255, 255);">
+
+    <span style="color: rgb(255, 255, 255);"> Важно запомнить:</span><br style="color: rgb(255, 255, 255);">
+
+    <span style="color: rgb(255, 255, 255);"> Java не запрещает
+      использовать имена параметров или локальных переменных,
+      совпадающие с глобальными переменными. В этом случае говорят, что
+      локальная переменная или параметр </span><span style="font-style: italic; color: rgb(255, 255, 255);">скрывает</span><span style="color: rgb(255, 255, 255);"> переменную экземпляра. Доступ
+      к скрытой переменной экземпляра обеспечивается ключевым словом
+      this. </span><br style="color: rgb(255, 255, 255);">
+
+    <br style="color: rgb(255, 255, 255);">
+
+    <span style="color: rgb(255, 255, 255);"> Пример конструктора
+      синтаксически правилен, но такого стиля программирования <span style="font-weight: bold;">стоит избежать</span>:</span><br style="color: rgb(255, 255, 255);">
+
+    <br style="color: rgb(255, 255, 255);">
+
+    <span style="color: rgb(255, 204, 153);"> Pwr (int b, int e) {</span><br style="color: rgb(255, 204, 153);">
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; this.b
+      = b;</span><br style="color: rgb(255, 204, 153);">
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; this.e
+      = e;</span><br style="color: rgb(255, 204, 153);">
+
+    <span style="color: rgb(255, 204, 153);"> &nbsp;&nbsp;&nbsp; //..</span><br style="color: rgb(255, 204, 153);">
+
+    <span style="color: rgb(255, 204, 153);"> }</span>
+    
+<h2><font color="#ffff66">Ключевое слово super</font></h2>
+
+    
+<p><font color="#ffffff">1. Используется для вызова конструктора
+        суперкласса из подкласса.<br>
+
+        Пример:<br>
+
+      </font></p>
+
+    <font color="#ffffff"><font color="#ffcc99">class TwoDShape {<br>
+
+        &nbsp;&nbsp;&nbsp; double width;<br>
+
+        &nbsp;&nbsp;&nbsp; double height;<br>
+
+        &nbsp;&nbsp;&nbsp; //...<br>
+
+        &nbsp;&nbsp;&nbsp; TwoDShape(double w, double h) {<br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; width = w;<br>
+
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; hieght = h;<br>
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+        }<br>
+
+        <br>
+
+        class Triangle extends TwoDShape {<br>
+
+        &nbsp;&nbsp;&nbsp; String style;<br>
+
+        &nbsp;&nbsp;&nbsp; //...<br>
+
+        &nbsp;&nbsp;&nbsp; Triangle (String s, double w, double h) {<br>
+
+        &nbsp;&nbsp;&nbsp; super (w, h); <font color="#999999">//вызов
+          метода конструктора TwoDShape</font><br>
+
+        &nbsp;&nbsp;&nbsp; style = s;<br>
+
+        &nbsp;&nbsp;&nbsp; }<br>
+
+        } <br>
+
+        <br>
+
+        <font color="#ffffff">2. Используется для доступа к членам
+          суперкласса<br>
+
+          <br>
+
+          Синаксис:<br>
+
+          <font color="#ffcc99"><i>super.член_класса;<br>
+
+              <br>
+
+            </i><font color="#ffffff">Пример:<br>
+
+              <font color="#ffcc99">class A {<br>
+
+                &nbsp;&nbsp;&nbsp;&nbsp; int i;<br>
+
+                }<br>
+
+                <br>
+
+                class B extends A {<br>
+
+                &nbsp;&nbsp;&nbsp; int i;<br>
+
+                &nbsp;&nbsp;&nbsp; B (int a, int b) {<br>
+
+                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; super.i = a; <font color="#999999">//ссылка на переменную класса А</font><br>
+
+                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; i = b; <font color="#999999">//переменная класса B</font><br>
+
+                &nbsp;&nbsp;&nbsp; }<br>
+
+                }</font><br>
+
+              <br>
+
+            </font></font></font></font></font>
+    
+<h2><font color="#ffff33">Ключевое слово final</font></h2>
+
+    
+<p><font color="#ffffff">Используется для запрета переопределения
+        метода или наследования класса.<br>
+
+      </font></p>
+
+    
+<h3><font color="#ffffff"><font color="#ffff00">Предотвращение
+          переопределения методов</font></font></h3>
+
+    
+<p><font color="#ffffff">Для предотвращения переопределния в начале
+        объявления метода нужно указать ключевое слово <font color="#ccffff"><b>final</b><font color="#ffffff">.<br>
+
+          </font></font></font></p>
+
+    
+<p><font color="#ffffff"><font color="#ccffff"><font color="#ffffff">Пример:<br>
+
+          </font></font></font></p>
+
+    <font color="#ffffff"><font color="#ccffff"><font color="#ffffff">&nbsp;&nbsp;&nbsp;
+          <font color="#ffcc99">class A {<br>
+
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; final void meth() {<br>
+
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            System.out.println("Это метод final.");<br>
+
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+
+          </font></font></font></font><font color="#ffffff"><font color="#ccffff"><font color="#ffffff"><font color="#ffcc99">&nbsp;&nbsp;&nbsp;
+            }<br>
+
+            <br>
+
+            &nbsp;&nbsp;&nbsp; class B extends A {<br>
+
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; void meth() { <font color="#c0c0c0">//Ошибка: этот метод не может быть
+              переопределен!</font><br>
+
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            System.out.println("Недопустимо!");<br>
+
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+
+            &nbsp;&nbsp;&nbsp; }</font><br>
+
+        </font></font></font><br>
+
+    
+<h3><font color="#ffff00">Предотвращение наследования</font></h3>
+
+    
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; Предотвратить
+        наследование класса можно, указав в определении класса ключевое
+        слово <font color="#ccffff"><b>final</b><font color="#ffffff">.
+            В этом случает считается, что это ключевое слово применяется
+            ко всем методам класса. Применять его к абстрактным классам
+            не имеет никакого смысла, т.к. абстрактный класс требует
+            переопределения методов.<br>
+
+          </font></font></font></p>
+
+    
+<p><font color="#ffffff"><font color="#ccffff"><font color="#ffffff">Пример:<br>
+
+          </font></font></font></p>
+
+    <font color="#ffffff"><font color="#ccffff"><font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;
+          <font color="#ffcc99">final class A {<br>
+
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // ...<br>
+
+          </font></font></font></font><font color="#ffffff"><font color="#ccffff"><font color="#ffffff"><font color="#ffcc99">&nbsp;&nbsp;&nbsp;
+            }<br>
+
+            <br>
+
+            &nbsp;&nbsp;&nbsp; //Следующее определение класса недопустимо<br>
+
+            &nbsp;&nbsp;&nbsp; class B extends A {<font color="#c0c0c0">
+              //Ошибка: класс А не может иметь подклассов!</font> <br>
+
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // ...<br>
+
+            &nbsp;&nbsp;&nbsp; }<br>
+
+            <br>
+
+          </font></font></font></font>
+    
+<h3><font color="#ffff00">Применение к переменным экземпляра</font></h3>
+
+    
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; Используется для
+        создания именованных констант. Если имени переменной
+        предшествует <b><font color="#ccffff">final</font></b>, то ее
+        значение нельзя изменить до конца работы программы.</font></p>
+<p><font color="#ffffff">&nbsp;&nbsp;&nbsp; Название переменных пишется КАПСОМ, а между словами ставится нижнее подчеркивание. <br>
+
+      </font></p>
+
+    <font color="#ffffff"><font color="#ccffff"><b></b></font></font><font color="#ffffff"><font color="#ffcc99"><font color="#ffffff"><font color="#ffcc99"><font color="#ffffff"> </font></font></font></font>
+    </font><font color="#ffffff"> </font>
+  
+</body>
+</html>

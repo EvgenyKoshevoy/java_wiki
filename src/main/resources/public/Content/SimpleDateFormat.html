@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+  
+  <meta content="text/html; charset=Windows-1251" http-equiv="content-type">
+
+  
+  <title>SimpleDateFormat</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+
+<body style="background-color: rgb(51, 51, 51); color: rgb(0, 0, 0);" alink="#ee0000" link="#0000ee" vlink="#551a8b">
+Для Для <span style="color: rgb(255, 255, 255);"></span>
+<h1 style="text-align: center;"><span style="color: rgb(255, 255, 204);">SimpleDateFormat</span></h1>
+
+<span style="color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp; Является подклассом, производным от класса <span style="font-weight: bold;">DateFormat</span>.<br>
+
+&nbsp;&nbsp;&nbsp; Позволяет определять собственные шаблоны
+форматирования, чтобы использовать их для отображения сведений о дате и
+времени.<br>
+
+<br>
+
+&nbsp;&nbsp;&nbsp; Конструктор:<br>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">SimpleDateFormat(String </span><span style="font-style: italic; color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">форматируемая_строка</span><span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">)<br>
+
+<br>
+
+</span><span style="color: rgb(255, 204, 153);"><span style="color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp; Пример:<br>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(255, 204, 153); font-family: Courier New,Courier,monospace;">SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy hh:mm:ss zzz")</span><br>
+
+<br>
+
+&nbsp;&nbsp;&nbsp; </span></span></span>
+
+<pre style="font-family: 'Courier New'; background-color: rgb(51, 51, 51); color: rgb(255, 204, 153);">public class SimpleDateFormatDemo {<br>    public static void main(String[] args) {<br>        Date date = new Date();<br>        SimpleDateFormat sdf;<br>        sdf = new SimpleDateFormat("hh:mm:ss");<br>        System.<span style="font-style: italic;">out</span>.println(sdf.format(date));<br>        sdf = new SimpleDateFormat("dd MMM yyy hh:mm:ss zzz");<br>        System.<span style="font-style: italic;">out</span>.println(sdf.format(date));<br>        sdf = new SimpleDateFormat("E MMM dd yyyy");<br>        System.<span style="font-style: italic;">out</span>.println(sdf.format(date));<br>    }<br>}</pre>
+
+<span style="color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp; Пример парсинга вводимой даты:<br>
+И&nbsp;&nbsp;&nbsp; И&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; М<br>
+</span>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<pre style="color: rgb(169, 183, 198); font-family: 'Courier New'; background-color: rgb(51, 51, 51);"><span style="color: rgb(204, 120, 50);">public class </span>Solution {<br><br>    <span style="color: rgb(204, 120, 50);">public static void </span><span style="color: rgb(255, 198, 109);">main</span>(String[] args) <span style="color: rgb(204, 120, 50);">throws </span>Exception {<br>       BufferedReader reader = <span style="color: rgb(204, 120, 50);">new </span>BufferedReader(<span style="color: rgb(204, 120, 50);">new </span>InputStreamReader(System.<span style="color: rgb(152, 118, 170); font-style: italic;">in</span>))<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">       </span><span style="color: rgb(128, 128, 128);">//создать шаблон для вводимой даты<br></span><span style="color: rgb(128, 128, 128);">       </span>SimpleDateFormat sdf = <span style="color: rgb(204, 120, 50);">new </span>SimpleDateFormat(<span style="color: rgb(106, 135, 89);">"yyyy-MM-dd"</span><span style="color: rgb(204, 120, 50);">, </span>Locale.<span style="color: rgb(152, 118, 170); font-style: italic;">ENGLISH</span>)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">       </span><span style="color: rgb(128, 128, 128);">//создать объект date, присвоив ему введенные значения<br></span><span style="color: rgb(128, 128, 128);">       </span>Date date = sdf.parse(reader.readLine())<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">       </span><span style="color: rgb(128, 128, 128);">//создать шаблон для вывода даты<br></span><span style="color: rgb(128, 128, 128);">       </span>SimpleDateFormat newDate = <span style="color: rgb(204, 120, 50);">new </span>SimpleDateFormat(<span style="color: rgb(106, 135, 89);">"MMM dd, yyyy"</span><span style="color: rgb(204, 120, 50);">, </span>Locale.<span style="color: rgb(152, 118, 170); font-style: italic;">ENGLISH</span>)<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);"><br></span><span style="color: rgb(204, 120, 50);">       </span>System.<span style="color: rgb(152, 118, 170); font-style: italic;">out</span>.println(newDate.format(date).toUpperCase())<span style="color: rgb(204, 120, 50);">;<br></span><span style="color: rgb(204, 120, 50);">       </span><span style="color: rgb(128, 128, 128);">//toUpperCase делает буквы заглавными<br></span><span style="color: rgb(128, 128, 128);">    </span>}<br>}</pre>
+<br>
+
+<span style="color: rgb(255, 255, 255);"><span style="color: rgb(255, 204, 153);"><span style="color: rgb(255, 255, 255);"></span></span><br>
+
+&nbsp;&nbsp;&nbsp; </span>
+</body>
+</html>

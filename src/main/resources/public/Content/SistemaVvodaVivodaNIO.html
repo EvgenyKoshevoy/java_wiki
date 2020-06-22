@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>SistemaVvodaVivodaNIO</title>
+  </head>
+  <body>
+    <h1 align="center">Система ввода-вывода NIO</h1>
+    <h2>&nbsp;&nbsp;&nbsp; Интерфейс Path</h2>
+    <p>&nbsp;&nbsp;&nbsp; Задает путь к файлу.<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; Создание объекта типа Path не приводит к
+      открытию&nbsp; или созданию файла. Создается объект,
+      инкапсултрующий путь к каталогу, в котором находится файл.<br>
+    </p>
+    <table width="80%" border="1" cellspacing="2" cellpadding="2">
+      <tbody>
+        <tr>
+          <td valign="top" align="center"><b>Метод<br>
+            </b></td>
+          <td valign="top"><b>Описание<br>
+            </b></td>
+        </tr>
+        <tr>
+          <td valign="top">boolean endsWith(String путь)<br>
+          </td>
+          <td valign="top">Возвращает true, если вызывающий объект типа
+            Path оканчивается заданным путем<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">boolean endsWith(Path путь)<br>
+          </td>
+          <td valign="top">Возвращает true, если вызывающий объект типа
+            Path оканчивается заданным путем</td>
+        </tr>
+        <tr>
+          <td valign="top">Path getFileName()<br>
+          </td>
+          <td valign="top">Возвращает имя файла, связанное с вызывающим
+            объектом типа Path<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">Path getName(int index)<br>
+          </td>
+          <td valign="top">Возвращает объект типа Path содержащий имя
+            элемента пути по указанному индексу в вызывающем объекте.
+            Крайний слева соответствует элементу getNameCount() - 1<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">int getNameCount()<br>
+          </td>
+          <td valign="top">Возвращает количество элементов(кроме
+            корневого) в вызывающем объекте типа Path<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">Path getParent()<br>
+          </td>
+          <td valign="top">Возвращает объект типа Path, который содержит
+            весь путь, кроме имени файла, определяемого вызывающим
+            объектом типа Path<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">Path getRoot()<br>
+          </td>
+          <td valign="top">Возвращает корневой каталог<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">boolean isAbsolute()<br>
+          </td>
+          <td valign="top">Возвращает true, если вызывающий объект
+            обозначает абсолютный путь<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top"><br>
+          </td>
+          <td valign="top"><br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top"><br>
+          </td>
+          <td valign="top"><br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top"><br>
+          </td>
+          <td valign="top"><br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top"><br>
+          </td>
+          <td valign="top"><br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top"><br>
+          </td>
+          <td valign="top"><br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top"><br>
+          </td>
+          <td valign="top"><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;&nbsp;&nbsp; Экземпляр класса File(java.io) можно
+      преобразовать в Path методом toPath(). Так же File (java.io) можно
+      получить из Path методом toFile().<br>
+    </p>
+    <h2>&nbsp;&nbsp;&nbsp; Класс Files</h2>
+    <p>&nbsp;&nbsp;&nbsp; В основном состоит из статических методов,
+      предоставляющие действия над файлами.<br>
+      &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; Методы из класса Files используют объекты типа
+      Path.<br>
+    </p>
+    <h2>&nbsp;&nbsp;&nbsp; Класс Paths</h2>
+    <p>&nbsp;&nbsp;&nbsp; Экземпляр типа Path нельзя создать
+      непосредственно с помощью конструктора т.к. это интерфейс. Вместо
+      этого можно получить объект типа Path с помощью метода get() в
+      классе Paths.<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; static Path get(String
+      имя_пути, String части)<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращает объект, инкапсулирующий определенный путь. Параметр
+      "части" указывать не обязательно. Если путь не достоверен
+      генерируется исключение&nbsp; InvalidPathException.<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; static Path get(URI uri)<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращается объект типа Path, соответствующий заданному параметру
+      uri.<br>
+    </p>
+  </body>
+</html>

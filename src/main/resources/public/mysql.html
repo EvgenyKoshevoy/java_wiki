@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>mysql</title>
+  </head>
+  <body vlink="#551A8B" text="#ffffcc" link="#0000EE" alink="#EE0000"
+    bgcolor="#333333">
+    <div align="left">
+      <h1 align="center"><font color="#33ccff">MySQL</font></h1>
+      <h3>&nbsp;&nbsp;&nbsp; <font color="#ffff33">Модификаторы доступа</font></h3>
+      <ul>
+        <li>NOT NULL - не может содержать пустого значения;</li>
+        <li>PRIMARY KEY - поле будет первичным ключом;</li>
+        <li>AUTO_INCREMENT - при добавлении новой записи значение этого
+          поля будет увеличено на единицу (только для целых типов);</li>
+        <li>DEFAULT - задает значение поля по умолчанию;</li>
+      </ul>
+      &nbsp;&nbsp;&nbsp; Пример:<br>
+      <br>
+      <font color="#33cc00">&nbsp;&nbsp;&nbsp; CREATE TABLES friends<br>
+        &nbsp;&nbsp;&nbsp; (<br>
+        &nbsp;&nbsp;&nbsp; id int auto_increment,<br>
+        &nbsp;&nbsp;&nbsp; name varchar(50) not null,<br>
+        &nbsp;&nbsp;&nbsp; email varchar(30) not null,<br>
+        &nbsp;&nbsp;&nbsp; comment text,<br>
+        &nbsp;&nbsp;&nbsp; primary key (id)<br>
+        &nbsp;&nbsp;&nbsp; );<br>
+      </font><br>
+      <h3><b>&nbsp;&nbsp;&nbsp; <font color="#ffff33">Добавление
+            записей в таблицу</font></b><b>&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; </b><br>
+      </h3>
+      <font color="#33cc00"><b>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </b>INSERT
+
+
+        INTO Имя_таблицы [(Список полей)]<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VALUES (Список
+        констант);</font><br>
+      <br>
+      &nbsp;&nbsp;&nbsp; Пример:<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; INSERT INTO friends<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; VALUES (0, 'Denis',
+      'denis@host.ru', 'some comment');<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; Так же поля можно указывать явно:<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; INSERT INTO friends
+      (COMMENT, EMAIL, NAME)<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; VALUES ('some comment',
+      'denis@host.ru', 'Denis');<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; Для вставки даты удобно использовать встроенную
+      SQL функцию TO_DATE:<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; INSERT INTO BIRTHDAY (ADATE,
+      NAME)<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; VALUES (TO_DATE('01/02/77',
+      'DD/MM/YY'), 'Andrew');<br>
+      <br>
+      <h3>&nbsp;&nbsp;&nbsp; <font color="#ffff33">Обновление записей</font></h3>
+      <p>&nbsp;&nbsp;&nbsp; Синтаксис:</p>
+      <p><font color="#33cc00">&nbsp;&nbsp;&nbsp; UPDATE таблица<br>
+          &nbsp;&nbsp;&nbsp; SET список_полей_и_значений (задается: поле
+          = значение)<br>
+          &nbsp;&nbsp;&nbsp; WHERE условие;</font><br>
+      </p>
+      <p>&nbsp;&nbsp;&nbsp; Пример:<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; UPDATE friends<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; SET name='Igor',
+        email='777@host.ru'<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; WHERE id=1;<br>
+      </p>
+      <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; UPDATE friends<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; SET name='Igor',
+        email='777@host.ru'<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; WHERE (id=1) and
+        (email='user@somehost.ru')<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; LIMIT 1;<br>
+      </p>
+      <p>&nbsp;&nbsp;&nbsp; Если не указать условие where, то значения
+        полей будут установлены для всех записей!<br>
+      </p>
+      <p>&nbsp;&nbsp;&nbsp; LIMIT - задает условие: количество записей,
+        которые будут затронуты в результате обработки запроса.
+        (Например, если id не primary key, то будут изменены все записи
+        с id = 1).<br>
+      </p>
+      <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; UPDATE friends<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; SET name='Igor',
+        email='777@host.ru'<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; WHERE id=1 LIMIT 1;<br>
+      </p>
+      <h3>&nbsp;&nbsp;&nbsp; <font color="#ffff33">Выборка записей</font></h3>
+      <p>&nbsp;&nbsp;&nbsp; Синтаксис (упрощенная форма):<br>
+      </p>
+      <p><font color="#009900"><font color="#33cc00">&nbsp;&nbsp;&nbsp;
+            SELECT список_полей<br>
+            &nbsp;&nbsp;&nbsp; FROM таблица<br>
+            &nbsp;&nbsp;&nbsp; [WHERE условие];</font><br>
+        </font></p>
+      <p><font color="#009900">&nbsp;&nbsp;&nbsp; <font color="#ffffcc">Полный
+
+
+            синтаксис:</font><br>
+        </font></p>
+      <p><font color="#009900"><font color="#33cc00">&nbsp;&nbsp;&nbsp;
+            SELECT [DISTINCT | ALL] {* | [поле1 AS псевдоним] [, ...,
+            поле N AS псевдоним]}<br>
+            &nbsp;&nbsp;&nbsp; FROM Имя_таблицы1 [, ..., Имя_таблицыN]<br>
+            &nbsp;&nbsp;&nbsp; [WHERE условие]<br>
+            &nbsp;&nbsp;&nbsp; [GROUP BY список полей] [HAVING условие]<br>
+            &nbsp;&nbsp;&nbsp; [ORDER BY список полей]</font><br>
+        </font></p>
+      <p>&nbsp;&nbsp;&nbsp; Пример:<br>
+      </p>
+      <p>&nbsp;&nbsp;&nbsp; SELECT *&nbsp;&nbsp;&nbsp; // для всех полей<br>
+        &nbsp;&nbsp;&nbsp; FROM friends;<br>
+      </p>
+      <p>&nbsp;&nbsp;&nbsp; SELECT id, name, email<br>
+        &nbsp;&nbsp;&nbsp; FROM friends;<br>
+      </p>
+      <p>&nbsp;&nbsp;&nbsp; SELECT comment FROM friends WHERE id=1;<br>
+      </p>
+      <h3>&nbsp;&nbsp;&nbsp; <font color="#ffff33">Удаление записей</font></h3>
+      <p>&nbsp;&nbsp;&nbsp; Синтаксис:<br>
+      </p>
+      <p><font color="#33cc00">&nbsp;&nbsp;&nbsp; DELETE<br>
+          &nbsp;&nbsp;&nbsp; FROM таблица<br>
+          &nbsp;&nbsp;&nbsp; WHERE условие;</font><br>
+      </p>
+      <p>&nbsp;&nbsp;&nbsp; Пример:<br>
+      </p>
+      <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; DELETE FROM friends WHERE
+        id=1;<br>
+      </p>
+      <p>&nbsp;&nbsp;&nbsp; Если не указать условие, будут удалены все
+        записи.<br>
+      </p>
+    </div>
+    <br>
+    <h3>&nbsp;&nbsp;&nbsp;<font color="#ffff33"> Встроенные функции</font></h3>
+    <p>&nbsp;&nbsp;&nbsp; Описание функций на русском:<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      http://phpclub.ru/mysql/doc/index.html<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; Описание функций дати и времени:<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      http://phpclub.ru/mysql/doc/date-and-time-functions.html<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; COUNT - вычисляет число элементов;<br>
+      &nbsp;&nbsp;&nbsp; MIN / MAX - вычисляет мин / макс значение;<br>
+      &nbsp;&nbsp;&nbsp; AVG - среднее значение;<br>
+      &nbsp;&nbsp;&nbsp; SUM - сумма элементов<br>
+      &nbsp;&nbsp;&nbsp; RAND() - используется для выборки случайных
+      записей<br>
+      &nbsp;&nbsp;&nbsp; LAST_INTEGER_ID() - возвращает id последней
+      добавленной записи.<br>
+    </p>
+    <h3>&nbsp;&nbsp;&nbsp; Группировка записей. Сложные запросы</h3>
+    <p>&nbsp;&nbsp;&nbsp; Вывести всех клиентов, общая сумма заказов
+      которых превышает 500:<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; SELECT FROM CUSTOMERS.FIO, SUM(GOODS.PRICE *
+      ORDERS.QTY) AS A FROM CUSTOMERS, GOODS, ORDERS <br>
+      &nbsp;&nbsp;&nbsp; WHERE (CUSTOMERS.C_NO = ORDERS.C_NO) &amp;
+      (ORDERS.G_NO = GOODS.G_NO) GROUP BY ORDERS.C_NO<br>
+      &nbsp;&nbsp;&nbsp; HAVING A &gt; 500;<br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; <br>
+    </p>
+  </body>
+</html>

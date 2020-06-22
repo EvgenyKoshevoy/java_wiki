@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <title>Основы ООП</title>
+  </head>
+  <body>
+    <h1 style="text-align: center; color: rgb(0, 0, 153);">Основы ООП</h1>
+    <span style="font-weight: bold;">Абстракиця</span> - выделение
+    наиболее важных характеритсик и информации об объекте.<br>
+    Абстракцию так же можно определить, как способ представления
+    элементов задачи из реального мира в виде объектов в программе.<br>
+    <br>
+    <span style="font-weight: bold;">Инкапсуляция</span> - атрибуты и
+    поведение объекта объединяются в одном классе, внутренняя реализация
+    объекта скрывается от пользователя, а для работы с объектом
+    предоставляется открытый интерфейс.<br>
+    Задача программиста - определить какие атрибуты и методы будут
+    доступны
+    для открытого доступа, а какие являются внутренней реализацией
+    объекта
+    и дожны быть недоступны для изменений.<br>
+    <br>
+    Состояние будущих объектов описывается в классе с помощью <span
+      style="font-weight: bold;">полей</span>, а их поведение с помощью
+    методов.<br>
+    Возможность изменения состояния и поведения осуществляется с помощью
+    модификаторов доступа к полям и методам - <span style="font-weight:
+      bold;">private, protected, public, default.<br>
+      <br>
+    </span>Пример:<br>
+    <br>
+    <span style="color: rgb(0, 0, 153);">public class</span> SomePhone {<br>
+    &nbsp; &nbsp;<br>
+    &nbsp; <span style="color: rgb(0, 0, 153);">&nbsp;private int</span>
+    year;<br>
+    &nbsp; &nbsp;<span style="color: rgb(0, 0, 153);">private</span>
+    String company;<br>
+    &nbsp; &nbsp;<span style="color: rgb(0, 0, 153);">public</span>
+    SomePhone (int year, String company) {<br>
+    &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 0, 153);">this</span>.year
+    = year;<br>
+    &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 0, 153);">this</span>.company
+    = company;<br>
+    &nbsp; &nbsp;}<br>
+    &nbsp; &nbsp;<span style="color: rgb(0, 0, 153);">private void</span>
+    openConnection() {<br>
+    &nbsp; &nbsp;<span style="color: rgb(153, 153, 153);">//find
+      commutator</span><br style="color: rgb(153, 153, 153);">
+    <span style="color: rgb(153, 153, 153);">&nbsp;
+      &nbsp;//openNewConnection...</span><br>
+    &nbsp; &nbsp;}<br>
+    &nbsp; &nbsp;<span style="color: rgb(0, 0, 153);">public void</span>
+    call(){<br>
+    &nbsp; &nbsp; &nbsp; openConnection();<br>
+    &nbsp; &nbsp; &nbsp; System.out.println(<span style="color: rgb(0,
+      102, 0);">"Вызываю номер"</span>);<br>
+    }<br>
+    &nbsp; &nbsp;<span style="color: rgb(0, 0, 153);">public void </span>ring(){<br>
+    &nbsp; &nbsp; &nbsp; System.out.println(<span style="color: rgb(0,
+      102, 0);">"Дзынь дзынь"</span>);<br>
+    } <br>
+    }<br>
+    <br>
+    Модификатор <span style="font-weight: bold;">private</span> делает
+    доступными поля и методы класса только внутри этого класса. Это
+    значит
+    что получить доступ к полям из вне не возможно, так же как и
+    получить
+    доступ к private методам.<br>
+    <br>
+    Сокрытие доступа с метода openConnetction дает нам возможность
+    свободного изменения реализации этого метода, т.к. он гарантированно
+    не
+    используется другими объектами и его изменение не нарушит их работу.<br>
+    <br>
+    Для работы с объектом мы оставляется открыте медоты ring и call с
+    помощью модификатора <span style="font-weight: bold;">public</span>.<br>
+    <span style="font-weight: bold;">Предоставление открытых методов для
+      работы с объектом так же является частью механизма инкапсуляции,
+      т.к.
+      если полностью закрыть доступ к объекту он становится бесполезным.<br>
+      <br>
+      Наследование<br>
+    </span>В программировании наследовние заключается в использовании
+    уже существующих классов для описания новых.<br>
+    <br>
+    Пример создания класса смартфон с помощью наследования:<br>
+    <br>
+    <span style="color: rgb(0, 0, 153);">public abstract class</span>
+    AbstractPhone {<br>
+    &nbsp; &nbsp;<span style="color: rgb(0, 0, 153);">private int</span>
+    year;<br>
+    &nbsp; &nbsp;<br>
+    &nbsp; &nbsp;<span style="color: rgb(0, 0, 153);">public</span>
+    AbstractPhone (int year){<br>
+    &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 0, 153);">this</span>.year
+    = year;<br>
+    }<br>
+    &nbsp; &nbsp;<span style="color: rgb(0, 0, 153);">public abstract
+      void</span> call (int outputNumber);<br>
+    &nbsp; &nbsp;<span style="color: rgb(0, 0, 153);">public abstract
+      void</span> ring (int inputNumber);<br>
+    }<br>
+    <br>
+    <span style="color: rgb(0, 0, 153);">public abstract class</span>
+    Wireless extends AbstractPhone {<br>
+    &nbsp; &nbsp;<br>
+    &nbsp; &nbsp;<span style="color: rgb(0, 0, 153);">private int</span>
+    hour;<br>
+    &nbsp; &nbsp;<span style="color: rgb(0, 0, 153);">public</span>
+    WirelessPhone (<span style="color: rgb(0, 0, 153);">int</span> year,
+    <span style="color: rgb(0, 0, 153);">int</span> hour){<br>
+    &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 0, 153);">super</span>(year);<br>
+    &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 0, 153);">this</span>.hour
+    = hour;<br>
+    }<br>
+    }<br>
+    <br>
+    <span style="font-weight: bold;">Полиморфизм</span> - когда
+    программа может использовать объекты с одинаковым интерфейсом без
+    информации о внутреннем устройстве объекта.<br>
+    <br>
+    <span class="token keyword" style="color: navy; font-weight: 600; font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">public</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"> </span><span class="token keyword" style="color: navy; font-weight: 600; font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">class</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"> </span><span class="token class-name" style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">User</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"> </span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">{</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"><br>
+    </span><span class="token keyword" style="color: navy; font-weight: 600; font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">private</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"> String name</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">;</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"><br>
+<br>
+    </span><span class="token keyword" style="color: navy; font-weight: 600; font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">public</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"> </span><span class="token function" style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">User</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">(</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">String name</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">)</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"> </span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">{</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"><br>
+        </span><span class="token keyword" style="color: navy; font-weight: 600; font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">this</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">.</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">name </span><span class="token operator" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px;">=</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"> name</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">;</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"><br>
+            </span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">}</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"><br>
+<br>
+    </span><span class="token keyword" style="color: navy; font-weight: 600; font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">public</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"> </span><span class="token keyword" style="color: navy; font-weight: 600; font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">void</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"> </span><span class="token function" style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">callAnotherUser</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">(</span><span class="token keyword" style="color: navy; font-weight: 600; font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">int</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"> number</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">,</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"> AbstractPhone phone</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">)</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">{</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"><br>
+</span><span class="token comment" style="padding: 0px; color: gray; width: auto; height: auto; min-height: 0px; min-width: 0px; font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">// вот он полиморфизм - использование в коде абстактного типа AbstractPhone phone!</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"><br>
+        phone</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">.</span><span class="token function" style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">call</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">(</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">number</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">)</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">;</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"><br>
+    </span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">}</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"><br>
+</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">}</span><span style="color: rgb(0, 0, 0); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"><br>
+ </span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);">}</span><br>
+    <h3><span style="color: rgb(255, 102, 0);">Объект</span></h3>
+    &nbsp;<span style="font-weight: bold;">Объект (экземпляр)</span> -
+    это отдельный представитель класса, имеющий конкретное состояние и
+    поведение, полностью определяемое классом.<br>
+    <br>
+    Объект имеет конкретные значения <span style="font-weight: bold;">атрибутов</span>
+    и <span style="font-weight: bold;">методы</span>, работающие с
+    этими значениями на основе правил, заданных в классе.<br>
+    <br>
+    Машина может быть красной или синей, кружко полной или пустой. Эти
+    характеристики называются <span style="font-weight: bold;">атрибутами</span>
+    объекта. Атрибут описывает текущее состояние объекта (еще его
+    называют <span style="font-weight: bold;">переменная экземпляра</span>).<br>
+    <br>
+    В ООП объект следующие свойства:<br>
+    &nbsp;&nbsp;&nbsp; - <i>поведение объекта</i> (что с ним можно
+    делать, какие методы к нему можно применить)<br>
+    &nbsp;&nbsp;&nbsp; - <i>состояние объекта</i> (как объект реагирует
+    на применение методов)<br>
+    &nbsp;&nbsp;&nbsp; - <i>идентичность объекта</i> (чем данный объект
+    отличается от других, характеризующихся тем же поведением и
+    состоянием)<br>
+    <br>
+    <span style="font-weight: bold;"></span><span style="font-weight:
+      bold;">
+    </span>Атрибут описывает текущее состояние объекта.<br>
+    <span style="font-weight: bold;">Поведение</span> демонстрирует что
+    объект способен делать.<br>
+    <br>
+    Объект - значения переменных экземпляра могут отличаться от значений
+    его полей ввода.<br>
+    Объект и класс могут вести себя по разному.<br>
+    Состояние объекта может меняться.<br>
+    Объект может меняться во время выполнения программы.<br>
+    <h3 style="color: rgb(255, 102, 0);">Класс</h3>
+    <span style="font-weight: bold;">Класс</span> - способ описания
+    сущности, определяющий состояние и поведение, зависящее от этого
+    состояния, а так же правила для взаимодействия с этой сущностью
+    (контракт). Другими словами, класс - описание объекта. Один класс
+    можно использовать для создания множества объектов.<br>
+    <br>
+    С точки зрения программирования класс можно рассматривать как набор
+    данных (полей, атрибутов, членов класса) и функций для работы с ними
+    (методов).<br>
+    <br>
+    С точки зрения структуры программы класс является сложным типом
+    данных.<br>
+    <br>
+    Каждый класс имеет имя, которое используется для определения <span
+      style="font-weight: bold;">атрибутов</span> и <span
+      style="font-weight: bold;">поведения</span>.<br>
+    <br>
+    Атрибуты: имя, высота, вес, пол, возраст.<br>
+    Поведение: ходить, бегать, прыгать, говорить, спать.<br>
+    <br>
+    Класс - компилируется из файла Java.<br>
+    Класс объявляет методы.<br>
+    <br>
+    <h3><span style="color: rgb(255, 102, 0);">Методы</span></h3>
+    <br>
+    Методы определяют <span style="font-weight: bold;">поведение</span>.<br>
+    Метод является коллекцией выражений, сгруппированных вместе для
+    выполнения действия.<br>
+    System.out.println() - является примером метода.<br>
+    <br>
+    Метод и переменная экземпляра находятся в объектах.<br>
+    <br>
+    Можно определить свои методы для выполнения желаемых действий.<br>
+    <br>
+    class MyClass {<br>
+    <br>
+    static void <span style="font-weight: bold;">sayHello()</span> {<br>
+    System.out.println("Hello World!");<br>
+    &nbsp;}<br>
+    <br>
+    public static void main(String[] args) {<br>
+    &nbsp; &nbsp;<span style="font-weight: bold;">sayHello()</span>;<br>
+    &nbsp; &nbsp;}<br>
+    }<br>
+    <br>
+    Чтобы вызвать метод, достаточно ввести его имя и пару круглых
+    скобок.<br>
+    <h4><span style="color: rgb(204, 102, 0);">Вызов методов</span><br>
+    </h4>
+    Метод можно вызывать любое количество раз. При запуске метода код
+    перескакивает в место, где метод был определен, выполняет код внутри
+    него, а затем возвращается обратно и выполняет другие строки.<br>
+    <br>
+    <h4><span style="color: rgb(204, 102, 0);">Параметры методов</span></h4>
+    Можно создать метод, который принимает некторую информацию,
+    называемую <span style="font-weight: bold;">параметрами</span>, при
+    его вызове. Параметры необходимо указывать внутри скобок.<br>
+    Например можно модифицировать метод <span style="font-weight:
+      bold;">sayHello()</span>, чтобы он принимал параметр <span
+      style="font-weight: bold;">String</span>.<br>
+    <br>
+    myClass {<br>
+    &nbsp; &nbsp;static void sayHello(<span style="font-weight: bold;">String
+      name</span>) {<br>
+    &nbsp; &nbsp; &nbsp; Systwm.out.println("Hello" + <span
+      style="font-weight: bold;">name</span>);<br>
+    &nbsp; &nbsp;}<br>
+    <br>
+    public static void main(String[] args) {<br>
+    &nbsp; &nbsp;sayHello("David");<br>
+    &nbsp; &nbsp;sayHello("Amy");<br>
+    &nbsp; &nbsp;}<br>
+    }<br>
+    Метод sayHello принимает строку с именем <span style="font-weight:
+      bold;">name </span>в качестве параметра, который используется в
+    теле метода. При вызове метода мы передаем значение параметра в
+    скобки.&nbsp;<br>
+    <br>
+    Метод может иметь множество параметров, разделенных запятыми.<br>
+    <br>
+    Преимущество методов - <span style="font-weight: bold;">повторное
+      использование кода</span>.
+    Можно написать метод один раз и использовать его множество раз.
+    Основываясь на переданных параметрах, метода могут выполнять
+    различные
+    действия.
+    <h3><span style="color: rgb(255, 102, 0);">Интерфейс</span></h3>
+    <span style="font-weight: bold;">Интерфейс</span> - набор методов
+    класса, доступных для использования другими классами.<br>
+    <br>
+    Интерфейсом класса будет являться набор всех его публичных методов в
+    совокупности с набором публичных атрибутов. Интерфейс специфизирует
+    класс, четко определяя все возможные действия над ним.
+  </body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Potoki</title>
+  </head>
+  <body vlink="#7b68ee" text="#ffffcc" link="#00ff7f" bgcolor="#333333"
+    alink="#4682b4">
+    <div align="center">
+      <h1><font color="#33ccff">Потоки</font></h1>
+      <p align="left">&nbsp;&nbsp;&nbsp; <b><font color="#ffff33">java.util.stream.Stream&lt;T&gt;
+
+            8</font><br>
+        </b></p>
+      <div align="left"><b>&nbsp;&nbsp;&nbsp; - </b><font
+          color="#ff9966">Stream&lt;T&gt; filter(Predicate&lt;? super
+          T&gt; p)</font> : возвращает поток данных, содержащий все
+        эелементы, совпадающие с указанным предикатом p.<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Пример:<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>long
+
+          count = words.stream().filter(w -&gt; w.length() &gt;
+          12).count();</i><br>
+      </div>
+      <div align="left"><br>
+        &nbsp;&nbsp;&nbsp; -<font color="#ff9966"> long count()</font> :
+        возвращает количество элементов в исходном потоке данных. Это
+        оконечная операция.<br>
+        &nbsp;&nbsp;&nbsp; - <font color="#ff9966">default
+          Stream&lt;E&gt; stream()</font><br>
+        &nbsp;&nbsp;&nbsp; - <font color="#ff9966">default
+          Stream&lt;E&gt; parallelStream()</font> : возвращает
+        последовательный или параллельный поток данных, состоящий из
+        элементов исходной коллекции. <br>
+        &nbsp;&nbsp; <br>
+      </div>
+      <div align="left"><br>
+        &nbsp;&nbsp;&nbsp; <font color="#ffff33"><b>java.util.stream.Stream
+
+            8</b></font><br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; - <font color="#ff9966">static &lt;T&gt;
+          Stream&lt;T&gt; of(T... values)</font> : возвращает поток
+        данных, элементами которого являются заданные значения.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Если вместо коллекци
+        массив, то его можно преобразовать в поток методом Stream.of():<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>Stream&lt;String&gt;
+
+          words = Stream.of(contents.split("\\PL+"));</i><i><br>
+        </i></div>
+      <div align="left"><br>
+        &nbsp;&nbsp;&nbsp; - <font color="#ff9966">static &lt;T&gt;
+          Stream&lt;T&gt; empty</font> : возвращает поток данных без
+        элементов:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>Stream&lt;String&gt;
+
+          silence = Stream.empty();</i><br>
+      </div>
+      <div align="left"><br>
+        &nbsp;&nbsp;&nbsp; - <font color="#ff9966">static &lt;T&gt;
+          Stream&lt;T&gt; generate(Supplier&lt;T&gt; s)</font> :
+        возвращает бесконечный поток данных, элементы которого
+        составляются путем повторного вызова функции s().<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>Stream&lt;String&gt;
+          echos = Stream.generate(() -&gt; "Echo");</i><br>
+      </div>
+      <div align="left"><br>
+        &nbsp;&nbsp;&nbsp; - <font color="#ff9966">static &lt;T&gt;
+          Stream&lt;T&gt; iterate(T seed, UnaryOperator&lt;T&gt; f)</font>
+        : возвращает бесконечный поток данных, элементы которого
+        содержат начальные значения seed, функция f() сначала вызывается
+        с начальным значением seed, а затем со значением предыдущего
+        элемента и т.д.</div>
+      <div align="left"><br>
+      </div>
+      <div align="left"><br>
+        &nbsp;&nbsp;&nbsp; <font color="#ffff33"><b>java.util.Arrays
+            1.2</b></font><br>
+      </div>
+      <div align="left">&nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; - <font color="#ff9966">static &lt;T&gt;
+          Stream&lt;T&gt; stream(T[] array, int startInclusive, int
+          endExclusive) 8</font> : возвращает поток данных, элементы
+        которого сформированы из заданного диапазона в указанном
+        массиве.<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; <font color="#ffff33"><b>java.util.regex.Pattern</b></font><br>
+        &nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; - <font color="#ff9966">Stream&lt;String&gt;
+          splitAsStream(CharSequence input) 8</font> : возвращает поток
+        данных, элементы которого являются частями последовательности
+        симоволов input, разделяемых по заданному шаблону.<br>
+      </div>
+      <div align="left"><br>
+        &nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; <font color="#ffff33"><b>java.nio.file.Files
+            7</b></font><br>
+      </div>
+      <div align="left">&nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; - <font color="#ff9966">static
+          Stream&lt;String&gt; lines(Path path) 8</font>&nbsp;&nbsp;&nbsp;
+
+        <br>
+        &nbsp;&nbsp;&nbsp; - <font color="#ff9966">static
+          Stream&lt;String&gt; lines(Path path, Charset cs) 8</font> :
+        возвращает поток данных, элементы которого составляют строки из
+        указанного файла в кодировке UTF-8 или в заданном наборе
+        символов.<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>Stream&lt;String&gt;
+          lines = Files.lines(path, StandardCharsets.UTF_8</i>&nbsp;
+        &nbsp;&nbsp;&nbsp; <br>
+      </div>
+    </div>
+    <br>
+    <h3>&nbsp;&nbsp;&nbsp; Методы filter(), map() и flatMap()</h3>
+    <p>&nbsp;&nbsp;&nbsp; <font color="#ffff33">java.util.stream.Stream
+        8</font><br>
+      &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">Stream&lt;T&gt;
+        filter(Predicate&lt;? super T&gt; predicate)</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращает поток данных, элементы которого совпадают с указанным
+      предикатом.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>Stream&lt;String&gt;
+        longWords = words.stream().filter(w -&gt; w.length() &gt; 12);</i><br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">&lt;R&gt;
+        Stream&lt;R&gt; map(Function&lt;? super T, ? extends R&gt;
+        mapper)</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращает поток данных, содержащий результаты применения функции
+      mapper() к элементам исходного потока данных.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>Stream&lt;String&gt;
+        lowercaseWords = words.stream().map(String::toLowerCase);</i><br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">&lt;R&gt;
+        Stream&lt;R&gt; flatMap(Function&lt;? super T, ? extends
+        Stream&lt;? extends R&gt;&gt; mapper)</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращает поток данных, получаемый сцеплением результатов
+      применения функции mapper() к элементам исходного потока данных.
+      Каждый результат представляет собой отдельный поток данных.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>Stream&lt;String&gt;
+        flatResult = words.stream().flatMap(w -&gt; letters(w));</i><br>
+    </p>
+    <h3>&nbsp;&nbsp;&nbsp; Извлечение подпотоков и сцепление потоков</h3>
+    <p>&nbsp;&nbsp;&nbsp; <font color="#ffff33">java.util.stream.Stream
+        8</font><br>
+      &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">Stream&lt;T&gt;
+        limit(long maxSize)</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращает поток данных, состоящий из элементов исходного потока
+      данных вплоть до заданной длины maxSize.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>Stream&lt;Double&gt;
+        randoms = Stream.generate(Math::random).limit(100);</i><br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">Stream&lt;T&gt;
+        skip(long n)</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращает поток данных, все эелементы которого, кроме начальных n
+      элементов, взяты из исходного потока данных.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>Stream&lt;String&gt;
+        words = Stream.of(contents.split("\\PL")).skip(1);</i><br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">static
+        &lt;T&gt; Stream&lt;T&gt; concat(Stream&lt;? extends T&gt; a,
+        Stream&lt;? extends T&gt; b)</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращает поток данных, элементы которого последовательно
+      составлены их элементов потока a и элементов потока b.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>Stream&lt;String&gt;
+        combined = Stream.concat(letters("Hello"), letters("World"));</i><br>
+    </p>
+    <h3>&nbsp;&nbsp;&nbsp; Другие операции преобразования потоков данных<br>
+    </h3>
+    <p>&nbsp;&nbsp;&nbsp;<font color="#ffff33"> java.util.stream.Stream
+        8</font><br>
+      &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">Stream&lt;T&gt;
+        distinct()</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращает поток данных, состоящих из неповторяющихся элементов
+      исходного потока.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>Stream&lt;String&gt;
+        uniqueWords = Stream.of("merrily", "merrily", "merrily",
+        "gently").distinct();</i><br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">Stream&lt;T&gt;
+        sorted()<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Stream&lt;T&gt;
+        sorted(Comparator&lt;? super T&gt; comparator)</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращает поток данных, состоящий из отсортированных элементов
+      исходного потока. Первый метод требует, чтобы элементы были
+      экземплярами класса, реализующими интрефейс Comparable.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>Stream&lt;String&gt;
+        longestFirst =
+        words.stream().sorted(Comparator.comparing(String::length).reversed());</i><br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">Stream&lt;T&gt;
+        peek(Consumer&lt;? super T&gt; action)</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращает поток данных с теми же самыми элементами, что у
+      исходного потока, передавая каждый элемент указанной функции
+      action() по мере употребления этого элемента.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>Object[]
+        powers = Stream.iterate(1.0, p -&gt; p * 2).peek(e -&gt;
+        System.out.print("Fetching: " + e)).limit(20).toArray();</i><br>
+    </p>
+    <h3>&nbsp;&nbsp;&nbsp; Простые методы сведения</h3>
+    <p>&nbsp;&nbsp;&nbsp; <font color="#ffff33">java.util.stream.Stream
+        8</font><br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">Optional&lt;T&gt;
+        max(Comparator&lt;? super T&gt;)<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Optional&lt;T&gt;
+        max(Comparator&lt;? super T&gt;)</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращает максимальный или минимальный элемент из исходного
+      потока данных, используя порядок расположения, который определяет
+      заданный comparator, или же пустое значение типа Optional,
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; если исходный поток данных пуст. Это оконечные
+      операции.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>Optional&lt;String&gt;
+        largest = words.stream().max(String::compareToIgnoreCase);</i><br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">Optional&lt;T&gt;
+        findFirst()<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Optional&lt;T&gt;findAny()</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+      Возвращает первый или любой элемент из исходного потока данных или
+      же значение типа Optional, если исходный поток данных пуст. Это
+      оконечные операции.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>Optional&lt;String&gt;
+        startsWithQ = words.stream().filter(s -&gt;
+        s.startsWith("Q")).findFirst();</i><i><br>
+      </i><i>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        Optional&lt;String&gt; startsWithQAny = words.stream().filter(s
+        -&gt; s.startsWith("Q")).findAny();</i><br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#ff9966">boolean
+        anyMatch(Predicate&lt;? super T&gt; predicate)<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; boolean
+        allMatch(Predicate&lt;? super T&gt; predicate)<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; boolean
+        noneMatch(Predicate&lt;? super T&gt; predicate)</font><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Возвращает логическое значение true, если с заданным предикатом
+      совпадают любые или все элементы исходного потока данных или же не
+      совпадает ни один из его элементов.<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <i>boolean
+        aWordStartsWithQ = words.stream().parallel().anyMatch(s -&gt;
+        s.startsWith("Q"));</i><br>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+  
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+  
+  
+  
+  
+  <title>Циклы в Java</title>
+  <style>
+     .clrMB {
+		 color:#191970
+		 }
+	 .clrpr {
+         color:#8B008B;
+         }
+	 .clrorng {
+	     color:#FF4500;
+		 }	
+     .clrbl {
+	     color:#4169E1;
+		 }
+     .clrrd {
+         color:#DC143C
+         }	
+	 .text1 {
+         font-size: 18px;
+         color:#4169E1;
+         }		 
+  </style>
+</head>
+
+
+<body>
+
+
+  
+<h1>Циклы в Java</h1>
+
+
+  
+<p>В Java выделяют 4 виды циклов:</p>
+
+
+  
+<p>1. Цикл While</p>
+
+
+  
+<p>2. Цикл do...while</p>
+
+
+  
+<p>3. Цикл for</p>
+
+
+  
+<p>4. Цикл for each</p>
+
+
+  
+<h2>Цикл While</h2>
+
+
+  
+<p>Цикл while еще называют <span class="clrMB">цикл "пока"</span> или <span class="clrMB">"до тех пор пока"</span></p>
+
+
+  
+<p>
+     <span class="clrorng">Общая форма записи цикла while выглядит так:</span>
+     </p>
+
+<p>
+	     <span class="clrpr">while</span> (условие) {
+             <span class="clrorng">// действия, которые выполняются пока условие истинно</span>;
+			 }
+	 </p>
+
+	 
+  
+  
+<p><span class="clrorng">Суть оператора while: он повторяетя действия(-я) до тех пор, пока условие истинно.</span></p>
+
+
+  
+<h3>Например:</h3>
+
+
+  
+<pre>     до тех пор пока (в кошельке &gt; = 200 грн) {<br>     вожу девушку по кафешкам;<br>     покупаю девушке цветы;<br>     }<br>  </pre>
+
+
+  
+<p>В приведенном примере:</p>
+
+
+  
+<p>1. "до тех пор пока" - это while</p>
+
+
+  
+<p>2. (в кошельке &gt; = 200 грн) - это условие</p>
+
+
+  
+<p>3. "Вожу девушку по кафешкам", "Покупаю цветы" - это действия, которые будут выполняться пока условие истинно.</p>
+
+
+  
+<h2>Задача №1</h2>
+
+
+  
+<p>Необходимо вывести на экран числа от 1 до 7.</p>
+
+
+  
+<h3>Решение:</h3>
+
+
+  
+<pre>     <span class="clrpr">class</span> <span class="clrbl">Test</span>{<br>         <span class="clrpr">public static void</span> <span class="clrpr">main</span>(<span class="clrpr">String</span> args[]){<br>             <span class="clrpr">int</span> i <span class="clrpr">=</span> <span class="clrrd">1</span>;<br>             <span class="clrpr">while</span> (i <span class="clrpr">&lt;</span> <span class="clrrd">8</span>) {<br>                 System.out.<span class="clrbl">print</span>(i <span class="clrbl">+</span> " ");<br>                 i<span class="clrbl">++</span>;<br>                 }<br>         }<br>     } <br>  </pre>
+
+
+  
+<h2>Задача №2</h2>
+
+
+  
+<p>Если бы код был написан так, то он не выполнился бы ни разу.</p>
+
+
+  
+<pre>     class Test {<br>         public static void main(String args[]) {<br>             int i = 1;<br>             while (i &lt; 0) {<br>                 System.out.print(i + " ");<br>                 i++;<br>             }<br>         }<br>     }<br>  </pre>
+
+
+  
+<p>Не выполнился бы потому, что int i = 1; а в условии указано while (i
+&lt; 0). В коде i уже равно 1, что не соответствует условию.</p>
+
+
+  
+<h2>Задача №3</h2>
+
+
+  
+<p>Если бы код был написан так, то на экран выводились бы цифры от 1 до бесконечности.</p>
+
+
+  
+<pre>     class Test {<br>         public static void main(String [args]) {<br>             int i = 1;<br>             while (true) {<br>                 System.out.print(i + " ");<br>                 i++;<br>             }<br>         }<br>     }<br>  </pre>
+
+
+  
+<p>Это пример бесконечного цикла. При запуске он заблокировал бы
+программу т.к. код не останавливается потому что условие true и есть
+истинное условие.</p>
+
+
+  
+<h2>Задача №4</h2>
+
+
+  
+<p>Необходимо вывести на экран последовательность чисел 100 90 80 70 60 50 40 10</p>
+
+
+  
+<h3>Решение:</h3>
+
+
+  
+<pre>     class Test {<br>         public static void main(String args[]) {<br>             int i = 100;<br>             while ( i &gt;= 10){<br>                 System.out.println( &ldquo;Обратный отсчет:&rdquo; + i);<br>                 i-=10; \\сокращенно от i = i - 10;<br>             }<br>         }<br>     }<br>  </pre>
+
+
+  
+<h2>Цикл do...while</h2>
+
+
+  
+<ul>
+
+
+     <li>Цикл do...while еще называют <span class="clrMB">"делать до тех пор пока"</span></li>
+
+
+	 <li>Цикл do...while - это одна из вариаций цикла while</li>
+
+
+  
+</ul>
+
+
+  
+<h3>Общая форма цикла do...while:</h3>
+
+
+  
+<p>
+     <span class="clrpr">do</span> {<br>
+
+
+     <span class="clrorng">// действия, которые выполняются</span><br>
+
+
+     }<br>
+
+
+     <span class="clrpr">while</span> (условие);<br>
+
+
+  </p>
+
+  
+  
+<p>Отличия этих циклов рассмотрим в примерах:</p>
+
+
+  
+<h2>Задача №5 - код с циклом while</h2>
+
+
+  
+<pre>     class Example1 {<br>         public static void main(String args[]) {<br>             int i = 1;<br>             while (i &lt; 0) {<br>                 i++;<br>                 System.out.print(i + " ");<br>             }<br>         }<br>     }<br>  </pre>
+
+
+  
+<h3>Комментарий:</h3>
+
+
+  
+<p>Данный код не выполнится ни разу, т.к. сначала идет проверка условия
+while (i &lt; 0) и только потом, если условие истинно выполняется код.
+При цикле <span class="clrorng">while</span> идет <span class="clrorng">предпроверка условия.</span></p>
+
+
+  
+<h2>Задача №6 - код с циклом do...while</h2>
+
+
+  
+<pre>     class Example2 {<br>         public static void main(String args[]){<br>             int i = 1;<br>             do {<br>                 i++;<br>                 System.out.print(i + " ");<br>             } while(i &lt; 0);<br>         }<br>     }<br>  </pre>
+
+
+  
+<h3>Комментарий:</h3>
+
+
+  
+<p>do...while сначала выполняет тело цикла, а потом проверяет условие, поэтому тело цикла как минимум выполнится 1 раз. При цикле <span class="clrorng">do...while</span> происходит <span class="clrorng">постпроверка условия</span>.</p>
+
+
+  
+<p><span class="clrorng">Цикл do...while всегда выполняется как минимум 1 раз!</span></p>
+
+
+  
+<p>Цикл do...while удобно использовать, когда некоторое действие в
+программе нужно выполнить по крайней мере единожды, но при некоторых
+условиях его придется повторять многократно.</p>
+
+
+  
+<h2>Цикл for</h2>
+
+
+  
+<p>Цикл for еще называют "цикл со счетчиком"</p>
+
+
+  
+<p><span class="clrorng">Когда заранее известно сколько раз повториться одно и то же действие - необходимо использовать цикл for</span>.</p>
+
+<p>Общая форма записи:</p>
+
+<p></p>
+
+
+  
+<h3>Общая форма цикла for в Java</h3>
+
+
+  
+<pre>     <span class="clrpr">for</span> (инициализация; условие; итерация) {<br>	 <br>     <span class="clrorng">// действия, которые выполняются</span> <br>	 <br>     }<br>  </pre>
+
+
+  
+<h3>Пример:</h3>
+
+
+  
+<pre>     class Test {<br>         public static void main(String args[]){<br>             for (int i = 1; i &lt;= 5; i++) {<br>                 System.out.println (&ldquo;Супер!&rdquo;);<br>             }<br>         }<br>     }<br>  </pre>
+
+
+  
+<h3>Комментарий:</h3>
+
+
+  
+<p>Конструкция for (i = 1; i &lt;= 5; i++) в языке Java - это все равно, что сказать "Повторить столько то раз".</p>
+
+
+  
+<p>int i = 1; - это первый параметр, который отвечает за установку начального значения. Этот параметр называется <span class="text1">инициализация</span><span class="clrbl">, где i - переменная цикла</span>.</p>
+
+
+  
+<p>i &lt;= 5; - это второй параметр, который отвечает за условие, при котором будет выполняться цикл.</p>
+
+
+  
+<p>i++ это третий параметр, который отвечает за изменение переменной i после каждого шага цикла. Этот параметр называется <span class="text1">итерация</span>.</p>
+
+
+  
+<h2>Задача №7</h2>
+
+
+  
+<p>Необходимо вывести на экран числа от 3 до -3.</p>
+
+
+  
+<h3>Решение:</h3>
+
+
+  
+<pre>     class Test {<br>	     public static void main (String [] args) {<br>	         for (int i = 3; i &gt;= -3; i--) {<br>		     System.out.print (i + " ");<br>	         }<br>	     }<br>     }<br>  <br></pre>
+<h3>&nbsp;&nbsp;&nbsp; For each</h3>
+&nbsp;&nbsp;&nbsp; Синтаксис:<br>
+&nbsp;&nbsp;&nbsp; for (type itVar : array) {<br>
+&nbsp;&nbsp;&nbsp; }<br>
+<br>
+<span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">public</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">static</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">double</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token function" style="color: rgb(255, 198, 109); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">midGrade</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">int</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">[</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">]</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> numbers</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">{</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+        </span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">int</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> grade </span><span class="token operator" style="color: rgb(169, 183, 198); background-color: rgb(43, 43, 43); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px;">=</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token number" style="color: rgb(104, 151, 187); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">0</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">;</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+        </span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">for</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">int</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> num </span><span class="token operator" style="color: rgb(169, 183, 198); background-color: rgb(43, 43, 43); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px;">:</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> numbers</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">{</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+            grade </span><span class="token operator" style="color: rgb(169, 183, 198); background-color: rgb(43, 43, 43); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px;">=</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> num </span><span class="token operator" style="color: rgb(169, 183, 198); background-color: rgb(43, 43, 43); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px;">+</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> grade</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">;</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+        </span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">}</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+        </span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">return</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> </span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">(</span><span class="token keyword" style="color: rgb(204, 120, 50); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">double</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> grade </span><span class="token operator" style="color: rgb(169, 183, 198); background-color: rgb(43, 43, 43); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px;">/</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"> numbers</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">.</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;">length</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">)</span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">;</span><span style="color: rgb(169, 183, 198); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43); display: inline ! important; float: none;"><br>
+    </span><span class="token punctuation" style="color: rgb(153, 153, 153); font-family: Menlo,Monaco,Consolas,&quot;Courier New&quot;,&quot;Ubuntu Mono&quot;,monospace; font-size: 18px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre; widows: 2; word-spacing: 0px; background-color: rgb(43, 43, 43);">}</span>
+<pre></pre>
+
+
+ 
+</body>
+</html>

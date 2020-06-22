@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>SozdanieObjektov</title>
+  </head>
+  <body>
+    <h1 align="center">Создание объектов</h1>
+    <h2>&nbsp;&nbsp;&nbsp; Автоматическая конфигурация</h2>
+    <p>&nbsp;&nbsp;&nbsp; 1. Main класс<br>
+      &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; <font color="#003300" size="-1">public class
+        Main {<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public static void
+        main(String[] args) {<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        //создаем пустой стринговый контекст, который будет искать свои
+        бины по аннотациям в указанном пакете<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        ApplicationContext context = new
+        AnnotationConfigApplicationContext("пакет, в котором лежат
+        классы требуемых нам бинов");<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Cat cat
+        = context.getBean(Cat.class);&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+        &nbsp;&nbsp;&nbsp; }<br>
+      </font></p>
+    <p><font color="#003300" size="-1">&nbsp;&nbsp;&nbsp; </font><font
+        color="#003300"><font color="#000000">2. Класс, описывающий
+          создаваемые нами объекты</font></font><font color="#003300"
+        size="-1"><br>
+      </font></p>
+    <font color="#003300" size="-1">&nbsp;&nbsp;&nbsp;
+      @Component("имя_создаваемого бина") // имя задавать не обязательно<br>
+      &nbsp;&nbsp;&nbsp; public class Cat {<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; privite String name =
+      "name";<br>
+      &nbsp;&nbsp;&nbsp; }</font><br>
+    <p>&nbsp;&nbsp;&nbsp; Спринг будет искать не только @Component, но и
+      все, наследующиеся от этой: @Controller, @RestController,
+      @Service, @Repository<br>
+    </p>
+    <h2>&nbsp;&nbsp;&nbsp; Java конфигурация</h2>
+    <p>&nbsp;&nbsp;&nbsp; 1. Создать класс с конфигами:<br>
+      &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp; <font color="#003300" size="-1">import
+        org.springframework.context.annotation.Bean;<br>
+        &nbsp;&nbsp;&nbsp; import
+        org.springframework.context.annotation.ComponentScan;<br>
+        &nbsp;&nbsp;&nbsp; import
+        org.springframework.context.annotation.Configuration;<br>
+        <br>
+        &nbsp;&nbsp;&nbsp; import animals.entities.*;<br>
+        <br>
+        &nbsp;&nbsp;&nbsp; @Configuration&nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; public class <b>MyConfig</b> {<br>
+        &nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; @Bean<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public Cat getCat() {<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; return
+        new Cat();<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+        &nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; @Bean<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public Parrot getParrot()
+        {<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; return
+        new Parrot();<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; }</font><br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp; 2. Класс, описывающий создаваемые
+      объекты:<br>
+      &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp;<font color="#003300" size="-1"> import
+        org.springframework.stereotype.Component;<br>
+        <br>
+        &nbsp;&nbsp;&nbsp; public class Cat {<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; private String name =
+        "cat";<br>
+        <br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public String getName() {<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return
+        name;<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+        <br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public void setName(String
+        name) {<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        this.name = name;<br>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+        &nbsp;&nbsp;&nbsp; }</font><br>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp; 3. Main класс:<br>
+    </p>
+    &nbsp;&nbsp;&nbsp; <font color="#003300" size="-1">public class
+      Main {<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public static void
+      main(String[] args) {<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; //создаем
+      пустой стринговый контекст, который будет искать свои бины по
+      аннотациям в указанном пакете<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // в
+      конструктор AnnotationConfigApplicationCintext можно передавать
+      названия пакетов, если классов с конфигами слишком много<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      ApplicationContext context = new
+      AnnotationConfigApplicationContext(<b>MyConfig.class</b>);<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Cat cat =
+      context.getBean(Cat.class);&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+      &nbsp;&nbsp;&nbsp; }</font><br>
+    <h3>&nbsp;&nbsp;&nbsp; Смешанная конфигурация</h3>
+    &nbsp;&nbsp;&nbsp; В классе конфигурации добавляется аннотация
+    @ComponentScan("пакет, где лежат классы создаваемых бинов") &nbsp; <br>
+    <br>
+    <font color="#003300" size="-1">@Configuration<br>
+      @ComponentScan("пакет_с_классами") &nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; public class <b>MyConfig</b> {<br>
+      &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; @Bean<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public Cat getCat() {<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; return
+      new Cat();<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+      &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; @Bean<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public Parrot getParrot() {<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; return
+      new Parrot();<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; }<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; </font><font color="#003300"><font
+        color="#000000">Классы с автоматическим созданием бинов как и в
+        первом способе помечаются аннотацией @Component</font></font><font
+      color="#003300" size="-1"><font color="#000000"><br>
+        <br>
+        &nbsp;&nbsp;&nbsp; </font></font><font color="#003300"
+      size="-1">@Component("имя_создаваемого бина") // имя задавать не
+      обязательно<br>
+      &nbsp;&nbsp;&nbsp; public class Dog {<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; privite String name =
+      "name";<br>
+      &nbsp;&nbsp;&nbsp; }</font><br>
+  </body>
+</html>
